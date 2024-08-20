@@ -1,21 +1,23 @@
 [
-    {
-      "title": "5 Tips for First-Time Homebuyers",
-      "details": "Buying your first home can be both exciting and overwhelming. This blog post provides essential tips for first-time homebuyers, including how to budget, what to look for in a property, and how to navigate the mortgage process.",
-      "date": "2024-08-10",
-      "image": "https://assets.architecturaldigest.in/photos/600845b5eebcfd50ede87936/16:9/w_2560%2Cc_limit/Bengaluru-home-Bodhi-Design-Studio-17-1366x768.jpg"
-    },
-    {
-      "title": "How to Increase Your Home’s Value with Simple Upgrades",
-      "details": "Looking to boost your home's market value without breaking the bank? Discover easy and cost-effective upgrades that can significantly enhance the appeal and value of your property.",
-      "date": "2024-08-12",
-      "image": "https://assets.architecturaldigest.in/photos/60083d8e94ca758bb0ad12f2/16:9/w_2560%2Cc_limit/Chennai-home-interior-design-architecture-1366x768.jpg"
-    },
-    {
-      "title": "The Future of Real Estate: Trends to Watch in 2025",
-      "details": "The real estate market is constantly evolving. Explore upcoming trends and predictions for the future of real estate, including technology advancements, sustainability practices, and shifts in buyer preferences.",
-      "date": "2024-08-15",
-      "image": "https://i.pinimg.com/736x/ae/a5/ab/aea5ab039b38de8bb32e088f3e882b56.jpg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "5 Tips for First-Time Homebuyers",
+    "description": "Buying your first home can be both exciting and overwhelming. This blog post provides essential tips for first-time homebuyers, including how to budget, what to look for in a property, and how to navigate the mortgage process.",
+    "date": "2024-08-10",
+    "image": "https://assets.architecturaldigest.in/photos/600845b5eebcfd50ede87936/16:9/w_2560%2Cc_limit/Bengaluru-home-Bodhi-Design-Studio-17-1366x768.jpg"
+  },
+  {
+    "id": 2,
+    "title": "How to Increase Your Home’s Value with Simple Upgrades",
+    "description": "Looking to boost your home's market value without breaking the bank? Discover easy and cost-effective upgrades that can significantly enhance the appeal and value of your property.",
+    "date": "2024-08-12",
+    "image": "https://assets.architecturaldigest.in/photos/60083d8e94ca758bb0ad12f2/16:9/w_2560%2Cc_limit/Chennai-home-interior-design-architecture-1366x768.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Future of Real Estate: Trends to Watch in 2025",
+    "description": "The real estate market is constantly evolving. Explore upcoming trends and predictions for the future of real estate, including technology advancements, sustainability practices, and shifts in buyer preferences.",
+    "date": "2024-08-15",
+    "image": "https://i.pinimg.com/736x/ae/a5/ab/aea5ab039b38de8bb32e088f3e882b56.jpg"
+  }
+]

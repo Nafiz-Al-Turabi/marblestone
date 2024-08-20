@@ -43,7 +43,7 @@ const Blog = () => {
                                     <BsCalendar3 className='mr-2 text-xl' />
                                     {blog.date}
                                 </p>
-                                <Link to='/blogDetails' className='flex items-center '>Read more
+                                <Link to={`/blogDetails/${blog.id}`} className='flex items-center '>Read more
                                     <IoIosArrowForward className='ml-2' />
                                 </Link>
                             </div>

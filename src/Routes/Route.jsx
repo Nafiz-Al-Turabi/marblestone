@@ -20,8 +20,9 @@ const router = createBrowserRouter([
                 element:<About></About>
             },
             {
-                path:'/blogDetails',
-                element:<BlogDetails></BlogDetails>
+                path:'/blogDetails/:id',
+                element:<BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch('blogdata.json')
             }
         ]
     },

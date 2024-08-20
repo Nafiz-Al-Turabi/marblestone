@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsCalendar3 } from "react-icons/bs";
 import { PiArticleMediumFill } from "react-icons/pi";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaBriefcase, FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter, FaCirclePlus } from "react-icons/fa6";
+import { useParams } from 'react-router-dom';
 
 
 
 
 const BlogDetails = () => {
+    const { id } = useParams()
+    const [details, setDetails] = useState({});
+    useEffect(() => {
+        fetch('/blogdata.json')
+            .then(res => res.json())
+            .then(result => {
+                const data = result.find(detail => detail.id == id)
+                if (data) {
+                    setDetails(data)
+                }
+            })
+    }, [])
+
+    const { title, image, description, date } = details;
     return (
         <div className=' py-20'>
             <div>
@@ -17,11 +32,11 @@ const BlogDetails = () => {
                         Article</p>
                     <p className='flex items-center text-gray-500 '>
                         <BsCalendar3 className='mr-2 text-base' />
-                        Mar 30, 2024
+                        {date}
                     </p>
                 </div>
-                <div className='lg:flex flex-row-reverse gap-5 xl:gap-'>
-                    <div className='relative shadow m-2 lg:m-2 xl:m-0 p-4 md:rounded-3xl  xl:w-[346px]'>
+                <div className='lg:flex flex-row-reverse gap-5 xl:gap-10 mt-5'>
+                    <div className='relative shadow m-2 lg:m-2 xl:m-0 p-4 md:rounded-3xl  xl:w-[446px]'>
                         <div className='flex items-center'>
                             <div>
                                 <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" className='w-16' />
@@ -43,15 +58,15 @@ const BlogDetails = () => {
                         </button>
                     </div>
                     <div>
-                        <h1 className='text-2xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-medium my-2 px-2'>First-time homebuyer’s guide: Steps for beginners</h1>
-                        <p className='secondary-text px-2 text-justify mb-10'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
+                        <h1 className='text-2xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-medium my-2 px-2'>{title}</h1>
+                        <p className='secondary-text px-2 text-justify mb-10'>{description}</p>
                     </div>
                 </div>
             </div>
             <div className='mt-10'>
-                <div className='xl:max-w-[1200px] mx-auto '>
-                    <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg" alt=""
-                        className='w-full xl:h-[490px] xl:rounded-3xl'
+                <div className='xl:max-w-[1200px] mx-auto xl:h-[490px] overflow-hidden relative '>
+                    <img src={image} alt=""
+                        className='object-cover w-full h-full xl:rounded-3xl'
                     />
                 </div>
             </div>
