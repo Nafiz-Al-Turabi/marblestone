@@ -17,13 +17,15 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='absolute 2xl:hidden  z-20 w-full'>
+        <nav className='absolute  z-20 w-full xl:w-[1440px] '>
             {/* Desktop Navbar */}
             <div className='hidden lg:flex max-w-[1200px] mx-auto justify-between items-center p-4'>
                 <div className='flex items-center'>
-                    <img src={logo} alt="Logo" />
+                    <Link to="/">
+                        <img src={logo} alt="Logo" />
+                    </Link>
                 </div>
-                <ul className='flex space-x-6 text-white'>
+                <ul className='flex space-x-6 text-black'>
                     <li className='relative'>
                         <a href="#" onClick={toggleDropdown} className='flex items-center font-medium'>
                             Property Management <IoIosArrowDown />
@@ -51,18 +53,17 @@ const Navbar = () => {
             </div>
 
             {/* Mobile & Medium Device Navbar */}
-            <div className='absolute lg:hidden flex justify-between items-center p-4  w-full z-40'>
+            <div className='absolute lg:hidden flex justify-between items-center p-4  w-full'>
                 <img src={logo} alt="Logo" />
                 <button onClick={toggleMobileMenu} className='text-black text-2xl'>
-                    {isMobileMenuOpen ? <FaTimes /> : <IoIosMenu />}
+                    {isMobileMenuOpen ? '': <IoIosMenu />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
             <div
-                className={`lg:hidden fixed top-0 right-0 h-full w-2/3 bg-white p-4 transform transition-transform duration-300 ease-in-out z-30 pt-20 ${
-                    isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
+                className={` lg:hidden fixed top-0 right-0 h-full w-2/3 bg-white p-4 transform transition-transform duration-300 ease-in-out z-30 pt-20 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                    }`}
             >
                 <ul className='space-y-4 text-black'>
                     <li className='relative'>
@@ -88,6 +89,9 @@ const Navbar = () => {
                 <button className='primary-btn flex items-center mt-6'>
                     Book a call
                     <FaArrowRight className='bg-white p-2 w-[28px] h-[28px] rounded-full text-black ml-2' />
+                </button>
+                <button onClick={toggleMobileMenu} className='absolute top-5 right-5 text-black text-2xl z-40 '>
+                    <FaTimes />
                 </button>
             </div>
         </nav>
