@@ -4,6 +4,7 @@ import image2 from './../../assets/AboutImages/image2.png'
 import image1 from './../../assets/AboutImages/image1.png'
 import CountUp from 'react-countup'; // Import CountUp
 import OurValues from '../../AboutComponents/OurValues/OurValues';
+import OurMission from '../../AboutComponents/OurMission/OurMission';
 
 
 
@@ -55,6 +56,7 @@ const About = () => {
                 </div>
             </div>
             <OurValues />
+            <OurMission />
         </div>
     );
 };
