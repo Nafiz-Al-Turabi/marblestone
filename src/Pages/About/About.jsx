@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import image2 from './../../assets/AboutImages/image2.png'
 import image1 from './../../assets/AboutImages/image1.png'
 import CountUp from 'react-countup'; // Import CountUp
+import OurValues from '../../AboutComponents/OurValues/OurValues';
 
 
 
@@ -31,7 +32,7 @@ const About = () => {
                 <div className='lg:flex gap-5 mt-12'>
                     <div>
                         <img src={image2} alt="" className='w-full lg:rounded-3xl lg:w-[696px]' />
-                        <div className=" text-center lg:text-left 2xl:flex space-x-2 mr-5 space-y-4 lg:space-y-0 my-10">
+                        <div className=" text-center lg:text-left 2xl:flex space-x-2 mr-5 space-y-4 lg:space-y-0 my-10 xl:ml-16">
                             <div>
                                 <h3 className="text-[18px]">Stat 1</h3>
                                 <p className="text-5xl 2xl:text-7xl my-[6px]">
@@ -51,9 +52,9 @@ const About = () => {
                     <div className=' overflow-hidden relative'>
                         <img src={image1} alt="" className='w-full lg:h-[662px] lg:rounded-3xl object-cover' />
                     </div>
-
                 </div>
             </div>
+            <OurValues />
         </div>
     );
 };
