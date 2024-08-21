@@ -1,6 +1,4 @@
-import image1 from './../../assets/Images/blog.svg'
-import image2 from './../../assets/Images/blog2.svg'
-import image3 from './../../assets/Images/blog3.svg'
+
 import { IoPencil } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsCalendar3 } from "react-icons/bs";
