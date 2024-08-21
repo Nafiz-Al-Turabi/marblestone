@@ -7,6 +7,7 @@ import OurValues from '../../AboutComponents/OurValues/OurValues';
 import OurMission from '../../AboutComponents/OurMission/OurMission';
 import AboutBlog from '../../AboutComponents/AboutBlog/AboutBlog';
 import AboutFAQs from '../../AboutComponents/AboutFAQs/AboutFAQs';
+import ResidentFAQs from '../../AboutComponents/ResidentFAQs/ResidentFAQs';
 
 
 
@@ -61,6 +62,7 @@ const About = () => {
             <OurMission />
             <AboutBlog />
             <AboutFAQs />
+            <ResidentFAQs />
         </div>
     );
 };
