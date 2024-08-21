@@ -25,7 +25,7 @@ const BlogDetails = () => {
     const { title, image, description, date } = details;
     return (
         <div className=' py-40'>
-            <div>
+            <div className='xl:max-w-[1440px] mx-auto'>
                 <div className='flex items-center gap-5 px-2'>
                     <p className='flex items-center justify-center text-white bg-gray-400 w-24 rounded-full p-1 '>
                         <PiArticleMediumFill className='mr-2 text-base' />

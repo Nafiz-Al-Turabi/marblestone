@@ -24,9 +24,9 @@ const Blog = () => {
             </button>
             <div className='md:flex justify-between mb-10 mx-2'>
                 <h1 className='text-3xl lg:text-5xl font-medium'>Read Our Latest blog</h1>
-                <button className='flex items-center '>Browse al articles
+                <Link to='/blogs' className='flex items-center '>Browse al articles
                     <IoIosArrowForward className='ml-2' />
-                </button>
+                </Link>
             </div>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 mx-2'>
                 {
