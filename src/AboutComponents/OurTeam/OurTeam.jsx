@@ -25,7 +25,7 @@ const OurTeam = () => {
                     </div>
                     {/* Agents */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent1} alt="" className="rounded-full" />
                             </div>
@@ -43,7 +43,7 @@ const OurTeam = () => {
                                 <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
                             </button>
                         </div>
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent3} alt="" className="rounded-full" />
                             </div>
@@ -61,7 +61,7 @@ const OurTeam = () => {
                                 <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
                             </button>
                         </div>
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent2} alt="" className="rounded-full" />
                             </div>
@@ -80,7 +80,7 @@ const OurTeam = () => {
                             </button>
                         </div>
 
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent3} alt="" className="rounded-full" />
                             </div>
@@ -98,7 +98,7 @@ const OurTeam = () => {
                                 <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
                             </button>
                         </div>
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent2} alt="" className="rounded-full" />
                             </div>
@@ -116,7 +116,7 @@ const OurTeam = () => {
                                 <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
                             </button>
                         </div>
-                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl relative">
+                        <div className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                             <div className="flex justify-center">
                                 <img src={agent1} alt="" className="rounded-full" />
                             </div>

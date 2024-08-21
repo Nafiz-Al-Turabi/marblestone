@@ -40,7 +40,7 @@ const ResidentFAQs
                     </div>
                     <div>
                         <div className="w-full lg:w-[550px] xl:w-[776px] mx-auto mt-10 lg:mt-0">
-                            <div className='shadow rounded-xl'>
+                            <div className='shadow bg-white rounded-xl'>
                                 <div className="border-b">
                                     <button
                                         onClick={toggleAccordion}

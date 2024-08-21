@@ -17,9 +17,9 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='absolute  z-20 w-full xl:w-[1440px] '>
+        <nav className='absolute  z-20 w-full xl:px-4 '>
             {/* Desktop Navbar */}
-            <div className='hidden lg:flex max-w-[1200px] mx-auto justify-between items-center p-4'>
+            <div className='hidden xl:flex xl:max-w-[1440px] mx-auto  justify-between items-center p-4'>
                 <div className='flex items-center'>
                     <Link to="/">
                         <img src={logo} alt="Logo" />
@@ -53,7 +53,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile & Medium Device Navbar */}
-            <div className='absolute lg:hidden flex justify-between items-center p-4  w-full'>
+            <div className='absolute xl:hidden flex justify-between items-center p-4  w-full'>
                 <img src={logo} alt="Logo" />
                 <button onClick={toggleMobileMenu} className='text-black text-2xl'>
                     {isMobileMenuOpen ? '': <IoIosMenu />}
@@ -62,7 +62,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={` lg:hidden fixed top-0 right-0 h-full w-2/3 bg-white p-4 transform transition-transform duration-300 ease-in-out z-30 pt-20 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                className={` xl:hidden fixed top-0 right-0 h-full w-2/3 bg-white p-4 transform transition-transform duration-300 ease-in-out z-30 pt-20 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                     }`}
             >
                 <ul className='space-y-4 text-black'>

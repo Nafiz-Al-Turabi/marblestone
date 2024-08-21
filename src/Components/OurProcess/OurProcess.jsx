@@ -27,7 +27,7 @@ const OurProcess = () => {
             </div>
             <div className="2xl:w-[1200px] mx-auto 2xl:flex justify-between mb-16 2xl:mb-0">
                 <div className=" w-full  2xl:w-[537px] mx-auto mt-10">
-                    <div className="border-b shadow rounded-2xl">
+                    <div className="border-b bg-white shadow rounded-2xl">
                         <button
                             onClick={toggleAccordion}
                             className="flex items-center justify-between w-full p-4 focus:outline-none"

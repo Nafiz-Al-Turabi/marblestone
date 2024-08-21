@@ -34,9 +34,9 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className='lg:flex gap-5 mt-12'>
-                    <div>
-                        <img src={image2} alt="" className='w-full lg:rounded-3xl lg:w-[696px]' />
+                <div className='lg:flex gap-5 mt-12 xl:w-[1400px] mx-auto '>
+                    <div className=''>
+                        <img src={image2} alt="" className='w-full lg:rounded-3xl lg:w-[696px] ' />
                         <div className=" text-center lg:text-left 2xl:flex space-x-2 mr-5 space-y-4 lg:space-y-0 my-10 xl:ml-28">
                             <div>
                                 <h3 className="text-[18px]">Stat 1</h3>
