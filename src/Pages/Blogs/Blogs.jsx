@@ -1,6 +1,7 @@
 import { IoSearch } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa";
 import image from './../../assets/Images/macbook.png'
+import LatestBlog from "../../Components/LatestBlog/LatestBlog";
 
 
 
@@ -34,6 +35,9 @@ const Blogs = () => {
                     </div>
                     <img src={image} alt="" className="absolute -top-24 right-0 md:top-10 md:right-0 lg:-top-10   lg:right-0 w-full md:w-[373px] lg:w-[573px] xl:w-[773px] " />
                 </div>
+            </div>
+            <div>
+                <LatestBlog />
             </div>
         </div>
     );
