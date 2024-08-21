@@ -8,6 +8,7 @@ import OurMission from '../../AboutComponents/OurMission/OurMission';
 import AboutBlog from '../../AboutComponents/AboutBlog/AboutBlog';
 import AboutFAQs from '../../AboutComponents/AboutFAQs/AboutFAQs';
 import ResidentFAQs from '../../AboutComponents/ResidentFAQs/ResidentFAQs';
+import OurTeam from '../../AboutComponents/OurTeam/OurTeam';
 
 
 
@@ -36,7 +37,7 @@ const About = () => {
                 <div className='lg:flex gap-5 mt-12'>
                     <div>
                         <img src={image2} alt="" className='w-full lg:rounded-3xl lg:w-[696px]' />
-                        <div className=" text-center lg:text-left 2xl:flex space-x-2 mr-5 space-y-4 lg:space-y-0 my-10 xl:ml-16">
+                        <div className=" text-center lg:text-left 2xl:flex space-x-2 mr-5 space-y-4 lg:space-y-0 my-10 xl:ml-28">
                             <div>
                                 <h3 className="text-[18px]">Stat 1</h3>
                                 <p className="text-5xl 2xl:text-7xl my-[6px]">
@@ -63,6 +64,7 @@ const About = () => {
             <AboutBlog />
             <AboutFAQs />
             <ResidentFAQs />
+            <OurTeam />
         </div>
     );
 };
