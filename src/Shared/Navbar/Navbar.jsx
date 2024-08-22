@@ -31,10 +31,10 @@ const Navbar = () => {
                             Property Management <IoIosArrowDown />
                         </a>
                         {isDropdownOpen && (
-                            <ul className='absolute bg-gray-500 mt-2 p-2 rounded shadow-lg'>
+                            <ul className='absolute bg-gray-100 mt-2 p-2 rounded shadow-lg'>
                                 <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Manage Properties</a></li>
                                 <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Add New Property</a></li>
-                                <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Reports</a></li>
+                                <li><Link to="/agents" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
                             </ul>
                         )}
                     </li>
@@ -71,10 +71,10 @@ const Navbar = () => {
                             Property Management <IoIosArrowDown />
                         </a>
                         {isDropdownOpen && (
-                            <ul className='bg-gray-500 mt-2 p-2 rounded shadow-lg'>
+                            <ul className='bg-gray-100 mt-2 p-2 rounded shadow-lg'>
                                 <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Manage Properties</a></li>
                                 <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Add New Property</a></li>
-                                <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Reports</a></li>
+                                <li><Link to="/agents" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
                             </ul>
                         )}
                     </li>

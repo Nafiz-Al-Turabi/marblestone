@@ -82,17 +82,17 @@ const LatestBlog = () => {
                 <div className="flex items-center justify-between space-x-2 mt-10">
                     <button
                         disabled
-                        className="flex items-center justify-center p-2 border border-gray-300 rounded-full text-white bg-black disabled:bg-white disabled:text-black"
+                        className="flex w-12 h-12 items-center justify-center p-2 border border-gray-300 rounded-full text-white bg-black disabled:bg-white disabled:text-black"
                     >
                         <FaChevronLeft />
                     </button>
 
-                    <span className="text-gray-700">
+                    <span className="text-gray-700 font-semibold">
                         1 / 6
                     </span>
 
                     <button
-                        className="flex items-center justify-center p-2 border border-gray-300 rounded-full text-white bg-black "
+                        className="flex w-12 h-12 items-center justify-center p-2 border border-gray-300 rounded-full text-white bg-black "
                     >
                         <FaChevronRight />
                     </button>
