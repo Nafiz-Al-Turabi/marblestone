@@ -8,6 +8,7 @@ import BlogDetails from "../Components/BlogDetails/BlogDetails";
 import Blogs from "../Pages/Blogs/Blogs";
 import Agents from "../Pages/Agents/Agents";
 import AgentDetails from "../Pages/AgentDetails/AgentDetails";
+import Properties from "../Pages/Properties/Properties";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                 path:'/agentDetails/:id',
                 element:<AgentDetails></AgentDetails>,
                 loader:({params})=>fetch('agents.json')
+            },
+            {
+                path:'/properties',
+                element:<Properties></Properties>
             }
         ]
     },
