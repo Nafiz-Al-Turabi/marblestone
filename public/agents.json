@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "John Carter",
+        "title": "Inmobiliary Agent",
+        "image": "https://i.ibb.co/86qGByg/agent4.png",
+        "phone": "+1-555-1234",
+        "mail": "john.carter@example.com"
+    },
+    {
+        "id": 2,
+        "name": "Sarah Smith",
+        "title": "Real Estate Consultant",
+        "image": "https://i.ibb.co/P1x2P0S/agent3.png",
+        "phone": "+1-555-5678",
+        "mail": "sarah.smith@example.com"
+    },
+    {
+        "id": 3,
+        "name": "Michael Johnson",
+        "title": "Property Specialist",
+        "image": "https://i.ibb.co/HgsM0Rr/agent2.png",
+        "phone": "+1-555-9101",
+        "mail": "michael.johnson@example.com"
+    },
+    {
+        "id": 4,
+        "name": "Emily Davis",
+        "title": "Real Estate Agent",
+        "image": "https://i.ibb.co/P1x2P0S/agent3.png",
+        "phone": "+1-555-1122",
+        "mail": "emily.davis@example.com"
+    },
+    {
+        "id": 5,
+        "name": "David Brown",
+        "title": "Real Estate Advisor",
+        "image": "https://i.ibb.co/W5bCbfR/agent1.png",
+        "phone": "+1-555-3344",
+        "mail": "david.brown@example.com"
+    },
+    {
+        "id": 6,
+        "name": "Sophia Wilson",
+        "title": "Property Consultant",
+        "image": "https://i.ibb.co/86qGByg/agent4.png",
+        "phone": "+1-555-5566",
+        "mail": "sophia.wilson@example.com"
+    },
+    {
+        "id": 7,
+        "name": "James Miller",
+        "title": "Real Estate Specialist",
+        "image": "https://i.ibb.co/W5bCbfR/agent1.png",
+        "phone": "+1-555-7788",
+        "mail": "james.miller@example.com"
+    },
+    {
+        "id": 8,
+        "name": "Olivia Brown",
+        "title": "Estate Agent",
+        "image": "https://i.ibb.co/86qGByg/agent4.png",
+        "phone": "+1-555-9900",
+        "mail": "olivia.brown@example.com"
+    },
+    {
+        "id": 9,
+        "name": "Liam Anderson",
+        "title": "Housing Specialist",
+        "image": "https://i.ibb.co/W5bCbfR/agent1.png",
+        "phone": "+1-555-2233",
+        "mail": "liam.anderson@example.com"
+    },
+    {
+        "id": 10,
+        "name": "Ava Martinez",
+        "title": "Real Estate Broker",
+        "image": "https://i.ibb.co/P1x2P0S/agent3.png",
+        "phone": "+1-555-4455",
+        "mail": "ava.martinez@example.com"
+    },
+    {
+        "id": 9,
+        "name": "Liam Anderson",
+        "title": "Housing Specialist",
+        "image": "https://i.ibb.co/W5bCbfR/agent1.png",
+        "phone": "+1-555-2233",
+        "mail": "liam.anderson@example.com"
+    },
+    {
+        "id": 10,
+        "name": "Ava Martinez",
+        "title": "Real Estate Broker",
+        "image": "https://i.ibb.co/86qGByg/agent4.png",
+        "phone": "+1-555-4455",
+        "mail": "ava.martinez@example.com"
+    }
+]
