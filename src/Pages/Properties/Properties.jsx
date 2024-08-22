@@ -7,7 +7,7 @@ const Properties = () => {
     return (
         <div>
             <PropertyBanner />
-            <div className='grid grid-cols-2 max-w-[1200px] mx-auto gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-5 px-2 xl:px-0'>
                 <div className="relative full overflow-hidden">
                     <div className="relative">
                         <img
