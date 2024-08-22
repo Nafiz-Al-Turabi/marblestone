@@ -5,7 +5,9 @@
         "title": "Inmobiliary Agent",
         "image": "https://i.ibb.co/86qGByg/agent4.png",
         "phone": "+1-555-1234",
-        "mail": "john.carter@example.com"
+        "mail": "john.carter@example.com",
+        "about": "John Carter has built a reputation for his deep knowledge of the real estate market and dedication to his clients. With over a decade of experience in the industry, John has a knack for matching clients with their ideal properties, whether they are first-time homebuyers or seasoned investors. His approach combines market insights with a personalized touch, ensuring that every client receives tailored advice and attention.",
+        "experience": "John began his career as a junior agent and quickly advanced due to his exceptional negotiation skills and client-focused service. His portfolio includes a range of successful residential and commercial transactions. John's commitment to professional development keeps him at the forefront of market trends and real estate strategies."
     },
     {
         "id": 2,
@@ -13,7 +15,9 @@
         "title": "Real Estate Consultant",
         "image": "https://i.ibb.co/P1x2P0S/agent3.png",
         "phone": "+1-555-5678",
-        "mail": "sarah.smith@example.com"
+        "mail": "sarah.smith@example.com",
+        "about": "Sarah Smith is known for her strategic thinking and comprehensive approach to real estate consulting. Her expertise lies in advising clients on market conditions, property values, and investment opportunities. Sarah is particularly skilled at guiding clients through complex transactions and helping them make informed decisions.",
+        "experience": "Sarah's career spans over 15 years, during which she has worked with a diverse clientele, including high-net-worth individuals and corporate clients. She has successfully managed numerous high-profile deals and is praised for her analytical skills and client-centric approach."
     },
     {
         "id": 3,
@@ -21,7 +25,9 @@
         "title": "Property Specialist",
         "image": "https://i.ibb.co/HgsM0Rr/agent2.png",
         "phone": "+1-555-9101",
-        "mail": "michael.johnson@example.com"
+        "mail": "michael.johnson@example.com",
+        "about": "Michael Johnson brings a wealth of knowledge and experience to his role as a Property Specialist. He is renowned for his in-depth understanding of property values and trends, which he uses to provide clients with precise and actionable advice. Michael is dedicated to helping clients navigate the property market with ease and confidence.",
+        "experience": "With over 12 years in the industry, Michael has developed a strong network of contacts and a deep understanding of various property types and market segments. His success is built on a foundation of diligent research and a client-first mentality."
     },
     {
         "id": 4,
@@ -29,7 +35,9 @@
         "title": "Real Estate Agent",
         "image": "https://i.ibb.co/P1x2P0S/agent3.png",
         "phone": "+1-555-1122",
-        "mail": "emily.davis@example.com"
+        "mail": "emily.davis@example.com",
+        "about": "Emily Davis is a highly skilled Real Estate Agent known for her exceptional client service and market acumen. Her ability to understand client needs and deliver results has earned her a solid reputation in the industry. Emily is committed to providing a seamless real estate experience, from initial consultation to closing.",
+        "experience": "Emily has been active in real estate for over 8 years, focusing on both residential and commercial properties. Her career highlights include numerous successful transactions and satisfied clients, reflecting her dedication and expertise."
     },
     {
         "id": 5,
@@ -37,7 +45,9 @@
         "title": "Real Estate Advisor",
         "image": "https://i.ibb.co/W5bCbfR/agent1.png",
         "phone": "+1-555-3344",
-        "mail": "david.brown@example.com"
+        "mail": "david.brown@example.com",
+        "about": "David Brown excels as a Real Estate Advisor, leveraging his extensive knowledge to provide valuable guidance to clients. His focus is on creating strategic real estate solutions that align with his clients' long-term goals. David is known for his analytical skills and thorough understanding of the market.",
+        "experience": "With a career spanning over 10 years, David has a proven track record of successful advisory roles in both residential and commercial sectors. His ability to navigate complex real estate transactions and offer tailored advice has made him a trusted advisor in the industry."
     },
     {
         "id": 6,
@@ -45,7 +55,9 @@
         "title": "Property Consultant",
         "image": "https://i.ibb.co/86qGByg/agent4.png",
         "phone": "+1-555-5566",
-        "mail": "sophia.wilson@example.com"
+        "mail": "sophia.wilson@example.com",
+        "about": "Sophia Wilson is a seasoned Property Consultant known for her keen market insights and client-focused approach. She specializes in helping clients make informed property decisions by providing expert advice and up-to-date market information.",
+        "experience": "Sophia has been in the real estate industry for over 9 years. Her experience includes a diverse range of property types and markets, allowing her to offer valuable insights and personalized solutions to her clients."
     },
     {
         "id": 7,
@@ -53,7 +65,9 @@
         "title": "Real Estate Specialist",
         "image": "https://i.ibb.co/W5bCbfR/agent1.png",
         "phone": "+1-555-7788",
-        "mail": "james.miller@example.com"
+        "mail": "james.miller@example.com",
+        "about": "James Miller is a Real Estate Specialist with a strong track record of success in the industry. His expertise in market analysis and property valuation helps clients achieve their real estate goals effectively. James is dedicated to providing exceptional service and insightful advice.",
+        "experience": "James has been active in the real estate sector for over 11 years, working on a variety of projects ranging from residential sales to commercial leases. His extensive knowledge and professional approach have earned him recognition in the industry."
     },
     {
         "id": 8,
@@ -61,7 +75,9 @@
         "title": "Estate Agent",
         "image": "https://i.ibb.co/86qGByg/agent4.png",
         "phone": "+1-555-9900",
-        "mail": "olivia.brown@example.com"
+        "mail": "olivia.brown@example.com",
+        "about": "Olivia Brown is a dedicated Estate Agent known for her personalized service and deep understanding of the real estate market. She excels at matching clients with the perfect property and guiding them through the buying or selling process.",
+        "experience": "With over 7 years in real estate, Olivia has developed a reputation for her attention to detail and commitment to client satisfaction. Her successful transactions span various property types, reflecting her versatility and expertise."
     },
     {
         "id": 9,
@@ -69,23 +85,9 @@
         "title": "Housing Specialist",
         "image": "https://i.ibb.co/W5bCbfR/agent1.png",
         "phone": "+1-555-2233",
-        "mail": "liam.anderson@example.com"
-    },
-    {
-        "id": 10,
-        "name": "Ava Martinez",
-        "title": "Real Estate Broker",
-        "image": "https://i.ibb.co/P1x2P0S/agent3.png",
-        "phone": "+1-555-4455",
-        "mail": "ava.martinez@example.com"
-    },
-    {
-        "id": 9,
-        "name": "Liam Anderson",
-        "title": "Housing Specialist",
-        "image": "https://i.ibb.co/W5bCbfR/agent1.png",
-        "phone": "+1-555-2233",
-        "mail": "liam.anderson@example.com"
+        "mail": "liam.anderson@example.com",
+        "about": "Liam Anderson is a Housing Specialist with extensive experience in the housing market. He offers expert advice on property selection, market trends, and investment opportunities. Liam is known for his analytical skills and commitment to client success.",
+        "experience": "Liam has over 10 years of experience in the housing sector, providing valuable insights and guidance to clients. His work includes residential property transactions and investment analysis, showcasing his expertise in the field."
     },
     {
         "id": 10,
@@ -93,6 +95,8 @@
         "title": "Real Estate Broker",
         "image": "https://i.ibb.co/86qGByg/agent4.png",
         "phone": "+1-555-4455",
-        "mail": "ava.martinez@example.com"
+        "mail": "ava.martinez@example.com",
+        "about": "Ava Martinez is an accomplished Real Estate Broker with a strong background in facilitating complex real estate transactions. Her expertise includes negotiating deals and providing clients with strategic advice to achieve their real estate objectives.",
+        "experience": "Ava's career spans over 12 years, during which she has successfully managed numerous high-value transactions and built a strong network in the industry. Her skills in negotiation and market analysis are key to her success."
     }
 ]
