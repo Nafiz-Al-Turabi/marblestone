@@ -18,6 +18,12 @@ const slides = [
         description: 'Vivamus tristique mi vitae urna cursus, ac ultrices purus tristique.',
         location: '1234 Broadway, NY',
     },
+    {
+        img: 'https://i.ibb.co/Fs6dLPs/Rectangle-11-2.png',
+        title: 'Modern Apartment in New York',
+        description: 'Vivamus tristique mi vitae urna cursus, ac ultrices purus tristique.',
+        location: '1234 Broadway, NY',
+    },
     // Add more slides as needed
 ];
 
@@ -56,7 +62,7 @@ const FeaturedProperties = () => {
                             key={index}
                             className={`relative flex-shrink-0 cursor-pointer transition-all duration-500 ease-in-out ${index === activeIndex ? 'scale-100 shadow-lg' : 'scale-95'}`}
                             style={{
-                                width: index === activeIndex ? '80%' : '20%',
+                                width: index === activeIndex ? '80%' : '80%',
                                 marginRight: index !== slides.length - 1 ? '20px' : '0',
                             }}
                             onClick={() => handleSlideClick(index)}
