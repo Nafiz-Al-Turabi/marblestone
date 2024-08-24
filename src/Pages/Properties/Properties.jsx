@@ -2,6 +2,7 @@ import React from 'react';
 import PropertyBanner from '../../PropertyComponents/PropertyBanner/PropertyBanner';
 import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Properties = () => {
     return (
@@ -15,9 +16,9 @@ const Properties = () => {
                             alt="Luxury Loft"
                             className="w-full  object-cover rounded-3xl"
                         />
-                        <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
+                        <Link to='/propertyDetails' className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
                             <FaPlus className="text-gray-800" />
-                        </button>
+                        </Link>
                         <button className="flex items-center absolute top-2 left-2 p-2 bg-black text-white rounded-full shadow-md focus:outline-none">
                             <FaTag className="text-white mr-2" />
                             For rent
