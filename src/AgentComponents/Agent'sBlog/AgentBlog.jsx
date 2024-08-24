@@ -4,7 +4,7 @@ import { IoPencil } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import BlogCard from '../../Cards/BlogCard';
 
-const AgentBlog = ({name}) => {
+const AgentBlog = ({ name }) => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
         fetch('/blogdata.json')

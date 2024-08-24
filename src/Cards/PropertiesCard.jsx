@@ -19,7 +19,7 @@ const PropertiesCard = () => {
                     For rent
                 </button>
             </div>
-            <div className="p-4 text-white">
+            <div className="p-4 text-black">
                 <h1 className="text-xl font-semibold ">Home in Chicago Heart</h1>
                 <p className="flex items-center ">
                     <MdLocationPin className='mr-2' />

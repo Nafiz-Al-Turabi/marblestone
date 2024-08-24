@@ -4,20 +4,359 @@
     "title": "5 Tips for First-Time Homebuyers",
     "description": "Buying your first home can be both exciting and overwhelming. This blog post provides essential tips for first-time homebuyers, including how to budget, what to look for in a property, and how to navigate the mortgage process.",
     "date": "2024-08-10",
-    "image": "https://assets.architecturaldigest.in/photos/600845b5eebcfd50ede87936/16:9/w_2560%2Cc_limit/Bengaluru-home-Bodhi-Design-Studio-17-1366x768.jpg"
+    "image": "https://assets.architecturaldigest.in/photos/600845b5eebcfd50ede87936/16:9/w_2560%2Cc_limit/Bengaluru-home-Bodhi-Design-Studio-17-1366x768.jpg",
+    "agent_name": "John Smith",
+    "agent_email": "john.smith@example.com"
   },
   {
     "id": 2,
     "title": "How to Increase Your Home’s Value with Simple Upgrades",
     "description": "Looking to boost your home's market value without breaking the bank? Discover easy and cost-effective upgrades that can significantly enhance the appeal and value of your property.",
     "date": "2024-08-12",
-    "image": "https://assets.architecturaldigest.in/photos/60083d8e94ca758bb0ad12f2/16:9/w_2560%2Cc_limit/Chennai-home-interior-design-architecture-1366x768.jpg"
+    "image": "https://assets.architecturaldigest.in/photos/60083d8e94ca758bb0ad12f2/16:9/w_2560%2Cc_limit/Chennai-home-interior-design-architecture-1366x768.jpg",
+    "agent_name": "Jane Doe",
+    "agent_email": "jane.doe@example.com"
   },
   {
     "id": 3,
     "title": "The Future of Real Estate: Trends to Watch in 2025",
     "description": "The real estate market is constantly evolving. Explore upcoming trends and predictions for the future of real estate, including technology advancements, sustainability practices, and shifts in buyer preferences.",
     "date": "2024-08-15",
-    "image": "https://i.pinimg.com/736x/ae/a5/ab/aea5ab039b38de8bb32e088f3e882b56.jpg"
+    "image": "https://i.pinimg.com/736x/ae/a5/ab/aea5ab039b38de8bb32e088f3e882b56.jpg",
+    "agent_name": "Alice Johnson",
+    "agent_email": "alice.johnson@example.com"
+  },
+  {
+    "id": 4,
+    "title": "Understanding Mortgage Rates: A Comprehensive Guide",
+    "description": "Confused about mortgage rates? This guide breaks down everything you need to know about different types of mortgage rates, how they affect your monthly payments, and tips for getting the best rate.",
+    "date": "2024-08-17",
+    "image": "https://images.unsplash.com/photo-1591635474706-85a92d6a2c16",
+    "agent_name": "Emma Davis",
+    "agent_email": "emma.davis@example.com"
+  },
+  {
+    "id": 5,
+    "title": "Eco-Friendly Home Improvements for Sustainable Living",
+    "description": "Explore eco-friendly home improvement ideas that not only help the environment but also save you money in the long run. Learn about energy-efficient appliances, green building materials, and sustainable practices.",
+    "date": "2024-08-18",
+    "image": "https://images.unsplash.com/photo-1556220820-1a9b306f7f1e",
+    "agent_name": "Liam Johnson",
+    "agent_email": "liam.johnson@example.com"
+  },
+  {
+    "id": 6,
+    "title": "Navigating the Real Estate Market During Economic Uncertainty",
+    "description": "Economic fluctuations can impact the real estate market. This post offers advice on how to navigate buying or selling a home during uncertain economic times.",
+    "date": "2024-08-20",
+    "image": "https://images.unsplash.com/photo-1556745752-bc7f9d8c07e3",
+    "agent_name": "Sophia Lee",
+    "agent_email": "sophia.lee@example.com"
+  },
+  {
+    "id": 7,
+    "title": "How to Stage Your Home for a Quick Sale",
+    "description": "Staging your home can make a big difference in how quickly it sells. Learn the key steps for effective home staging, from decluttering to setting the right ambiance.",
+    "date": "2024-08-22",
+    "image": "https://images.unsplash.com/photo-1565861080-60c9e415f9e4",
+    "agent_name": "Noah Brown",
+    "agent_email": "noah.brown@example.com"
+  },
+  {
+    "id": 8,
+    "title": "Choosing the Right Neighborhood for Your Family",
+    "description": "When buying a home, the neighborhood can be just as important as the house itself. Discover factors to consider when selecting a neighborhood that best suits your family’s needs and lifestyle.",
+    "date": "2024-08-24",
+    "image": "https://images.unsplash.com/photo-1555685810-f691a0aa1a27",
+    "agent_name": "Olivia Martinez",
+    "agent_email": "olivia.martinez@example.com"
+  },
+  {
+    "id": 9,
+    "title": "First-Time Real Estate Investment Tips",
+    "description": "Thinking about investing in real estate? This post provides essential tips for first-time investors, including how to choose the right property, financing options, and managing rental properties.",
+    "date": "2024-08-26",
+    "image": "https://images.unsplash.com/photo-1584515985865-7c47b7d73ef7",
+    "agent_name": "Aiden Wilson",
+    "agent_email": "aiden.wilson@example.com"
+  },
+  {
+    "id": 10,
+    "title": "The Importance of Curb Appeal When Selling Your Home",
+    "description": "Curb appeal can greatly impact the sale of your home. Learn how to enhance the exterior of your property to attract potential buyers and increase your home’s value.",
+    "date": "2024-08-28",
+    "image": "https://images.unsplash.com/photo-1591604377347-2ab48f1b27c3",
+    "agent_name": "Isabella Anderson",
+    "agent_email": "isabella.anderson@example.com"
+  },
+  {
+    "id": 11,
+    "title": "What to Look for in a Real Estate Agent",
+    "description": "Finding the right real estate agent can make a big difference in your home buying or selling experience. Discover key qualities to look for and questions to ask potential agents.",
+    "date": "2024-08-30",
+    "image": "https://images.unsplash.com/photo-1533372565816-c1f9bcb9159f",
+    "agent_name": "Jackson Thomas",
+    "agent_email": "jackson.thomas@example.com"
+  },
+  {
+    "id": 12,
+    "title": "Top 10 Home Maintenance Tips for New Homeowners",
+    "description": "Regular maintenance is crucial for preserving your home’s value. Check out these top 10 home maintenance tips that every new homeowner should follow.",
+    "date": "2024-09-01",
+    "image": "https://images.unsplash.com/photo-1593813063074-8d0068a10fc4",
+    "agent_name": "Mia White",
+    "agent_email": "mia.white@example.com"
+  },
+  {
+    "id": 13,
+    "title": "How to Successfully Negotiate a Real Estate Deal",
+    "description": "Negotiation skills can make or break a real estate deal. Learn strategies for negotiating effectively whether you’re buying or selling a home.",
+    "date": "2024-09-03",
+    "image": "https://images.unsplash.com/photo-1589927986089-3581237884c1",
+    "agent_name": "Ethan Harris",
+    "agent_email": "ethan.harris@example.com"
+  },
+  {
+    "id": 14,
+    "title": "Understanding Property Taxes and How They Affect Your Home Purchase",
+    "description": "Property taxes can significantly impact your home purchase budget. Get a clear understanding of how property taxes work and how to factor them into your home-buying decisions.",
+    "date": "2024-09-05",
+    "image": "https://images.unsplash.com/photo-1562081523-7bcb5e7b8e4f",
+    "agent_name": "Ava Clark",
+    "agent_email": "ava.clark@example.com"
+  },
+  {
+    "id": 15,
+    "title": "The Pros and Cons of Buying vs. Renting a Home",
+    "description": "Deciding between buying and renting can be challenging. This post explores the benefits and drawbacks of each option to help you make an informed decision.",
+    "date": "2024-09-07",
+    "image": "https://images.unsplash.com/photo-1562041310-679ec2aa5305",
+    "agent_name": "James Robinson",
+    "agent_email": "james.robinson@example.com"
+  },
+  {
+    "id": 16,
+    "title": "How to Assess the Value of a Property",
+    "description": "Knowing how to assess a property’s value is crucial for both buyers and sellers. Learn methods for evaluating a property’s worth and what factors to consider.",
+    "date": "2024-09-09",
+    "image": "https: //images.unsplash.com/photo-1563455944-82d7e9e8dbd7",
+    "agent_name": "Charlotte Lewis",
+    "agent_email": "charlotte.lewis@example.com"
+  },
+  {
+    "id": 17,
+    "title": "The Role of Home Inspections in the Buying Process",
+    "description": "Home inspections can reveal critical information about a property. Discover what to expect during a home inspection and how it can impact your buying decision.",
+    "date": "2024-09-11",
+    "image": "https://images.unsplash.com/photo-1590665672627-1d9f4898ecb6",
+    "agent_name": "Benjamin Walker",
+    "agent_email": "benjamin.walker@example.com"
+  },
+  {
+    "id": 18,
+    "title": "How to Handle Bidding Wars in a Competitive Market",
+    "description": "Bidding wars can be stressful and challenging. Get tips on how to handle bidding wars effectively and increase your chances of winning the home of your dreams.",
+    "date": "2024-09-13",
+    "image": "https://images.unsplash.com/photo-1565145078-7fdc676d08b5",
+    "agent_name": "Amelia Young",
+    "agent_email": "amelia.young@example.com"
+  },
+  {
+    "id": 19,
+    "title": "The Benefits of Investing in Rental Properties",
+    "description": "Rental properties can be a lucrative investment. Learn about the benefits of owning rental properties and how to get started in the rental property market.",
+    "date": "2024-09-15",
+    "image": "https://images.unsplash.com/photo-1542077336-8d6f253aa549",
+    "agent_name": "Lucas King",
+    "agent_email": "lucas.king@example.com"
+  },
+  {
+    "id": 20,
+    "title": "How to Determine Your Home’s Selling Price",
+    "description": "Setting the right selling price is crucial for a successful home sale. Discover how to determine an accurate selling price and the factors that influence it.",
+    "date": "2024-09-17",
+    "image": "https://images.unsplash.com/photo-1572292834357-2f493eb07cbf",
+    "agent_name": "Ella Scott",
+    "agent_email": "ella.scott@example.com"
+  },
+  {
+    "id": 21,
+    "title": "Exploring the Benefits of Homeownership vs. Renting",
+    "description": "Homeownership has its advantages compared to renting. Learn about the long-term benefits of owning a home and how it compares to renting from a financial and lifestyle perspective.",
+    "date": "2024-09-19",
+    "image": "https://images.unsplash.com/photo-1546262956-251c8d408062",
+    "agent_name": "Michael Adams",
+    "agent_email": "michael.adams@example.com"
+  },
+  {
+    "id": 22,
+    "title": "How to Make Your Offer Stand Out in a Competitive Market",
+    "description": "In a hot real estate market, making your offer stand out can be crucial. Learn strategies for crafting an appealing offer that increases your chances of success.",
+    "date": "2024-09-21",
+    "image": "https://images.unsplash.com/photo-1598504778263-7b61e5d92ae4",
+    "agent_name": "Hannah Martinez",
+    "agent_email": "hannah.martinez@example.com"
+  },
+  {
+    "id": 23,
+    "title": "Understanding Closing Costs and Fees",
+    "description": "Closing costs can be a significant part of the home buying process. Get a clear breakdown of what to expect in terms of closing costs and fees, and how to budget for them.",
+    "date": "2024-09-23",
+    "image": "https://images.unsplash.com/photo-1543336811-78e7dcf7640e",
+    "agent_name": "Oliver Evans",
+    "agent_email": "oliver.evans@example.com"
+  },
+  {
+    "id": 24,
+    "title": "How to Use Home Equity for Renovations",
+    "description": "Home equity can be a valuable resource for financing renovations. Learn how to tap into your home equity and the best ways to use it for home improvement projects.",
+    "date": "2024-09-25",
+    "image": "https://images.unsplash.com/photo-1532635251-b5c6df8b0a9f",
+    "agent_name": "Sofia Carter",
+    "agent_email": "sofia.carter@example.com"
+  },
+  {
+    "id": 25,
+    "title": "Tips for Buying a Vacation Home",
+    "description": "Buying a vacation home can be a great investment or a personal retreat. Explore tips for finding the perfect vacation property and considerations for managing it.",
+    "date": "2024-09-27",
+    "image": "https://images.unsplash.com/photo-1568704435-93d68c5a161d",
+    "agent_name": "Daniel Murphy",
+    "agent_email": "daniel.murphy@example.com"
+  },
+  {
+    "id": 26,
+    "title": "The Pros and Cons of New Construction Homes",
+    "description": "New construction homes offer many benefits but also come with potential drawbacks. Learn about the advantages and disadvantages of buying a newly built home.",
+    "date": "2024-09-29",
+    "image": "https://images.unsplash.com/photo-1567786342-e7d43f5e9452",
+    "agent_name": "Grace Walker",
+    "agent_email": "grace.walker@example.com"
+  },
+  {
+    "id": 27,
+    "title": "How to Choose the Right Mortgage Lender",
+    "description": "Selecting a mortgage lender is a crucial step in the home buying process. Discover what to look for in a lender and how to compare offers to get the best mortgage deal.",
+    "date": "2024-10-01",
+    "image": "https://images.unsplash.com/photo-1566847819-7c23f7a2a5c5",
+    "agent_name": "Evan Thompson",
+    "agent_email": "evan.thompson@example.com"
+  },
+  {
+    "id": 28,
+    "title": "How to Handle Unexpected Repairs After Buying a Home",
+    "description": "Unexpected repairs can be a challenge for new homeowners. Learn how to manage and budget for unexpected home repairs after purchasing a property.",
+    "date": "2024-10-03",
+    "image": "https://images.unsplash.com/photo-1566416525-6c7e6a1d917f",
+    "agent_name": "Lily Harris",
+    "agent_email": "lily.harris@example.com"
+  },
+  {
+    "id": 29,
+    "title": "Investing in Real Estate: Market Analysis and Strategies",
+    "description": "Successful real estate investing requires thorough market analysis and strategic planning. Explore effective strategies for analyzing real estate markets and making informed investment decisions.",
+    "date": "2024-10-05",
+    "image": "https://images.unsplash.com/photo-1560469250-1a03d345c77e",
+    "agent_name": "Mason Lewis",
+    "agent_email": "mason.lewis@example.com"
+  },
+  {
+    "id": 30,
+    "title": "The Impact of Interest Rates on Real Estate Investment",
+    "description": "Interest rates can significantly affect real estate investments. Learn how fluctuations in interest rates can impact your investment strategy and financial returns.",
+    "date": "2024-10-07",
+    "image": "https://images.unsplash.com/photo-1564511287-9a6b8326b9bb",
+    "agent_name": "Zoe Allen",
+    "agent_email": "zoe.allen@example.com"
+  },
+  {
+    "id": 31,
+    "title": "Preparing Your Home for Winter: Essential Tips",
+    "description": "Winter can be tough on homes. Discover essential tips for preparing your home for the colder months to ensure it stays in good condition and remains energy efficient.",
+    "date": "2024-10-09",
+    "image": "https://images.unsplash.com/photo-1554517526-4d0f2c1d2d5a",
+    "agent_name": "William Young",
+    "agent_email": "william.young@example.com"
+  },
+  {
+    "id": 32,
+    "title": "How to Choose Between Fixed-Rate and Adjustable-Rate Mortgages",
+    "description": "Choosing the right type of mortgage is crucial. Explore the differences between fixed-rate and adjustable-rate mortgages to determine which is best for your financial situation.",
+    "date": "2024-10-11",
+    "image": "https://images.unsplash.com/photo-1560457386-5d8f85e3e7c4",
+    "agent_name": "Natalie Scott",
+    "agent_email": "natalie.scott@example.com"
+  },
+  {
+    "id": 33,
+    "title": "How to Manage Rental Properties Efficiently",
+    "description": "Managing rental properties can be demanding. Learn tips for efficient property management, including tenant relations, maintenance, and financial management.",
+    "date": "2024-10-13",
+    "image": "https://images.unsplash.com/photo-1553789284-f07a2d582b9a",
+    "agent_name": "James Martinez",
+    "agent_email": "james.martinez@example.com"
+  },
+  {
+    "id": 34,
+    "title": "The Benefits of Home Warranties",
+    "description": "Home warranties can offer peace of mind for homeowners. Discover what home warranties cover, the benefits they provide, and how to choose the right warranty for your home.",
+    "date": "2024-10-15",
+    "image": "https://images.unsplash.com/photo-1563466842-bb9d71e2d74a",
+    "agent_name": "Chloe Roberts",
+    "agent_email": "chloe.roberts@example.com"
+  },
+  {
+    "id": 35,
+    "title": "How to Research Neighborhoods Before Buying a Home",
+    "description": "Researching neighborhoods is key to finding the right home. Learn effective methods for evaluating neighborhoods, including local amenities, schools, and community aspects.",
+    "date": "2024-10-17",
+    "image": "https://images.unsplash.com/photo-1577817830984-2b2e54d5e5f2",
+    "agent_name": "Elijah Turner",
+    "agent_email": "elijah.turner@example.com"
+  },
+  {
+    "id": 36,
+    "title": "Tips for Buying a Home in a Seller’s Market",
+    "description": "In a seller’s market, competition can be tough. Get strategies for navigating a seller’s market and increasing your chances of securing the home you want.",
+    "date": "2024-10-19",
+    "image": "https://images.unsplash.com/photo-1586361113936-0187c77b2a6b",
+    "agent_name": "Megan Nelson",
+    "agent_email": "megan.nelson@example.com"
+  },
+  {
+    "id": 37,
+    "title": "How to Prepare for a Home Appraisal",
+    "description": "A home appraisal can influence your buying or selling process. Learn how to prepare for a home appraisal and ensure your property is valued accurately.",
+    "date": "2024-10-21",
+    "image": "https://images.unsplash.com/photo-1562855847-0a5500379b73",
+    "agent_name": "Alexander Hall",
+    "agent_email": "alexander.hall@example.com"
+  },
+  {
+    "id": 38,
+    "title": "The Advantages of Buying a Foreclosure Property",
+    "description": "Foreclosure properties can offer significant savings. Explore the advantages and considerations of buying a foreclosure property and how to find the right one.",
+    "date": "2024-10-23",
+    "image": "https://images.unsplash.com/photo-1568744404-e0c1a7b1c56d",
+    "agent_name": "Aria Perez",
+    "agent_email": "aria.perez@example.com"
+  },
+  {
+    "id": 39,
+    "title": "Understanding the Home Closing Process",
+    "description": "The closing process is the final step in buying a home. Get a detailed overview of what to expect during closing and how to prepare for a smooth transaction.",
+    "date": "2024-10-25",
+    "image": "https://images.unsplash.com/photo-1568661223-596b21dbf8b1",
+    "agent_name": "Daniel Rivera",
+    "agent_email": "daniel.rivera@example.com"
+  },
+  {
+    "id": 40,
+    "title": "How to Evaluate a Home’s Condition Before Buying",
+    "description": "Evaluating a home’s condition is essential before making a purchase. Learn key aspects to inspect and how to assess the overall condition of a property.",
+    "date": "2024-10-27",
+    "image": "https://images.unsplash.com/photo-1568178255-74c5f4b979a7",
+    "agent_name": "Avery Morgan",
+    "agent_email": "avery.morgan@example.com"
   }
 ]

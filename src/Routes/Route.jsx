@@ -9,6 +9,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import Agents from "../Pages/Agents/Agents";
 import AgentDetails from "../Pages/AgentDetails/AgentDetails";
 import Properties from "../Pages/Properties/Properties";
+import LocationCMS from "../Pages/LocationCMS/LocationCMS";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path:'/properties',
                 element:<Properties></Properties>
+            },
+            {
+                path:'propertyLocation',
+                element:<LocationCMS></LocationCMS>
             }
         ]
     },
