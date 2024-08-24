@@ -4,7 +4,7 @@ import { AiFillHome } from 'react-icons/ai';
 const PropertyBanner = () => {
     return (
         <div className='lg:m-6 '>
-            <div className=' bg-black px-16 py-20 md:px-32 lg:p-40  lg:rounded-3xl xl:relative mb-44 '>
+            <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  lg:rounded-3xl xl:relative mb-44 '>
                 <div className='text-center'>
                     <div className="flex justify-center ">
                         <button className="text-xs flex items-center text-white bg-gray-900 opacity-80 gap-1 justify-center p-2 rounded-full mb-4  ">

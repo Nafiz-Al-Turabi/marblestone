@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { BsCalendar3 } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import BlogCard from "../../Cards/BlogCard";
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -31,21 +32,7 @@ const Blog = () => {
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-6 mx-2'>
                 {
                     blogs.map(blog =>
-                        <div>
-                            <div className='h-96 overflow-hidden relative rounded-3xl'>
-                                <img src={blog.image} alt="blog image" className='object-cover w-full h-full' />
-                            </div>
-                            <h1 className='text-2xl my-6 font-medium'>{blog.title}</h1>
-                            <div className='flex justify-between'>
-                                <p className='flex justify-center text-gray-500'>
-                                    <BsCalendar3 className='mr-2 text-xl' />
-                                    {blog.date}
-                                </p>
-                                <Link to={`/blogDetails/${blog.id}`} className='flex items-center '>Read more
-                                    <IoIosArrowForward className='ml-2' />
-                                </Link>
-                            </div>
-                        </div>
+                        <BlogCard blog={blog} key={BlogCard.id} />
                     )
                 }
             </div>

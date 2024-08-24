@@ -8,7 +8,7 @@ import { IoIosMail } from "react-icons/io";
 
 const Footer = () => {
     return (
-        <footer className='bg-[#14161C] text-white  2xl:mb-7 p-2 lg:m-6 md:p-6 lg:px-[100px] lg:py-[106px]  2xl:rounded-2xl'>
+        <footer className='bg-[#14161C] text-white  2xl:mb-7 p-2 lg:m-6 md:p-6 lg:px-[100px] lg:py-[106px]  lg:rounded-3xl'>
             <div className=' lg:flex justify-between' >
                 <div className='lg:w-96'>
                     <h1 className='text-2xl lg:text-4xl mb-4'>Discover exclusive real estate opportunities</h1>
