@@ -35,6 +35,7 @@ const Navbar = () => {
                                 <li><Link to="/properties" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Properties</Link></li>
                                 <li><Link to="/propertyLocation" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property Location</Link></li>
                                 <li><Link to="/propertycms" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property CMS</Link></li>
+                                <li><Link to="/cmsSales" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>CMS Sales</Link></li>
                                 <li><Link to="/agents" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
                             </ul>
                         )}

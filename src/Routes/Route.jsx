@@ -11,6 +11,7 @@ import AgentDetails from "../Pages/AgentDetails/AgentDetails";
 import Properties from "../Pages/Properties/Properties";
 import LocationCMS from "../Pages/LocationCMS/LocationCMS";
 import PropertyCMS from "../Pages/PropertyCMS/PropertyCMS";
+import CmsSales from "../Pages/CmsSales/CmsSales";
 
 const router = createBrowserRouter([
     {
@@ -54,7 +55,11 @@ const router = createBrowserRouter([
             {
                 path: 'propertycms',
                 element: <PropertyCMS />
-            }
+            },
+            {
+                path: 'cmsSales',
+                element: <CmsSales />
+            },
         ]
     },
 ]);
