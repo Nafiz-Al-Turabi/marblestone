@@ -10,45 +10,50 @@ import Agents from "../Pages/Agents/Agents";
 import AgentDetails from "../Pages/AgentDetails/AgentDetails";
 import Properties from "../Pages/Properties/Properties";
 import LocationCMS from "../Pages/LocationCMS/LocationCMS";
+import PropertyCMS from "../Pages/PropertyCMS/PropertyCMS";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
-        children:[
+        children: [
             {
-                path:"/",
-                element:<Home></Home>
+                path: "/",
+                element: <Home></Home>
             },
             {
-                path:'/about',
-                element:<About></About>
+                path: '/about',
+                element: <About></About>
             },
             {
-                path:'/blogDetails/:id',
-                element:<BlogDetails></BlogDetails>,
+                path: '/blogDetails/:id',
+                element: <BlogDetails></BlogDetails>,
                 loader: ({ params }) => fetch('blogdata.json')
             },
             {
-                path:'/blogs',
-                element:<Blogs></Blogs>
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
             {
-                path:'/agents',
-                element:<Agents></Agents>
+                path: '/agents',
+                element: <Agents></Agents>
             },
             {
-                path:'/agentDetails/:id',
-                element:<AgentDetails></AgentDetails>,
-                loader:({params})=>fetch('agents.json')
+                path: '/agentDetails/:id',
+                element: <AgentDetails></AgentDetails>,
+                loader: ({ params }) => fetch('agents.json')
             },
             {
-                path:'/properties',
-                element:<Properties></Properties>
+                path: '/properties',
+                element: <Properties></Properties>
             },
             {
-                path:'propertyLocation',
-                element:<LocationCMS></LocationCMS>
+                path: 'propertyLocation',
+                element: <LocationCMS></LocationCMS>
+            },
+            {
+                path: 'propertycms',
+                element: <PropertyCMS />
             }
         ]
     },
