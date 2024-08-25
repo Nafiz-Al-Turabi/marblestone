@@ -46,7 +46,7 @@ const Navbar = () => {
                     <li><a href="#" className='font-medium'>Apply</a></li>
                     <li><a href="#" className='font-medium'>Resources</a></li>
                     <li><Link to="/about" className='font-medium'>About</Link></li>
-                    <li><a href="#" className='font-medium'>Contact</a></li>
+                    <li><Link to="/contact" className='font-medium'>Contact</Link></li>
                 </ul>
                 <button className='primary-btn flex items-center'>
                     Book a call

@@ -24,7 +24,6 @@ const slides = [
         description: 'Vivamus tristique mi vitae urna cursus, ac ultrices purus tristique.',
         location: '1234 Broadway, NY',
     },
-    // Add more slides as needed
 ];
 
 const FeaturedProperties = () => {

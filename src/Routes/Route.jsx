@@ -13,6 +13,7 @@ import LocationCMS from "../Pages/LocationCMS/LocationCMS";
 import PropertyCMS from "../Pages/PropertyCMS/PropertyCMS";
 import CmsSales from "../Pages/CmsSales/CmsSales";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
             {
                 path: 'propertyDetails',
                 element: <PropertyDetails />
+            },
+            {
+                path: 'contact',
+                element: <ContactUs />
             },
         ]
     },
