@@ -15,11 +15,13 @@ import CmsSales from "../Pages/CmsSales/CmsSales";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import PropertyManagement from "../Pages/PropertyManagement/PropertyManagement";
+import NotFound from "../Pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
+        errorElement:<NotFound></NotFound>,
         children: [
             {
                 path: "/",
