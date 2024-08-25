@@ -25,13 +25,14 @@ const Navbar = () => {
                         <img src={logo} alt="Logo" />
                     </Link>
                 </div>
-                <ul className='flex space-x-6 text-black'>
+                <ul className='flex space-x-6 text-gray-600'>
                     <li className='relative'>
                         <a href="#" onClick={toggleDropdown} className='flex items-center font-medium'>
                             Property Management <IoIosArrowDown />
                         </a>
                         {isDropdownOpen && (
                             <ul className='absolute bg-gray-100 mt-2 p-2 rounded shadow-lg'>
+                                <li><Link to="/propertyManagement" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property Management</Link></li>
                                 <li><Link to="/properties" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Properties</Link></li>
                                 <li><Link to="/propertyLocation" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property Location</Link></li>
                                 <li><Link to="/propertycms" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property CMS</Link></li>
