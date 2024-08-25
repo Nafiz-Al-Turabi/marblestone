@@ -2,6 +2,7 @@ import React from 'react';
 import { FaArrowRight, FaPen, FaUser } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import './ContactUs.css'
+import { IoLocation } from 'react-icons/io5';
 
 const ContactUs = () => {
     return (
@@ -52,7 +53,7 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='bg-white p-11 w-full rounded-3xl mx-2 mt-12 lg:mt-0 '>
+                    <div className='bg-white p-11 w-full rounded-3xl mt-12 lg:mt-0 '>
                         <form action="" className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                             <div className="relative">
                                 <label htmlFor="first-name" className='block mb-2.5 font-semibold'>
@@ -149,6 +150,41 @@ const ContactUs = () => {
                             </button>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  lg:rounded-3xl xl:relative my-44 '>
+                <div className='text-center'>
+                    <div className="flex justify-center ">
+                        <button className="text-xs flex items-center text-white bg-gray-900 opacity-80 gap-1 justify-center p-2 rounded-full mb-4  ">
+                            <IoLocation className="h-7 w-7 text-white bg-slate-500 rounded-full p-1" />
+                            Our offices
+                        </button>
+                    </div>
+                    <div className='lg:w-[765px] mx-auto mt-4'>
+                        <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white mb-4'>Come and visit our offices</h1>
+                        <p className='secondary-text'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
+                    </div>
+                </div>
+                <div className='bg-cover h-96 2xl:w-[1200px] mx-auto bg-center mt-6'
+                    style={{
+                        backgroundImage: "url('https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png')",
+                    }}
+                >
+                    <div className='text-white w- space-y-4 p-5 lg:p-20 text-center lg:text-left'>
+                        <h1 className='text-2xl'>Chicago, IL</h1>
+                        <p className='lg:w-1/3'>Lorem ipsum dolor sit amet consectetur tellus eu enim ultrices imperdiet faucibus elementum.</p>
+                        <p className='flex items-cente justify-center lg:justify-normal'>
+                            <MdPhone className='text-xl mr-2' />
+                            01745968723
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex justify-center mt-6 ">
+                    <button className="text-base flex items-center bg-white  opacity-80 gap-5 justify-center p-2 rounded-full mb-4  ">
+                        contact us
+                        <FaArrowRight className="h-7 w-7 text-white bg-slate-500 rounded-full p-1" />
+                    </button>
                 </div>
             </div>
         </div>
