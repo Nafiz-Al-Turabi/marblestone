@@ -29,7 +29,7 @@ const PropertyManagement = () => {
                         <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white mb-4'>
                             Property Management Essentials Best Practices
                         </h1>
-                        <p className='text-white md:text-lg lg:text-xl'>
+                        <p className='text-white'>
                             Property management involves overseeing residential or commercial properties to ensure they are well-maintained, financially viable, and effectively occupied. To succeed in this field, several best practices are essential.
                         </p>
                     </div>

@@ -13,11 +13,11 @@ const AreaLocation = () => {
     const { ref: refSaudiArabia, inView: inViewSaudiArabia } = useInView({ triggerOnce: true });
 
     return (
-        <div className='bg-black xl:px-10 xl:py-24 my-24 rounded-2xl text-white'>
+        <div className='bg-black py-6 px-4 xl:px-10 xl:py-24 my-24 rounded-2xl text-white'>
             <h1 className='text-3xl mb-10'>Areas We Serve</h1>
             <div className='relative h-56'>
                 <motion.p
-                    className='flex absolute left-24'
+                    className='flex absolute left-1/5'
                     ref={refBangladesh}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: inViewBangladesh ? 1 : 0, y: inViewBangladesh ? 0 : -20 }}
