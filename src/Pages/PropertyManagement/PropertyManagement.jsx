@@ -23,8 +23,8 @@ const PropertyManagement = () => {
     const activeComponent = tabs.find(tab => tab.id === activeTab)?.component;
 
     return (
-        <div className='md:m-6'>
-            <div className='bg-black px-4 py-20 md:px-8 lg:px-16 xl:px-32 lg:py-24 xl:py-32 md:rounded-2xl'>
+        <div className='xl:m-6'>
+            <div className='bg-black px-4 py-20 md:px-8 lg:px-16 xl:px-32 lg:py-24 xl:py-32 xl:rounded-2xl'>
                 <div className='text-center'>
                     <div className='max-w-4xl mx-auto'>
                         <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white mb-4'>

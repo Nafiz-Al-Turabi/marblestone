@@ -5,8 +5,8 @@ import PropertiesCard from '../../Cards/PropertiesCard';
 
 const LocationCMS = () => {
     return (
-        <div className='lg:m-6 '>
-            <div className="relative bg-cover bg-black px-2 py-20 md:px-32 lg:p-40  lg:rounded-3xl xl:relative mb-44"
+        <div className='xl:m-6 '>
+            <div className="relative bg-cover bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44"
                 style={{ backgroundImage: `url(${banner})` }}>
                 <div className='text-center'>
                     <div className='lg:w-[765px] mx-auto mt-4'>
@@ -14,7 +14,7 @@ const LocationCMS = () => {
                         <p className='text-white'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
                     </div>
                 </div>
-                <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:-mb-72'>
+                <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:-mb-72 mt-6'>
                     <div className='xl:flex gap-1 mb-4'>
                         <div className='xl:w-[40%]'>
                             <label className='block mb-4 font-semibold text-gray-600'>

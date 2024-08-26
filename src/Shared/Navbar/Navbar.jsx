@@ -42,10 +42,10 @@ const Navbar = () => {
                         )}
                     </li>
                     <li><Link to="/owner" className='font-medium'>Owners</Link></li>
-                    <li><a href="#" className='font-medium'>Residents</a></li>
-                    <li><a href="#" className='font-medium'>Rentals</a></li>
-                    <li><a href="#" className='font-medium'>Apply</a></li>
-                    <li><a href="#" className='font-medium'>Resources</a></li>
+                    <li><Link to="/" className='font-medium'>Residents</Link></li>
+                    <li><Link to="/" className='font-medium'>Rentals</Link></li>
+                    <li><Link to="/" className='font-medium'>Apply</Link></li>
+                    <li><Link to="/" className='font-medium'>Resources</Link></li>
                     <li><Link to="/about" className='font-medium'>About</Link></li>
                     <li><Link to="/contact" className='font-medium'>Contact</Link></li>
                 </ul>
@@ -58,8 +58,8 @@ const Navbar = () => {
             {/* Mobile & Medium Device Navbar */}
             <div className='absolute xl:hidden flex justify-between items-center p-4  w-full'>
                 <img src={logo} alt="Logo" />
-                <button onClick={toggleMobileMenu} className='text-black text-2xl'>
-                    {isMobileMenuOpen ? '': <IoIosMenu />}
+                <button onClick={toggleMobileMenu} className='text-white text-2xl'>
+                    {isMobileMenuOpen ? '' : <IoIosMenu />}
                 </button>
             </div>
 
@@ -75,19 +75,22 @@ const Navbar = () => {
                         </a>
                         {isDropdownOpen && (
                             <ul className='bg-gray-100 mt-2 p-2 rounded shadow-lg'>
-                                <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Manage Properties</a></li>
-                                <li><a href="#" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Add New Property</a></li>
+                                <li><Link to="/propertyManagement" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property Management</Link></li>
+                                <li><Link to="/properties" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Properties</Link></li>
+                                <li><Link to="/propertyLocation" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property Location</Link></li>
+                                <li><Link to="/propertycms" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property CMS</Link></li>
+                                <li><Link to="/cmsSales" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>CMS Sales</Link></li>
                                 <li><Link to="/agents" className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
                             </ul>
                         )}
                     </li>
                     <li><Link to="/owner" className='font-medium'>Owners</Link></li>
-                    <li><a href="#" className='font-medium'>Residents</a></li>
-                    <li><a href="#" className='font-medium'>Rentals</a></li>
-                    <li><a href="#" className='font-medium'>Apply</a></li>
-                    <li><a href="#" className='font-medium'>Resources</a></li>
+                    <li><Link to="/" className='font-medium'>Residents</Link></li>
+                    <li><Link to="/" className='font-medium'>Rentals</Link></li>
+                    <li><Link to="/" className='font-medium'>Apply</Link></li>
+                    <li><Link to="/" className='font-medium'>Resources</Link></li>
                     <li><Link to="/about" className='font-medium'>About</Link></li>
-                    <li><a href="#" className='font-medium'>Contact</a></li>
+                    <li><Link to="/contact" className='font-medium'>Contact</Link></li>
                 </ul>
                 <button className='primary-btn flex items-center mt-6'>
                     Book a call

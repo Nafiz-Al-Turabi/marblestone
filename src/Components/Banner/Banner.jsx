@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Banner = () => {
     return (
-        <div className="relative bg-cover md:bg-top h-screen md:h-[620px] 2xl:h-screen bg-no-repeat 2xl:mx-6 2xl:rounded-3xl 2xl:mt-5 mb-20"
+        <div className="relative bg-cover md:bg-top h-screen md:h-[620px] 2xl:h-screen bg-no-repeat xl:m-6 xl:rounded-3xl 2xl:mt-5 mb-20"
             style={{ backgroundImage: `url(${banner})` }}
         >
             {/* Dark overlay */}
