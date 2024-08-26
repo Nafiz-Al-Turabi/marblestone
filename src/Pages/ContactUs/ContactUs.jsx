@@ -3,8 +3,44 @@ import { FaArrowRight, FaPen, FaUser } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import './ContactUs.css'
 import { IoLocation } from 'react-icons/io5';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './ContactUs.css';
+import Slider from 'react-slick';
 
 const ContactUs = () => {
+    const slides = [
+        {
+            location: "Chicago, IL",
+            description: "Lorem ipsum dolor sit amet consectetur tellus eu enim ultrices imperdiet faucibus elementum.",
+            phone: "01745968723",
+            image: "https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png"
+        },
+        {
+            location: "New York, NY",
+            description: "Lorem ipsum dolor sit amet consectetur, tellus eu enim ultrices imperdiet faucibus elementum.",
+            phone: "01234567890",
+            image: "https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png"
+        },
+        {
+            location: "San Francisco, CA",
+            description: "Lorem ipsum dolor sit amet consectetur, tellus eu enim ultrices imperdiet faucibus elementum.",
+            phone: "09876543210",
+            image: "https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png"
+        }
+    ];
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        arrows:false
+    };
     return (
         <div className='xl:m-6 '>
             <div className='2xl:w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
@@ -152,6 +188,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
+            {/*  */}
             <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  lg:rounded-3xl xl:relative my-44 '>
                 <div className='text-center'>
                     <div className="flex justify-center ">
@@ -165,20 +202,28 @@ const ContactUs = () => {
                         <p className='secondary-text'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
                     </div>
                 </div>
-                <div className='bg-cover h-96 2xl:w-[1200px] mx-auto bg-center mt-6'
-                    style={{
-                        backgroundImage: "url('https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png')",
-                    }}
-                >
-                    <div className='text-white w- space-y-4 p-5 lg:p-20 text-center lg:text-left'>
-                        <h1 className='text-2xl'>Chicago, IL</h1>
-                        <p className='lg:w-1/3'>Lorem ipsum dolor sit amet consectetur tellus eu enim ultrices imperdiet faucibus elementum.</p>
-                        <p className='flex items-cente justify-center lg:justify-normal'>
-                            <MdPhone className='text-xl mr-2' />
-                            01745968723
-                        </p>
-                    </div>
-                </div>
+                {/* slider */}
+                <Slider {...settings}>
+                    {slides.map((slide, index) => (
+                        <div key={index} className='relative'>
+                            <div
+                                className='bg-cover h-96 2xl:w-[1200px] mx-auto bg-center mt-6'
+                                style={{
+                                    backgroundImage: `url(${slide.image})`,
+                                }}
+                            >
+                                <div className='text-white w-full space-y-4 p-5 lg:p-20 text-center lg:text-left'>
+                                    <h1 className='text-2xl'>{slide.location}</h1>
+                                    <p className='lg:w-1/3'>{slide.description}</p>
+                                    <p className='flex items-center justify-center lg:justify-normal'>
+                                        <MdPhone className='text-xl mr-2' />
+                                        {slide.phone}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
 
                 <div className="flex justify-center mt-6 ">
                     <button className="text-base flex items-center bg-white  opacity-80 gap-5 justify-center p-2 rounded-full mb-4  ">
