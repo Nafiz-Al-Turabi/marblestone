@@ -16,6 +16,7 @@ import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import PropertyManagement from "../Pages/PropertyManagement/PropertyManagement";
 import NotFound from "../Pages/NotFound/NotFound";
+import Owner from "../Pages/Owner/Owner";
 
 const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
             {
                 path: 'contact',
                 element: <ContactUs />
+            },
+            {
+                path: 'owner',
+                element: <Owner />
             },
         ]
     },

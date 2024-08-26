@@ -41,7 +41,7 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                    <li><Link to="/" className='font-medium'>Owners</Link></li>
+                    <li><Link to="/owner" className='font-medium'>Owners</Link></li>
                     <li><a href="#" className='font-medium'>Residents</a></li>
                     <li><a href="#" className='font-medium'>Rentals</a></li>
                     <li><a href="#" className='font-medium'>Apply</a></li>
@@ -81,7 +81,7 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                    <li><Link to="/" className='font-medium'>Owners</Link></li>
+                    <li><Link to="/owner" className='font-medium'>Owners</Link></li>
                     <li><a href="#" className='font-medium'>Residents</a></li>
                     <li><a href="#" className='font-medium'>Rentals</a></li>
                     <li><a href="#" className='font-medium'>Apply</a></li>
