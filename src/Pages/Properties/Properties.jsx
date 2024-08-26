@@ -1,9 +1,90 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
+import PropertiesCard from '../../Cards/PropertiesCard';
 
 const Properties = () => {
+    const [properties, setProperties] = useState([]);
+    const [filteredProperties, setFilteredProperties] = useState([]);
+    const [search, setSearch] = useState('');
+    const [minRent, setMinRent] = useState('');
+    const [maxRent, setMaxRent] = useState('');
+    const [bed, setBed] = useState('');
+    const [bath, setBath] = useState('');
+    const [propertyType, setPropertyType] = useState('');
+    const [petsPolicy, setPetsPolicy] = useState('');
+    const [sort, setSort] = useState('price-asc');
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    useEffect(() => {
+        filterProperties();
+    }, [search, minRent, maxRent, bed, bath, propertyType, petsPolicy, sort, properties]);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('properties.json');
+            if (!response.ok) {
+                throw new Error('Oh no Not good...');
+            }
+            const data = await response.json();
+            setProperties(data);
+        } catch (error) {
+            console.error('Properties Data not found: ', error);
+        }
+    }
+
+    const filterProperties = () => {
+        let filtered = properties;
+
+        if (search) {
+            filtered = filtered.filter(property =>
+                property.title.toLowerCase().includes(search.toLowerCase()) ||
+                property.location.toLowerCase().includes(search.toLowerCase())
+            );
+        }
+
+        if (minRent) {
+            filtered = filtered.filter(property => parseInt(property.minRent) >= parseInt(minRent));
+        }
+
+        if (maxRent) {
+            filtered = filtered.filter(property => parseInt(property.maxRent) <= parseInt(maxRent));
+        }
+
+        if (bed) {
+            filtered = filtered.filter(property => parseInt(property.bed) === parseInt(bed));
+        }
+
+        if (bath) {
+            filtered = filtered.filter(property => parseInt(property.bath) === parseInt(bath));
+        }
+
+        if (propertyType) {
+            filtered = filtered.filter(property => property.propertyType === propertyType);
+        }
+
+        if (petsPolicy) {
+            filtered = filtered.filter(property => property.petsPolicy === petsPolicy);
+        }
+
+        if (sort) {
+            if (sort === 'price-asc') {
+                filtered = filtered.sort((a, b) => parseInt(a.minRent) - parseInt(b.minRent));
+            } else if (sort === 'price-desc') {
+                filtered = filtered.sort((a, b) => parseInt(b.minRent) - parseInt(a.minRent));
+            } else if (sort === 'newest') {
+                filtered = filtered.sort((a, b) => b.id - a.id);
+            } else if (sort === 'oldest') {
+                filtered = filtered.sort((a, b) => a.id - b.id);
+            }
+        }
+
+        setFilteredProperties(filtered);
+    }
     return (
         <div>
             <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44 '>
@@ -25,25 +106,45 @@ const Properties = () => {
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Search
                             </label>
-                            <input type="text" className='w-full secondary-bg secodary-text p-[11px] focus:outline-none rounded-l-full' placeholder='Search for properties' />
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none rounded-l-full'
+                                placeholder='Search for properties'
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
                         </div>
                         <div className='xl:w-[20%]'>
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Min Rent
                             </label>
-                            <input type="text" className='w-full secondary-bg secodary-text p-[11px] focus:outline-none' />
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none'
+                                value={minRent}
+                                onChange={(e) => setMinRent(e.target.value)}
+                            />
                         </div>
                         <div className='xl:w-[20%]'>
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Max Rent
                             </label>
-                            <input type="text" className='w-full secondary-bg secodary-text p-[11px] focus:outline-none' />
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none'
+                                value={maxRent}
+                                onChange={(e) => setMaxRent(e.target.value)}
+                            />
                         </div>
                         <div className='xl:w-[10%]'>
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Bed
                             </label>
-                            <select className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'
+                                value={bed}
+                                onChange={(e) => setBed(e.target.value)}
+                            >
                                 <option value="">Any</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -55,7 +156,11 @@ const Properties = () => {
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Bath
                             </label>
-                            <select className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'
+                                value={bath}
+                                onChange={(e) => setBath(e.target.value)}
+                            >
                                 <option value="">Any</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -69,7 +174,11 @@ const Properties = () => {
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Property Type
                             </label>
-                            <select className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-l-full'>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-l-full'
+                                value={propertyType}
+                                onChange={(e) => setPropertyType(e.target.value)}
+                            >
                                 <option value="">Any</option>
                                 <option value="apartment">Apartment</option>
                                 <option value="house">House</option>
@@ -81,7 +190,11 @@ const Properties = () => {
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Pets Policy
                             </label>
-                            <select className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'
+                                value={petsPolicy}
+                                onChange={(e) => setPetsPolicy(e.target.value)}
+                            >
                                 <option value="">Any</option>
                                 <option value="allowed">Allowed</option>
                                 <option value="not-allowed">Not Allowed</option>
@@ -92,40 +205,24 @@ const Properties = () => {
                             <label className='block mb-4 font-semibold text-gray-600'>
                                 Sort
                             </label>
-                            <select className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'
+                                value={sort}
+                                onChange={(e) => setSort(e.target.value)}
+                            >
                                 <option value="price-asc">Price: Low to High</option>
                                 <option value="price-desc">Price: High to Low</option>
-                                <option value="newest">Newest Listings</option>
-                                <option value="oldest">Oldest Listings</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
                             </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-5 px-2 xl:px-0'>
-                <div className="relative full overflow-hidden">
-                    <div className="relative">
-                        <img
-                            src="https://i.ibb.co/BNR66Kp/Rectangle-11-1.png"
-                            alt="Luxury Loft"
-                            className="w-full  object-cover rounded-3xl"
-                        />
-                        <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
-                            <FaPlus className="text-gray-800" />
-                        </button>
-                        <button className="flex items-center absolute top-2 left-2 p-2 bg-black text-white rounded-full shadow-md focus:outline-none">
-                            <FaTag className="text-white mr-2" />
-                            For rent
-                        </button>
-                    </div>
-                    <div className="p-4">
-                        <h1 className="text-xl font-semibold text-gray-800">Home in Chicago Heart</h1>
-                        <p className="flex items-center text-gray-600">
-                            <MdLocationPin className='mr-2' />
-                            2596 El Segundo, Chicago
-                        </p>
-                    </div>
-                </div>
+                {filteredProperties.map((property) => (
+                    <PropertiesCard key={property.id} property={property} />
+                ))}
             </div>
         </div>
     );

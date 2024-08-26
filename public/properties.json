@@ -2,241 +2,261 @@
     {
         "id": 1,
         "image": "https://i.ibb.co/WPVwMWd/pexels-fotoaibe-1669799.jpg",
-        "search": "Luxury Apartment Downtown",
+        "title": "Luxury Apartment Downtown",
         "minRent": "1200",
         "maxRent": "2000",
         "bed": "2",
         "bath": "2",
         "propertyType": "apartment",
         "petsPolicy": "allowed",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "Downtown City Center"
     },
     {
         "id": 2,
         "image": "https://i.ibb.co/zfmQBK6/pexels-fotoaibe-1571463.jpg",
-        "search": "Cozy House in Suburbs",
+        "title": "Cozy House in Suburbs",
         "minRent": "1500",
         "maxRent": "2500",
         "bed": "3",
         "bath": "2",
         "propertyType": "house",
         "petsPolicy": "negotiable",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "Quiet Suburb Area"
     },
     {
         "id": 3,
         "image": "https://i.ibb.co/Tbhcvk0/pexels-notswervo-2398375.jpg",
-        "search": "Modern Condo with Great Views",
+        "title": "Modern Condo with Great Views",
         "minRent": "1800",
         "maxRent": "3000",
         "bed": "1",
         "bath": "1",
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
-        "sort": "price-desc"
+        "sort": "price-desc",
+        "location": "Central Business District"
     },
     {
         "id": 4,
         "image": "https://i.ibb.co/hMyh77C/pexels-naimbic-2029667.jpg",
-        "search": "Spacious Townhouse Near Park",
+        "title": "Spacious Townhouse Near Park",
         "minRent": "2200",
         "maxRent": "3200",
         "bed": "4",
         "bath": "3",
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
-        "sort": "oldest"
+        "sort": "oldest",
+        "location": "Near Green Park"
     },
     {
         "id": 5,
         "image": "https://i.ibb.co/C2d301c/pexels-fotoaibe-1571460-1.jpg",
-        "search": "Charming Studio in City Center",
+        "title": "Charming Studio in City Center",
         "minRent": "1000",
         "maxRent": "1500",
         "bed": "0",
         "bath": "1",
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "City Center"
     },
     {
         "id": 6,
         "image": "https://i.ibb.co/5nq9s0x/pexels-alex-qian-1180283-2343465.jpg",
-        "search": "Elegant House with Large Garden",
+        "title": "Elegant House with Large Garden",
         "minRent": "2500",
         "maxRent": "4000",
         "bed": "5",
         "bath": "4",
         "propertyType": "house",
         "petsPolicy": "allowed",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "Suburban Garden Area"
     },
     {
         "id": 7,
         "image": "https://i.ibb.co/5v4jrKR/pexels-mikebirdy-106936.jpg",
-        "search": "Compact Condo with Easy Commute",
+        "title": "Compact Condo with Easy Commute",
         "minRent": "1400",
         "maxRent": "2000",
         "bed": "2",
         "bath": "1",
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
-        "sort": "price-desc"
+        "sort": "price-desc",
+        "location": "Easy Commute Zone"
     },
     {
         "id": 8,
         "image": "https://i.ibb.co/NZnJxtY/pexels-fotoaibe-1571459.jpg",
-        "search": "Large Townhouse with Modern Features",
+        "title": "Large Townhouse with Modern Features",
         "minRent": "3000",
         "maxRent": "4500",
         "bed": "4",
         "bath": "3",
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "Modern Features Area"
     },
     {
         "id": 9,
         "image": "https://i.ibb.co/fCN1tz0/pexels-naimbic-2029665.jpg",
-        "search": "Stylish Loft in Trendy Neighborhood",
+        "title": "Stylish Loft in Trendy Neighborhood",
         "minRent": "1600",
         "maxRent": "2200",
         "bed": "1",
         "bath": "1",
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "Trendy Neighborhood"
     },
     {
         "id": 10,
         "image": "https://i.ibb.co/qR3GDPv/pexels-pixabay-276724.jpg",
-        "search": "Family-Friendly House with Pool",
+        "title": "Family-Friendly House with Pool",
         "minRent": "2800",
         "maxRent": "3500",
         "bed": "3",
         "bath": "2",
         "propertyType": "house",
         "petsPolicy": "allowed",
-        "sort": "oldest"
+        "sort": "oldest",
+        "location": "Family-Friendly Area"
     },
     {
         "id": 11,
         "image": "https://i.ibb.co/sFkdwhL/pexels-kamo11235-667838.jpg",
-        "search": "Sunny Apartment with Balcony",
+        "title": "Sunny Apartment with Balcony",
         "minRent": "1300",
         "maxRent": "1900",
         "bed": "2",
         "bath": "1",
         "propertyType": "apartment",
         "petsPolicy": "allowed",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "Sunny Area"
     },
     {
         "id": 12,
         "image": "https://i.ibb.co/D7JqYKL/pexels-emrecan-2079246.jpg",
-        "search": "Quiet House in Gated Community",
+        "title": "Quiet House in Gated Community",
         "minRent": "1700",
         "maxRent": "2700",
         "bed": "3",
         "bath": "2",
         "propertyType": "house",
         "petsPolicy": "not-allowed",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "Gated Community"
     },
     {
         "id": 13,
         "image": "https://i.ibb.co/nCQJpT5/pexels-jason-boyd-1388339-3209045.jpg",
-        "search": "Luxury Condo with Pool Access",
+        "title": "Luxury Condo with Pool Access",
         "minRent": "2200",
         "maxRent": "3500",
         "bed": "2",
         "bath": "2",
         "propertyType": "condo",
         "petsPolicy": "negotiable",
-        "sort": "price-desc"
+        "sort": "price-desc",
+        "location": "Luxury Area"
     },
     {
         "id": 14,
         "image": "https://i.ibb.co/4fwXZd2/pexels-pixabay-280232.jpg",
-        "search": "Historic Townhouse with Modern Upgrades",
+        "title": "Historic Townhouse with Modern Upgrades",
         "minRent": "2500",
         "maxRent": "3800",
         "bed": "3",
         "bath": "2",
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
-        "sort": "oldest"
+        "sort": "oldest",
+        "location": "Historic Area"
     },
     {
         "id": 15,
         "image": "https://i.ibb.co/QvyL3qw/pexels-houzlook-3797991-1.jpg",
-        "search": "Contemporary Studio Near University",
+        "title": "Contemporary Studio Near University",
         "minRent": "1100",
         "maxRent": "1600",
         "bed": "0",
         "bath": "1",
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "Near University"
     },
     {
         "id": 16,
         "image": "https://i.ibb.co/kKS2jVC/pexels-dropshado-2251247.jpg",
-        "search": "Spacious Family Home with Garage",
+        "title": "Spacious Family Home with Garage",
         "minRent": "2900",
         "maxRent": "4000",
         "bed": "4",
         "bath": "3",
         "propertyType": "house",
         "petsPolicy": "allowed",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "Family Area"
     },
     {
         "id": 17,
         "image": "https://i.ibb.co/nz3C6wx/pexels-fotoaibe-1743227.jpg",
-        "search": "City View Condo with Modern Kitchen",
+        "title": "City View Condo with Modern Kitchen",
         "minRent": "2000",
         "maxRent": "2800",
         "bed": "1",
         "bath": "1",
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
-        "sort": "price-desc"
+        "sort": "price-desc",
+        "location": "City View"
     },
     {
         "id": 18,
         "image": "https://i.ibb.co/C2d301c/pexels-fotoaibe-1571460-1.jpg",
-        "search": "Chic Townhouse in Prime Location",
+        "title": "Chic Townhouse in Prime Location",
         "minRent": "3100",
         "maxRent": "4500",
         "bed": "3",
         "bath": "2",
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
-        "sort": "price-asc"
+        "sort": "price-asc",
+        "location": "Prime Location"
     },
     {
         "id": 19,
         "image": "https://i.ibb.co/QvyL3qw/pexels-houzlook-3797991-1.jpg",
-        "search": "Luxurious Loft with High Ceilings",
+        "title": "Luxurious Loft with High Ceilings",
         "minRent": "2400",
         "maxRent": "3200",
         "bed": "2",
         "bath": "2",
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
-        "sort": "newest"
+        "sort": "newest",
+        "location": "High Ceilings Area"
     },
     {
         "id": 20,
         "image": "https://i.ibb.co/kKS2jVC/pexels-dropshado-2251247.jpg",
-        "search": "Family Home with Spacious Backyard",
+        "title": "Family Home with Spacious Backyard",
         "minRent": "2600",
         "maxRent": "3500",
         "bed": "3",
         "bath": "2",
         "propertyType": "house",
         "petsPolicy": "allowed",
-        "sort": "oldest"
+        "sort": "oldest",
+        "location": "Spacious Backyard Area"
     }
 ]

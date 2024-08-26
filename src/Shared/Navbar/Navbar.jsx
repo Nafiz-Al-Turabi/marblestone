@@ -59,7 +59,7 @@ const Navbar = () => {
             {/* Mobile & Medium Device Navbar */}
             <div className='absolute xl:hidden flex justify-between items-center p-4  w-full'>
                 <img src={logo} alt="Logo" />
-                <button onClick={toggleMobileMenu} className='text-white text-2xl'>
+                <button onClick={toggleMobileMenu} className='text-gray-400 text-2xl'>
                     {isMobileMenuOpen ? '' : <IoIosMenu />}
                 </button>
             </div>

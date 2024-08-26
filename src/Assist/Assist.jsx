@@ -1,108 +1,232 @@
-import React, { useState } from 'react';
-import Marquee from 'react-fast-marquee';
-import image1 from './../../assets/Images/Company.svg';
-import image2 from './../../assets/Images/Institute.svg';
-import image3 from './../../assets/Images/Enterprise.svg';
-import image4 from './../../assets/Images/Agency.svg';
-import image5 from './../../assets/Images/Venture.svg';
-import image6 from './../../assets/Images/Application.svg';
-import image7 from './../../assets/Images/agent.png';
-import image8 from './../assets/AboutImages/agent1.png';
-import image9 from './../assets/AboutImages/agent2.png';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-import CountUp from 'react-countup'; // Import CountUp
+import React, { useEffect, useState } from 'react';
+import { FaPlus, FaTag } from 'react-icons/fa';
+import { MdLocationPin } from 'react-icons/md';
+import { AiFillHome } from 'react-icons/ai';
+import PropertiesCard from '../../Cards/PropertiesCard';
 
-const TrustedCompany = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const testimonials = [
-        {
-            img: image7,
-            text: '“If you want convenience, call Tina”',
-            description: 'Lorem ipsum dolor sit amet consectetur ultrices rutrum fusce dui nisl neque placerat velit.',
-            location: 'Chicago, IL'
-        },
-        {
-            img: image8,
-            text: '“Exceptional service and support”',
-            description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            location: 'New York, NY'
-        },
-        {
-            img: image9,
-            text: '“Highly recommend for anyone”',
-            description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-            location: 'San Francisco, CA'
-        },
-        // Add more testimonials here if needed
-    ];
+const Properties = () => {
+    const [properties, setProperties] = useState([]);
+    const [filteredProperties, setFilteredProperties] = useState([]);
+    const [search, setSearch] = useState('');
+    const [minRent, setMinRent] = useState('');
+    const [maxRent, setMaxRent] = useState('');
+    const [bed, setBed] = useState('');
+    const [bath, setBath] = useState('');
+    const [propertyType, setPropertyType] = useState('');
+    const [petsPolicy, setPetsPolicy] = useState('');
+    const [sort, setSort] = useState('price-asc');
 
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
-    };
+    useEffect(() => {
+        fetchData();
+    }, [])
 
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
-    };
+    useEffect(() => {
+        filterProperties();
+    }, [search, minRent, maxRent, bed, bath, propertyType, petsPolicy, sort, properties]);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('properties.json');
+            if (!response.ok) {
+                throw new Error('Oh no Not good...');
+            }
+            const data = await response.json();
+            setProperties(data);
+        } catch (error) {
+            console.error('Properties Data not found: ', error);
+        }
+    }
+
+    const filterProperties = () => {
+        let filtered = properties;
+
+        if (search) {
+            filtered = filtered.filter(property =>
+                property.title.toLowerCase().includes(search.toLowerCase()) ||
+                property.location.toLowerCase().includes(search.toLowerCase())
+            );
+        }
+
+        if (minRent) {
+            filtered = filtered.filter(property => parseInt(property.minRent) >= parseInt(minRent));
+        }
+
+        if (maxRent) {
+            filtered = filtered.filter(property => parseInt(property.maxRent) <= parseInt(maxRent));
+        }
+
+        if (bed) {
+            filtered = filtered.filter(property => parseInt(property.bed) === parseInt(bed));
+        }
+
+        if (bath) {
+            filtered = filtered.filter(property => parseInt(property.bath) === parseInt(bath));
+        }
+
+        if (propertyType) {
+            filtered = filtered.filter(property => property.propertyType === propertyType);
+        }
+
+        if (petsPolicy) {
+            filtered = filtered.filter(property => property.petsPolicy === petsPolicy);
+        }
+
+        if (sort) {
+            if (sort === 'price-asc') {
+                filtered = filtered.sort((a, b) => parseInt(a.minRent) - parseInt(b.minRent));
+            } else if (sort === 'price-desc') {
+                filtered = filtered.sort((a, b) => parseInt(b.minRent) - parseInt(a.minRent));
+            } else if (sort === 'newest') {
+                filtered = filtered.sort((a, b) => b.id - a.id);
+            } else if (sort === 'oldest') {
+                filtered = filtered.sort((a, b) => a.id - b.id);
+            }
+        }
+
+        setFilteredProperties(filtered);
+    }
 
     return (
-        <div className="2xl:w-[1200px] mx-auto mb-40">
-            <div className="mb-20">
-                <h3 className="text-[18px] secondary-text text-center mb-6">As seen On:</h3>
-                <Marquee>
-                    <img src={image2} alt="Institute" className="ml-10" />
-                    <img src={image3} alt="Enterprise" className="ml-10" />
-                    <img src={image4} alt="Agency" className="ml-10" />
-                    <img src={image1} alt="Company" className="ml-10" />
-                    <img src={image5} alt="Venture" className="ml-10" />
-                    <img src={image6} alt="Application" className="ml-10" />
-                </Marquee>
+        <div>
+            <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44 '>
+                <div className='text-center'>
+                    <div className="flex justify-center ">
+                        <button className="text-xs flex items-center text-white bg-gray-900 opacity-80 gap-1 justify-center p-2 rounded-full mb-4  ">
+                            <AiFillHome className="h-7 w-7 text-white bg-slate-500 rounded-full p-1" />
+                            Available for rent
+                        </button>
+                    </div>
+                    <div className='lg:w-[765px] mx-auto mt-4'>
+                        <h1 className='text-2xl md:text-3xl lg:text-5xl xl:text-7xl text-white mb-4'>Check on all properties we have available</h1>
+                        <p className='secondary-text'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
+                    </div>
+                </div>
+                <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:-mb-72 mt-10'>
+                    <div className='xl:flex gap-1 mb-4'>
+                        <div className='xl:w-[40%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Search
+                            </label>
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none rounded-l-full'
+                                placeholder='Search for properties'
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                        </div>
+                        <div className='xl:w-[20%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Min Rent
+                            </label>
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none'
+                                value={minRent}
+                                onChange={(e) => setMinRent(e.target.value)}
+                            />
+                        </div>
+                        <div className='xl:w-[20%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Max Rent
+                            </label>
+                            <input
+                                type="text"
+                                className='w-full secondary-bg secodary-text p-[11px] focus:outline-none'
+                                value={maxRent}
+                                onChange={(e) => setMaxRent(e.target.value)}
+                            />
+                        </div>
+                        <div className='xl:w-[10%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Bed
+                            </label>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'
+                                value={bed}
+                                onChange={(e) => setBed(e.target.value)}
+                            >
+                                <option value="">Any</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div className='xl:w-[10%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Bath
+                            </label>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'
+                                value={bath}
+                                onChange={(e) => setBath(e.target.value)}
+                            >
+                                <option value="">Any</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='xl:flex gap-1'>
+                        <div className='xl:w-[33.33%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Property Type
+                            </label>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-l-full'
+                                value={propertyType}
+                                onChange={(e) => setPropertyType(e.target.value)}
+                            >
+                                <option value="">Any</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                                <option value="condo">Condo</option>
+                                <option value="townhouse">Townhouse</option>
+                            </select>
+                        </div>
+                        <div className='xl:w-[33.33%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Pets Policy
+                            </label>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none'
+                                value={petsPolicy}
+                                onChange={(e) => setPetsPolicy(e.target.value)}
+                            >
+                                <option value="">Any</option>
+                                <option value="allowed">Allowed</option>
+                                <option value="not-allowed">Not Allowed</option>
+                                <option value="negotiable">Negotiable</option>
+                            </select>
+                        </div>
+                        <div className='xl:w-[33.33%]'>
+                            <label className='block mb-4 font-semibold text-gray-600'>
+                                Sort
+                            </label>
+                            <select
+                                className='w-full secondary-bg secodary-text p-[14px] focus:outline-none rounded-r-full'
+                                value={sort}
+                                onChange={(e) => setSort(e.target.value)}
+                            >
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div className="lg:flex justify-between lg:mx-6">
-                <div className="text-center lg:text-left 2xl:flex 2xl:w-1/2 space-x-2 mr-5 space-y-4 lg:space-y-0">
-                    <div>
-                        <h3 className="text-[18px]">Our Project</h3>
-                        <p className="text-5xl 2xl:text-7xl my-[6px]">
-                            <CountUp end={10} suffix="k+" />
-                        </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi!</p>
-                    </div>
-                    <div>
-                        <h3 className="text-[18px]">Our Customer</h3>
-                        <p className="text-5xl 2xl:text-7xl my-[6px]">
-                            <CountUp end={200} prefix=" " suffix="k" />
-                        </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi!</p>
-                    </div>
-                </div>
-                {/* carousel  */}
-                <div className="relative overflow-hidden">
-                    <div className="carousel-wrapper flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                        {testimonials.map((testimonial, index) => (
-                            <div key={index} className="carousel-item w-full flex-shrink-0 px-4 py-6">
-                                <div className="lg:flex items-center lg:space-x-6 shadow rounded-3xl p-6 lg:p-12 bg-white">
-                                    <div className="flex-shrink-0">
-                                        <img src={testimonial.img} alt="Testimonial" className="rounded-full w-24 h-24 lg:w-32 lg:h-32" />
-                                    </div>
-                                    <div className="ml-4">
-                                        <h3 className="text-lg lg:text-xl">{testimonial.text}</h3>
-                                        <p className="my-[6px] text-xs md:text-base">{testimonial.description}</p>
-                                        <p className="text-lg lg:text-xl">{testimonial.location}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <button onClick={handlePrev} className="absolute top-1/2 left-0 transform -translate-y-1/2 h-12 w-12 bg-white opacity-75 shadow flex justify-center items-center rounded-full">
-                        <MdKeyboardArrowLeft className="text-2xl" />
-                    </button>
-                    <button onClick={handleNext} className="absolute top-1/2 right-0 transform -translate-y-1/2 h-12 w-12 bg-white opacity-75 shadow flex justify-center items-center rounded-full">
-                        <MdKeyboardArrowRight className="text-2xl" />
-                    </button>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+                {filteredProperties.map((property) => (
+                    <PropertiesCard key={property.id} property={property} />
+                ))}
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default TrustedCompany;
-
+export default Properties;
