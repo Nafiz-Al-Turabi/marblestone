@@ -45,7 +45,7 @@ const Navbar = () => {
                     <li><Link to="/" className='font-medium'>Residents</Link></li>
                     <li><Link to="/" className='font-medium'>Rentals</Link></li>
                     <li><Link to="/" className='font-medium'>Apply</Link></li>
-                    <li><Link to="/" className='font-medium'>Resources</Link></li>
+                    <li><Link to="/resources" className='font-medium'>Resources</Link></li>
                     <li><Link to="/about" className='font-medium'>About</Link></li>
                     <li><Link to="/contact" className='font-medium'>Contact</Link></li>
                 </ul>
@@ -88,7 +88,7 @@ const Navbar = () => {
                     <li><Link to="/" className='font-medium'>Residents</Link></li>
                     <li><Link to="/" className='font-medium'>Rentals</Link></li>
                     <li><Link to="/" className='font-medium'>Apply</Link></li>
-                    <li><Link to="/" className='font-medium'>Resources</Link></li>
+                    <li><Link to="/resources" className='font-medium'>Resources</Link></li>
                     <li><Link to="/about" className='font-medium'>About</Link></li>
                     <li><Link to="/contact" className='font-medium'>Contact</Link></li>
                 </ul>
