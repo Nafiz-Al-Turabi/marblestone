@@ -64,7 +64,7 @@ const BlogDetails = () => {
                 </div>
             </div>
             <div className='mt-10'>
-                <div className='xl:max-w-[1200px] mx-auto xl:h-[490px] overflow-hidden relative '>
+                <div className='xl:max-w-[1440px] mx-auto xl:h-[490px] overflow-hidden relative '>
                     <img src={image} alt=""
                         className='object-cover w-full h-full xl:rounded-3xl'
                     />

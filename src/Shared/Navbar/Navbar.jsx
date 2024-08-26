@@ -43,9 +43,9 @@ const Navbar = () => {
                         )}
                     </li>
                     <li><ActiveLink to="/owner" className='font-medium'>Owners</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Residents</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Rentals</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Apply</ActiveLink></li>
+                    <li><ActiveLink to="/g" className='font-medium'>Residents</ActiveLink></li>
+                    <li><ActiveLink to="/gg" className='font-medium'>Rentals</ActiveLink></li>
+                    <li><ActiveLink to="/ggg" className='font-medium'>Apply</ActiveLink></li>
                     <li><ActiveLink to="/resources" className='font-medium'>Resources</ActiveLink></li>
                     <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
@@ -86,9 +86,9 @@ const Navbar = () => {
                         )}
                     </li>
                     <li><ActiveLink to="/owner" className='font-medium'>Owners</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Residents</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Rentals</ActiveLink></li>
-                    <li><ActiveLink to="/" className='font-medium'>Apply</ActiveLink></li>
+                    <li><ActiveLink to="/gg" className='font-medium'>Residents</ActiveLink></li>
+                    <li><ActiveLink to="/g" className='font-medium'>Rentals</ActiveLink></li>
+                    <li><ActiveLink to="/gg" className='font-medium'>Apply</ActiveLink></li>
                     <li><ActiveLink to="/resources" className='font-medium'>Resources</ActiveLink></li>
                     <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
