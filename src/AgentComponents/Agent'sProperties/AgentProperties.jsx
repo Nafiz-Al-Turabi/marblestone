@@ -24,12 +24,11 @@ const AgentProperties = ({ name }) => {
                     </Link>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2  mx-auto gap-5 px-2 xl:px-0'>
-                    <PropertiesCard />
-                    <PropertiesCard />
+                    {/* <PropertiesCard />
+                    <PropertiesCard /> */}
                 </div>
             </div>
             <AgentBlog name={name} />
-
         </div>
     );
 };

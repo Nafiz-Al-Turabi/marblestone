@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
+import { Link} from 'react-router-dom';
 
-const PropertiesCard = ({property}) => {
-    const {image,title,location}=property;
+const PropertiesCard = ({ property }) => {
+    const { image, title, location, id } = property;
     return (
-        <div className="relative full overflow-hidden flex flex-col justify-between">
+        <div className="relative full overflow-hidden flex flex-col justify-between ">
             <div className="relative">
                 <img
                     src={image}
                     alt="Luxury Loft"
                     className="w-full h-96 object-cover rounded-3xl"
                 />
-                <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
+                <Link to={`/propertyDetails/${id}`} className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
                     <FaPlus className="text-gray-800" />
-                </button>
+                </Link>
                 <button className="flex items-center absolute top-2 left-2 p-2 bg-black text-white rounded-full shadow-md focus:outline-none">
                     <FaTag className="text-white mr-2" />
                     For rent

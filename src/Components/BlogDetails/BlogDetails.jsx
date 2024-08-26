@@ -18,6 +18,7 @@ const BlogDetails = () => {
                 const data = result.find(detail => detail.id == id)
                 if (data) {
                     setDetails(data)
+                    console.log(data)
                 }
             })
     }, [])

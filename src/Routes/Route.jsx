@@ -68,8 +68,9 @@ const router = createBrowserRouter([
                 element: <CmsSales />
             },
             {
-                path: 'propertyDetails',
-                element: <PropertyDetails />
+                path: '/propertyDetails/:id',
+                element: <PropertyDetails />,
+                loader: ({ params }) => fetch('properties.json')
             },
             {
                 path: 'propertyManagement',

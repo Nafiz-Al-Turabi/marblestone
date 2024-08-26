@@ -4,7 +4,8 @@ import { FaLocationPin } from 'react-icons/fa6';
 import agent from './../../assets/AboutImages/agent1.png'
 import { MdEmail, MdPhone } from 'react-icons/md';
 
-const AboutPropertyDetails = () => {
+const AboutPropertyDetails = ({propertyDetail}) => {
+    const {location,title,image}=propertyDetail
     return (
         <div className='pt-20 lg:pt-32 lg:px-4 mb-20 mx-2'>
             <div className='xl:w-[1440px] mx-auto lg:flex justify-between gap-24'>
@@ -12,9 +13,9 @@ const AboutPropertyDetails = () => {
                     <div className='border-b pb-16'>
                         <p className='flex items-center '>
                             <FaLocationPin className='mr-3' />
-                            3501 E 106th St, Chicago, IL
+                            {location}
                         </p>
-                        <h1 className='text-xl md:text-3xl lg:text-5xl font-medium my-4'>Single-Family Home in Chicago</h1>
+                        <h1 className='text-xl md:text-3xl lg:text-5xl font-medium my-4'>{title}</h1>
                         <p className='mb-4'>Lorem ipsum dolor sit amet consectetur. Gravida elementum dolor semper felis pulvinar feugiat risus adipiscing dictum. Ultricies nec elementum nisi ut. Cras diam odio sed auctor pellentesque. Sit nisl ipsum id convallis tristique. Malesuada.</p>
                         <div className='flex items-center gap-6'>
                             <p className='flex items-center text-gray-400'>
