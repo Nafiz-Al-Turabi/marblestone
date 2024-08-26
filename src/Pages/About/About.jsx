@@ -14,9 +14,9 @@ import OurTeam from '../../AboutComponents/OurTeam/OurTeam';
 
 const About = () => {
     return (
-        <div className=' pt-20 lg:pt-40 lg:px-4 mb-20'>
-            <div>
-                <div className='lg:max-w-[1200px] mx-auto lg:flex px-6 lg:px-0'>
+        <div className='xl:m-6 '>
+            <div className='pt-20 lg:pt-40 lg:px-4 mb-20'>
+                <div className='lg:max-w-[1200px] mx-auto lg:flex xl:px-6 lg:px-0'>
                     <div className=''>
                         <h1 className='text-center lg:text-left text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-medium'>Marblestone Property Group</h1>
                     </div>

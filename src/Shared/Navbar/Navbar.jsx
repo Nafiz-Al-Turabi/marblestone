@@ -3,6 +3,7 @@ import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import logo from './../../assets/Images/logo.svg'
+import ActiveLink from '../../Components/ActiveLink/ActiveLink';
 
 const Navbar = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -41,13 +42,13 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                    <li><Link to="/owner" className='font-medium'>Owners</Link></li>
-                    <li><Link to="/" className='font-medium'>Residents</Link></li>
-                    <li><Link to="/" className='font-medium'>Rentals</Link></li>
-                    <li><Link to="/" className='font-medium'>Apply</Link></li>
-                    <li><Link to="/resources" className='font-medium'>Resources</Link></li>
-                    <li><Link to="/about" className='font-medium'>About</Link></li>
-                    <li><Link to="/contact" className='font-medium'>Contact</Link></li>
+                    <li><ActiveLink to="/owner" className='font-medium'>Owners</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Residents</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Rentals</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Apply</ActiveLink></li>
+                    <li><ActiveLink to="/resources" className='font-medium'>Resources</ActiveLink></li>
+                    <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
+                    <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
                 </ul>
                 <button className='primary-btn flex items-center'>
                     Book a call
@@ -84,13 +85,13 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                    <li><Link to="/owner" className='font-medium'>Owners</Link></li>
-                    <li><Link to="/" className='font-medium'>Residents</Link></li>
-                    <li><Link to="/" className='font-medium'>Rentals</Link></li>
-                    <li><Link to="/" className='font-medium'>Apply</Link></li>
-                    <li><Link to="/resources" className='font-medium'>Resources</Link></li>
-                    <li><Link to="/about" className='font-medium'>About</Link></li>
-                    <li><Link to="/contact" className='font-medium'>Contact</Link></li>
+                    <li><ActiveLink to="/owner" className='font-medium'>Owners</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Residents</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Rentals</ActiveLink></li>
+                    <li><ActiveLink to="/" className='font-medium'>Apply</ActiveLink></li>
+                    <li><ActiveLink to="/resources" className='font-medium'>Resources</ActiveLink></li>
+                    <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
+                    <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
                 </ul>
                 <button className='primary-btn flex items-center mt-6'>
                     Book a call

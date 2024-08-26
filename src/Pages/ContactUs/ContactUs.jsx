@@ -6,8 +6,8 @@ import { IoLocation } from 'react-icons/io5';
 
 const ContactUs = () => {
     return (
-        <div className=' pt-20 lg:pt-40 lg:px-4 mb-20'>
-            <div className='2xl:w-[1440px] mx-auto '>
+        <div className='xl:m-6 '>
+            <div className='2xl:w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
                 <div className='xl:flex justify-between xl:gap-24'>
                     <div className='lg:w-full 2xl:w-[640px] '>
                         <div className='mx-2 lg:flex justify-between xl:block'>
