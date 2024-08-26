@@ -13,7 +13,7 @@ const PropertyCMS = () => {
                 <div className="relative bg-cover xl:h-[550px] bg-black px-2 py-20 md:px-32 lg:p-40 rounded-2xl lg:rounded-3xl xl:relative mb-44 m-6"
                     style={{ backgroundImage: `url(${banner})` }}>
 
-                    <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:absolute -bottom-32 left-1/4 mt-10'>
+                    <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:mt-72 mt-10'>
                         <div className='xl:flex gap-1 mb-4'>
                             <div className='xl:w-[40%]'>
                                 <label className='block mb-4 font-semibold text-gray-600'>

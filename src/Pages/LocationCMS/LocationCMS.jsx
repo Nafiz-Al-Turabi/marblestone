@@ -14,7 +14,7 @@ const LocationCMS = () => {
                         <p className='text-white'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
                     </div>
                 </div>
-                <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:absolute left-1/4 mt-10'>
+                <form className='bg-white w-full  xl:w-[940px] mx-auto p-6 rounded-3xl xl:-mb-72'>
                     <div className='xl:flex gap-1 mb-4'>
                         <div className='xl:w-[40%]'>
                             <label className='block mb-4 font-semibold text-gray-600'>
