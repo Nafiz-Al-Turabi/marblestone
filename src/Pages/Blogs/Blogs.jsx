@@ -14,7 +14,7 @@ const Blogs = () => {
                 <div className="lg:flex justify-between items-center mt-4 px-2">
                     <p className="lg:w-[560px] text-center lg:text-left">Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
                     <form className="relative mt-6 lg:mt-0">
-                        <input type="text" name="email" placeholder='Enter your email' className="bg-white  py-3 px-4 w-full lg:w-96 rounded-full focus:outline-none" />
+                        <input type="text" name="email" placeholder='Search articles' className="bg-white  py-3 px-4 w-full lg:w-96 rounded-full focus:outline-none" />
                         <button className='absolute top-1 right-2'>
                             <IoSearch className='bg-black text-white p-2 w-10 h-10 rounded-full ml-2 ' />
                         </button>

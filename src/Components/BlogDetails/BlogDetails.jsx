@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BsCalendar3 } from "react-icons/bs";
+import { BsCalendar3, BsNewspaper } from "react-icons/bs";
 import { PiArticleMediumFill } from "react-icons/pi";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaBriefcase, FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter, FaCirclePlus } from "react-icons/fa6";
 import { useParams } from 'react-router-dom';
+import { AiFillSetting, AiFillSound } from 'react-icons/ai';
 
 
 
@@ -21,16 +22,35 @@ const BlogDetails = () => {
                     console.log(data)
                 }
             })
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
     }, [])
 
-    const { title, image, description, date } = details;
+    const { title, image, description, date, agent_name, agent_email, blogtype } = details;
+
+    const renderBlogTypeIcon = () => {
+        switch (blogtype) {
+            case 'Resources':
+                return <AiFillSetting className='mr-3 text-xl' />;
+            case 'Articles':
+                return <BsNewspaper className='mr-3 text-xl' />;
+            case 'News':
+                return <AiFillSound className='mr-3 text-xl' />;
+            default:
+                return null;
+        }
+    };
+
     return (
         <div className=' py-40'>
             <div className='xl:max-w-[1440px] mx-auto'>
                 <div className='flex items-center gap-5 px-2'>
                     <p className='flex items-center justify-center text-white bg-gray-400 w-24 rounded-full p-1 '>
-                        <PiArticleMediumFill className='mr-2 text-base' />
-                        Article</p>
+                        {renderBlogTypeIcon()}
+                        {blogtype}
+                    </p>
                     <p className='flex items-center text-gray-500 '>
                         <BsCalendar3 className='mr-2 text-base' />
                         {date}
@@ -43,8 +63,8 @@ const BlogDetails = () => {
                                 <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" className='w-16' />
                             </div>
                             <div>
-                                <h1 className='text-xl font-medium'>Yuliya Onyshchuk</h1>
-                                <p className='secondary-text'>@Nafiz</p>
+                                <h1 className='text-xl font-medium'>{agent_name}</h1>
+                                <p className='secondary-text'>{agent_email}</p>
                             </div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur fermentum eget fringilla egestas lorem.</p>

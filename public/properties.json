@@ -12,7 +12,8 @@
         "sort": "price-asc",
         "location": "Downtown City Center",
         "car": "1",
-        "area": "1,850 sq ft"
+        "area": "1,850 sq ft",
+        "description": "Experience modern city living in this upscale 2-bedroom, 2-bath apartment located in the heart of the Downtown City Center. With elegant interiors, ample natural light, and a spacious 1,850 sq ft layout, this residence is perfect for those who enjoy luxury and convenience. Pets are allowed, and there’s parking space for one car."
     },
     {
         "id": 2,
@@ -27,7 +28,8 @@
         "sort": "newest",
         "location": "Quiet Suburb Area",
         "car": "2",
-        "area": "2,800 sq ft"
+        "area": "2,800 sq ft",
+        "description": "This charming 3-bedroom, 2-bath house offers a serene suburban lifestyle. Nestled in a Quiet Suburb Area, it features a spacious 2,800 sq ft interior and provides a flexible pets policy. With parking for two cars, it’s a great choice for families or those seeking a peaceful retreat."
     },
     {
         "id": 3,
@@ -42,7 +44,8 @@
         "sort": "price-desc",
         "location": "Central Business District",
         "car": "1",
-        "area": "2,700 sq ft"
+        "area": "2,700 sq ft",
+        "description": "Enjoy stunning cityscapes from this 1-bedroom, 1-bath modern condo in the Central Business District. Boasting a generous 2,700 sq ft and high-end finishes, this residence is ideal for professionals who prefer a luxurious lifestyle. Note: Pets are not allowed."
     },
     {
         "id": 4,
@@ -57,7 +60,8 @@
         "sort": "oldest",
         "location": "Near Green Park",
         "car": "3",
-        "area": "2,400 sq ft"
+        "area": "2,400 sq ft",
+        "description": "This expansive 4-bedroom, 3-bath townhouse offers both space and comfort. Located near Green Park, it features a 2,400 sq ft layout with modern amenities and a pet-friendly policy. With parking for three cars, it's perfect for larger families or those who enjoy extra room."
     },
     {
         "id": 5,
@@ -72,7 +76,8 @@
         "sort": "price-asc",
         "location": "City Center",
         "car": "1",
-        "area": "2,500 sq ft"
+        "area": "2,500 sq ft",
+        "description": "This cozy 2-bedroom, 1-bath studio in City Center combines charm with convenience. Offering a 2,500 sq ft living area, it features modern amenities and a negotiable pets policy. Perfect for those who enjoy urban living with a touch of elegance."
     },
     {
         "id": 6,
@@ -87,7 +92,8 @@
         "sort": "newest",
         "location": "Suburban Garden Area",
         "car": "4",
-        "area": "3,200 sq ft"
+        "area": "3,200 sq ft",
+        "description": "This luxurious 5-bedroom, 4-bath house features a sprawling 3,200 sq ft interior and a large garden, offering a perfect blend of elegance and space. Located in a Suburban Garden Area, it includes parking for four cars and a pet-friendly policy."
     },
     {
         "id": 7,
@@ -102,7 +108,8 @@
         "sort": "price-desc",
         "location": "Easy Commute Zone",
         "car": "1",
-        "area": "2650 sq ft"
+        "area": "2,650 sq ft",
+        "description": "Ideal for those who value convenience, this 2-bedroom, 1-bath condo is situated in the Easy Commute Zone. With a comfortable 2,650 sq ft layout, it’s perfect for city dwellers. Note: Pets are not allowed."
     },
     {
         "id": 8,
@@ -117,7 +124,8 @@
         "sort": "price-asc",
         "location": "Modern Features Area",
         "car": "3",
-        "area": "2,800 sq ft"
+        "area": "2,800 sq ft",
+        "description": "This spacious 4-bedroom, 3-bath townhouse, located in the Modern Features Area, offers a generous 2,800 sq ft of living space. With a pet-friendly policy and parking for three cars, it’s a great option for those seeking modern comforts."
     },
     {
         "id": 9,
@@ -132,7 +140,8 @@
         "sort": "newest",
         "location": "Trendy Neighborhood",
         "car": "1",
-        "area": "2800 sq ft"
+        "area": "2,800 sq ft",
+        "description": "This chic 1-bedroom, 1-bath loft is situated in a Trendy Neighborhood, offering modern design and a spacious 2,800 sq ft layout. With a negotiable pets policy and convenient parking, it’s perfect for those who love contemporary style."
     },
     {
         "id": 10,
@@ -147,7 +156,8 @@
         "sort": "oldest",
         "location": "Family-Friendly Area",
         "car": "4",
-        "area": "2,100 sq ft"
+        "area": "2,100 sq ft",
+        "description": "This family-friendly 3-bedroom, 2-bath house includes a pool and a spacious 2,100 sq ft layout. Located in a Family-Friendly Area, it offers parking for four cars and a pet-friendly environment."
     },
     {
         "id": 11,
@@ -162,7 +172,8 @@
         "sort": "price-asc",
         "location": "Sunny Area",
         "car": "1",
-        "area": "2850 sq ft"
+        "area": "2,850 sq ft",
+        "description": "This bright 2-bedroom, 1-bath apartment features a sunny balcony and a spacious 2,850 sq ft interior. Located in the Sunny Area, it’s a perfect spot for those who enjoy natural light and outdoor space. Pets are allowed, and there’s parking for one car."
     },
     {
         "id": 12,
@@ -177,7 +188,8 @@
         "sort": "newest",
         "location": "Gated Community",
         "car": "2",
-        "area": "1,700 sq ft"
+        "area": "1,700 sq ft",
+        "description": "This peaceful 3-bedroom, 2-bath house in a Gated Community offers privacy and security. With a 1,700 sq ft layout and a non-pet-friendly policy, it’s ideal for those seeking a tranquil living environment with parking for two cars."
     },
     {
         "id": 13,
@@ -192,7 +204,8 @@
         "sort": "price-desc",
         "location": "Luxury Area",
         "car": "1",
-        "area": "2900 sq ft"
+        "area": "2,900 sq ft",
+        "description": "This upscale 2-bedroom, 2-bath condo provides luxurious living with pool access. Located in the Luxury Area, it features a spacious 2,900 sq ft interior and a negotiable pets policy. Perfect for those who enjoy high-end amenities and convenience."
     },
     {
         "id": 14,
@@ -207,7 +220,8 @@
         "sort": "oldest",
         "location": "Historic Area",
         "car": "3",
-        "area": "2,300 sq ft"
+        "area": "2,300 sq ft",
+        "description": "This beautifully restored 3-bedroom, 2-bath historic townhouse combines classic charm with modern upgrades. Located in the Historic Area, it features a 2,300 sq ft living space, a pet-friendly policy, and parking for three cars."
     },
     {
         "id": 15,
@@ -222,7 +236,8 @@
         "sort": "price-asc",
         "location": "Near University",
         "car": "1",
-        "area": "3400 sq ft"
+        "area": "3,400 sq ft",
+        "description": "This modern studio apartment, located near the University, features a spacious 3,400 sq ft layout. With contemporary design and a negotiable pets policy, it’s perfect for students or anyone seeking a stylish, convenient living space. Parking for one car is included."
     },
     {
         "id": 16,
@@ -237,7 +252,8 @@
         "sort": "newest",
         "location": "Family Area",
         "car": "4",
-        "area": "2,500 sq ft"
+        "area": "2,500 sq ft",
+        "description": "This expansive 4-bedroom, 3-bath family home in a Family Area features a generous 2,500 sq ft layout and a large garage. With a pet-friendly policy and parking for four cars, it’s ideal for larger families seeking both space and comfort."
     },
     {
         "id": 17,
@@ -252,7 +268,8 @@
         "sort": "price-desc",
         "location": "City View",
         "car": "1",
-        "area": "2750 sq ft"
+        "area": "2,750 sq ft",
+        "description": "This contemporary 1-bedroom, 1-bath condo offers stunning city views and a modern kitchen. Located in the City View area, it features a spacious 2,750 sq ft interior and is ideal for those who appreciate upscale urban living. Pets are not allowed."
     },
     {
         "id": 18,
@@ -267,7 +284,8 @@
         "sort": "price-asc",
         "location": "Prime Location",
         "car": "3",
-        "area": "2,200 sq ft"
+        "area": "2,200 sq ft",
+        "description": "This stylish 3-bedroom, 2-bath townhouse is situated in a Prime Location, offering a modern living experience with a 2,200 sq ft layout. With a pet-friendly policy and parking for three cars, it’s perfect for those who seek both convenience and sophistication."
     },
     {
         "id": 19,
@@ -282,7 +300,8 @@
         "sort": "newest",
         "location": "High Ceilings Area",
         "car": "1",
-        "area": "2,000 sq ft"
+        "area": "2,000 sq ft",
+        "description": "This elegant 2-bedroom, 2-bath loft features high ceilings and a luxurious design. Located in the High Ceilings Area, it offers a spacious 2,000 sq ft living space and a negotiable pets policy. Ideal for those who appreciate stylish, contemporary living."
     },
     {
         "id": 20,
@@ -297,6 +316,7 @@
         "sort": "oldest",
         "location": "Spacious Backyard Area",
         "car": "4",
-        "area": "2,200 sq ft"
+        "area": "2,200 sq ft",
+        "description": "This delightful 3-bedroom, 2-bath family home includes a spacious backyard, making it perfect for outdoor activities. With a 2,200 sq ft layout and a pet-friendly policy, it offers ample room and comfort. Located in the Spacious Backyard Area, it also includes parking for four cars."
     }
 ]

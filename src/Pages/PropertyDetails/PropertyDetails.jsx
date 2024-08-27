@@ -28,17 +28,10 @@ const PropertyDetails = () => {
         }
     }
 
-    // useEffect(() => {
-    //     fetch('/properties.json')
-    //         .then(res => res.json())
-    //         .then(reslut => {
-    //             const data = reslut.find(details => details.id == id)
-    //             if (data) {
-    //                 setPropertyDetails(data)
-    //                 console.log(data)
-    //             }
-    //         })
-    // }, [])
+    // for scroll topz
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className='pt-20 lg:pt-32 lg:px-4 mb-20'>
             <div className='xl:w-[1440px] mx-auto'>

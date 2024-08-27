@@ -32,6 +32,10 @@ const AgentDetails = () => {
         }
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const { name, title, image, phone, mail, about, experience } = details;
     return (
         <div>

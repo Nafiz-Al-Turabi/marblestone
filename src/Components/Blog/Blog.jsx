@@ -15,7 +15,7 @@ const Blog = () => {
                 setBlogs(result)
                 console.log(result)
             })
-    }, [])
+    }, []);
 
     return (
         <div className='2xl:w-[1200px] mx-auto my-24 lg:my-[160px] px-2'>

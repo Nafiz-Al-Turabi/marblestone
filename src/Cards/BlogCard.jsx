@@ -1,12 +1,27 @@
 import React from 'react';
-import { BsCalendar3 } from 'react-icons/bs';
+import { AiFillSetting, AiFillSound } from 'react-icons/ai';
+import { BsCalendar3, BsNewspaper } from 'react-icons/bs';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
-    const { image, title, date, id } = blog;
+    const { image, title, date, id, blogtype } = blog;
+
+    const renderBlogTypeIcon = () => {
+        switch (blogtype) {
+            case 'Resources':
+                return <AiFillSetting className='mr-3 text-xl' />;
+            case 'Articles':
+                return <BsNewspaper className='mr-3 text-xl' />;
+            case 'News':
+                return <AiFillSound className='mr-3 text-xl' />;
+            default:
+                return null;
+        }
+    };
+
     return (
-        <div>
+        <div className='relative'>
             <div className='h-96 overflow-hidden relative rounded-3xl'>
                 <img src={image} alt="blog image" className='object-cover w-full h-full' />
             </div>
@@ -20,6 +35,10 @@ const BlogCard = ({ blog }) => {
                     <IoIosArrowForward className='ml-2' />
                 </Link>
             </div>
+            <button className='flex items-center absolute top-5 left-5 bg-white px-3 py-1.5 rounded-full font-semibold'>
+                {renderBlogTypeIcon()}
+                {blogtype}
+            </button>
         </div>
     );
 };
