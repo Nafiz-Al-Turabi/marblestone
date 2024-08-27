@@ -10,7 +10,9 @@
         "propertyType": "apartment",
         "petsPolicy": "allowed",
         "sort": "price-asc",
-        "location": "Downtown City Center"
+        "location": "Downtown City Center",
+        "car": "1",
+        "area": "1,850 sq ft"
     },
     {
         "id": 2,
@@ -23,7 +25,9 @@
         "propertyType": "house",
         "petsPolicy": "negotiable",
         "sort": "newest",
-        "location": "Quiet Suburb Area"
+        "location": "Quiet Suburb Area",
+        "car": "2",
+        "area": "2,800 sq ft"
     },
     {
         "id": 3,
@@ -36,7 +40,9 @@
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
         "sort": "price-desc",
-        "location": "Central Business District"
+        "location": "Central Business District",
+        "car": "1",
+        "area": "2,700 sq ft"
     },
     {
         "id": 4,
@@ -49,7 +55,9 @@
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
         "sort": "oldest",
-        "location": "Near Green Park"
+        "location": "Near Green Park",
+        "car": "3",
+        "area": "2,400 sq ft"
     },
     {
         "id": 5,
@@ -57,12 +65,14 @@
         "title": "Charming Studio in City Center",
         "minRent": "1000",
         "maxRent": "1500",
-        "bed": "0",
+        "bed": "2",
         "bath": "1",
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
         "sort": "price-asc",
-        "location": "City Center"
+        "location": "City Center",
+        "car": "1",
+        "area": "2,500 sq ft"
     },
     {
         "id": 6,
@@ -75,7 +85,9 @@
         "propertyType": "house",
         "petsPolicy": "allowed",
         "sort": "newest",
-        "location": "Suburban Garden Area"
+        "location": "Suburban Garden Area",
+        "car": "4",
+        "area": "3,200 sq ft"
     },
     {
         "id": 7,
@@ -88,7 +100,9 @@
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
         "sort": "price-desc",
-        "location": "Easy Commute Zone"
+        "location": "Easy Commute Zone",
+        "car": "1",
+        "area": "2650 sq ft"
     },
     {
         "id": 8,
@@ -101,7 +115,9 @@
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
         "sort": "price-asc",
-        "location": "Modern Features Area"
+        "location": "Modern Features Area",
+        "car": "3",
+        "area": "2,800 sq ft"
     },
     {
         "id": 9,
@@ -114,7 +130,9 @@
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
         "sort": "newest",
-        "location": "Trendy Neighborhood"
+        "location": "Trendy Neighborhood",
+        "car": "1",
+        "area": "2800 sq ft"
     },
     {
         "id": 10,
@@ -127,7 +145,9 @@
         "propertyType": "house",
         "petsPolicy": "allowed",
         "sort": "oldest",
-        "location": "Family-Friendly Area"
+        "location": "Family-Friendly Area",
+        "car": "4",
+        "area": "2,100 sq ft"
     },
     {
         "id": 11,
@@ -140,7 +160,9 @@
         "propertyType": "apartment",
         "petsPolicy": "allowed",
         "sort": "price-asc",
-        "location": "Sunny Area"
+        "location": "Sunny Area",
+        "car": "1",
+        "area": "2850 sq ft"
     },
     {
         "id": 12,
@@ -153,7 +175,9 @@
         "propertyType": "house",
         "petsPolicy": "not-allowed",
         "sort": "newest",
-        "location": "Gated Community"
+        "location": "Gated Community",
+        "car": "2",
+        "area": "1,700 sq ft"
     },
     {
         "id": 13,
@@ -166,7 +190,9 @@
         "propertyType": "condo",
         "petsPolicy": "negotiable",
         "sort": "price-desc",
-        "location": "Luxury Area"
+        "location": "Luxury Area",
+        "car": "1",
+        "area": "2900 sq ft"
     },
     {
         "id": 14,
@@ -179,7 +205,9 @@
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
         "sort": "oldest",
-        "location": "Historic Area"
+        "location": "Historic Area",
+        "car": "3",
+        "area": "2,300 sq ft"
     },
     {
         "id": 15,
@@ -192,7 +220,9 @@
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
         "sort": "price-asc",
-        "location": "Near University"
+        "location": "Near University",
+        "car": "1",
+        "area": "3400 sq ft"
     },
     {
         "id": 16,
@@ -205,7 +235,9 @@
         "propertyType": "house",
         "petsPolicy": "allowed",
         "sort": "newest",
-        "location": "Family Area"
+        "location": "Family Area",
+        "car": "4",
+        "area": "2,500 sq ft"
     },
     {
         "id": 17,
@@ -218,7 +250,9 @@
         "propertyType": "condo",
         "petsPolicy": "not-allowed",
         "sort": "price-desc",
-        "location": "City View"
+        "location": "City View",
+        "car": "1",
+        "area": "2750 sq ft"
     },
     {
         "id": 18,
@@ -231,7 +265,9 @@
         "propertyType": "townhouse",
         "petsPolicy": "allowed",
         "sort": "price-asc",
-        "location": "Prime Location"
+        "location": "Prime Location",
+        "car": "3",
+        "area": "2,200 sq ft"
     },
     {
         "id": 19,
@@ -244,7 +280,9 @@
         "propertyType": "apartment",
         "petsPolicy": "negotiable",
         "sort": "newest",
-        "location": "High Ceilings Area"
+        "location": "High Ceilings Area",
+        "car": "1",
+        "area": "2,000 sq ft"
     },
     {
         "id": 20,
@@ -257,6 +295,8 @@
         "propertyType": "house",
         "petsPolicy": "allowed",
         "sort": "oldest",
-        "location": "Spacious Backyard Area"
+        "location": "Spacious Backyard Area",
+        "car": "4",
+        "area": "2,200 sq ft"
     }
 ]

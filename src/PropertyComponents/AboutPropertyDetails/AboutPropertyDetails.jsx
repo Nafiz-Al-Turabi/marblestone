@@ -4,8 +4,8 @@ import { FaLocationPin } from 'react-icons/fa6';
 import agent from './../../assets/AboutImages/agent1.png'
 import { MdEmail, MdPhone } from 'react-icons/md';
 
-const AboutPropertyDetails = ({propertyDetail}) => {
-    const {location,title,image}=propertyDetail
+const AboutPropertyDetails = ({ propertyDetail }) => {
+    const { location, title, bed, bath, car, area } = propertyDetail;
     return (
         <div className='pt-20 lg:pt-32 lg:px-4 mb-20 mx-2'>
             <div className='xl:w-[1440px] mx-auto lg:flex justify-between gap-24'>
@@ -20,19 +20,19 @@ const AboutPropertyDetails = ({propertyDetail}) => {
                         <div className='flex items-center gap-6'>
                             <p className='flex items-center text-gray-400'>
                                 <FaSquare className='mr-2' />
-                                25000 sqre
+                                {area}
                             </p>
                             <p className='flex items-center text-gray-400'>
                                 <FaBath className='mr-2' />
-                                2
+                                {bath}
                             </p>
                             <p className='flex items-center text-gray-400'>
                                 <FaBed className='mr-2' />
-                                3
+                                {bed}
                             </p>
                             <p className='flex items-center text-gray-400'>
                                 <FaCar className='mr-2' />
-                                4
+                                {car}
                             </p>
                         </div>
                     </div>
