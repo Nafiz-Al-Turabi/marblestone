@@ -1,12 +1,43 @@
 import { IoSearch } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa";
-import image from './../../assets/Images/macbook.png'
+import Slider from "react-slick";
+import { BsCalendar3 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import LatestBlog from "../../Components/LatestBlog/LatestBlog";
-
-
-
+import image2 from './../../assets/Images/macbook.png';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Blogs = () => {
+    const slides = [
+        {
+            backgroundImage: "https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png",
+            title: "Home buying basics: How many bedrooms and bathrooms?",
+            date: "Mar 25 2025",
+            description: "Lorem ipsum dolor sit amet consectetur sit ut gravida aenean potenti metus in eu vel.",
+        },
+        {
+            backgroundImage: "https://i.ibb.co/fxYwfDJ/Rectangle-2-3.png",
+            title: "The Ultimate Guide to Renting a Property",
+            date: "Apr 10 2025",
+            description: "Lorem ipsum dolor sit amet consectetur sit ut gravida aenean potenti metus in eu vel.",
+        }
+    ];
+
+    // React Slick settings
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        cssEase: 'linear',
+        arrows:false
+    };
+
     return (
         <div className='max-w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
             <div>
@@ -20,20 +51,46 @@ const Blogs = () => {
                         </button>
                     </form>
                 </div>
+
+                {/* Slider */}
+                <div className="mt-12">
+                    <Slider {...settings} className="relative">
+                        {slides.map((slide, index) => (
+                            <div key={index} className="relative bg-cover bg-center h-[490px] rounded-2xl"
+                                style={{ backgroundImage: `url(${slide.backgroundImage})` }}
+                            >
+                                <div className="bg-white xl:w-[490px] rounded-3xl p-12 float-right mt-28 mr-16">
+                                    <h1 className="text-2xl mb-4">{slide.title}</h1>
+                                    <p className="mb-6">{slide.description}</p>
+                                    <div className="flex justify-between">
+                                        <p className='flex text-gray-500'>
+                                            <BsCalendar3 className='mr-2 text-xl' />
+                                            {slide.date}
+                                        </p>
+                                        <Link className=''>
+                                            Read More...
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+
                 {/* News letter */}
-                <div className="max-w-[1440px] mx-auto bg-black xl:px-20  px-4 pb-20 pt-64 mr-4 ml-4 lg:mr-0 lg:ml-0 md:pt-16 xl:py-40  xl:mt-28 relative mt-28 rounded-lg xl:rounded-3xl">
-                    <div className=" md:w-[360px] lg:w-[480px] text-white ">
+                <div className="max-w-[1440px] mx-auto bg-black xl:px-20 px-4 pb-20 pt-64 mr-4 ml-4 lg:mr-0 lg:ml-0 md:pt-16 xl:py-40 xl:mt-28 relative mt-28 rounded-lg xl:rounded-3xl">
+                    <div className="md:w-[360px] lg:w-[480px] text-white">
                         <h1 className="text-2xl md:text-3xl lg:text-5xl">Subscribe to our weekly newsletter</h1>
                         <p className="mt-4 mb-8">Lorem ipsum dolor sit amet consectetur. Volutpat et lacinia sit aenean consequat. Id tellus eget libero eget non odio tristique.</p>
                         <form className="relative">
                             <input type="email" name="email" placeholder='Enter your email' className="bg-[#202127] py-3 px-4 w-full rounded-full" />
-                            <button className='absolute top-1 right-2 bg-white text-black font-medium rounded-full pl-4 pr-2 py-[6px] flex items-cente'>Subscribe
+                            <button className='absolute top-1 right-2 bg-white text-black font-medium rounded-full pl-4 pr-2 py-[6px] flex items-cente'>
+                                Subscribe
                                 <FaArrowRight className='bg-black text-white p-2 w-[28px] h-[28px] rounded-full ml-2 ' />
                             </button>
                         </form>
-
                     </div>
-                    <img src={image} alt="" className="absolute -top-24 right-0 md:top-10 md:right-0 lg:-top-10   lg:right-0 w-full md:w-[373px] lg:w-[573px] xl:w-[773px] " />
+                    <img src={image2} alt="" className="absolute -top-24 right-0 md:top-10 md:right-0 lg:-top-10 lg:right-0 w-full md:w-[373px] lg:w-[573px] xl:w-[773px]" />
                 </div>
             </div>
             <div>
