@@ -18,6 +18,8 @@ import PropertyManagement from "../Pages/PropertyManagement/PropertyManagement";
 import NotFound from "../Pages/NotFound/NotFound";
 import Owner from "../Pages/Owner/Owner";
 import Resources from "../Pages/Resources/Resources";
+import Admin from "../Admin/Admin";
+import AddProperties from "../Admin Components/AddProperties/AddProperties";
 
 const router = createBrowserRouter([
     {
@@ -90,6 +92,16 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path:'/admin',
+        element:<Admin />,
+        children:[
+            {
+                path:'/admin/addProperties',
+                element:<AddProperties />
+            }
+        ]
+    }
 ]);
 
 export default router

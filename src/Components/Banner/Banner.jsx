@@ -1,3 +1,4 @@
+import Navbar from '../../Shared/Navbar/Navbar';
 import banner from './../../assets/Images/banner.png';
 import { FaArrowRight } from "react-icons/fa";
 
@@ -6,9 +7,10 @@ const Banner = () => {
         <div className="relative bg-cover md:bg-top h-screen md:h-[620px] 2xl:h-screen bg-no-repeat xl:m-6 xl:rounded-3xl 2xl:mt-5 mb-20"
             style={{ backgroundImage: `url(${banner})` }}
         >
+            <Navbar />
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black opacity-10 2xl:rounded-3xl"></div>
-            
+
             {/* Content */}
             <div className='relative text-white 2xl:flex justify-between 2xl:w-[1200px] mx-auto pt-[192px] text-center 2xl:text-left space-y-4 2xl:space-y-0'>
                 <div>
