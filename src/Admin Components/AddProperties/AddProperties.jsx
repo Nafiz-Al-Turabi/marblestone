@@ -129,9 +129,10 @@ const AddProperties = () => {
                         className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm p-2"
                     >
                         <option value="">Select Type</option>
-                        <option value="House">House</option>
-                        <option value="Apartment">Apartment</option>
-                        <option value="Condo">Condo</option>
+                        <option value="house">House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="condo">Condo</option>
+                        <option value="townhouse">Condo</option>
                     </select>
                     {errors.propertyType && <p className="text-red-500 text-sm">{errors.propertyType.message}</p>}
                 </div>
@@ -143,9 +144,9 @@ const AddProperties = () => {
                         className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm p-2"
                     >
                         <option value="">Select Policy</option>
-                        <option value="Allowed">Allowed</option>
-                        <option value="Not Allowed">Not Allowed</option>
-                        <option value="Negotiable">Negotiable</option>
+                        <option value="allowed">Allowed</option>
+                        <option value="not-allowed">Not Allowed</option>
+                        <option value="negotiable">Negotiable</option>
                     </select>
                     {errors.petsPolicy && <p className="text-red-500 text-sm">{errors.petsPolicy.message}</p>}
                 </div>
@@ -157,8 +158,8 @@ const AddProperties = () => {
                         className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm p-2"
                     >
                         <option value="">Select Sort</option>
-                        <option value="Newest">Newest</option>
-                        <option value="Oldest">Oldest</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
                         <option value="Price: Low to High">Price: Low to High</option>
                         <option value="Price: High to Low">Price: High to Low</option>
                     </select>

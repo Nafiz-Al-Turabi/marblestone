@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MdArrowForwardIos } from 'react-icons/md';
 import AboutPropertyDetails from '../../PropertyComponents/AboutPropertyDetails/AboutPropertyDetails';
 import { useParams } from 'react-router-dom';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const PropertyDetails = () => {
     const { id } = useParams();
@@ -11,22 +12,39 @@ const PropertyDetails = () => {
         fetchData();
     }, [id])
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('/properties.json')
-            if (!response.ok) {
-                throw new error('Oh no not good!')
+    // const fetchData = async () => {
+    //     try {
+    //         const response = await fetch('/properties.json')
+    //         if (!response.ok) {
+    //             throw new error('Oh no not good!')
+    //         }
+    //         const data = await response.json();
+    //         const property = data.find(details => details.id == id)
+    //         if (property) {
+    //             setPropertyDetails(property);
+    //             console.log(property)
+    //         }
+    //     } catch (error) {
+    //         onsole.error('Failed to fetch property Details:', error);
+    //     }
+    // }
+
+        const fetchData = async () => {
+            try {
+                const response = await axiosInstance.get(`/properties/${id}`);
+                const property = response.data;
+        
+                if (property) {
+                    setPropertyDetails(property);
+                    console.log(property);
+                } else {
+                    console.log('Property not found');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
             }
-            const data = await response.json();
-            const property = data.find(details => details.id == id)
-            if (property) {
-                setPropertyDetails(property);
-                console.log(property)
-            }
-        } catch (error) {
-            onsole.error('Failed to fetch property Details:', error);
-        }
-    }
+        };
+        
 
     // for scroll topz
     useEffect(() => {

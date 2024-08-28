@@ -3,6 +3,7 @@ import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import PropertiesCard from '../../Cards/PropertiesCard';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const Properties = () => {
     const [properties, setProperties] = useState([]);
@@ -24,14 +25,24 @@ const Properties = () => {
         filterProperties();
     }, [search, minRent, maxRent, bed, bath, propertyType, petsPolicy, sort, properties]);
 
-    const fetchData = async () => {
+    // const fetchData = async () => {
+    //     try {
+    //         const response = await fetch('properties.json');
+    //         if (!response.ok) {
+    //             throw new Error('Oh no Not good...');
+    //         }
+    //         const data = await response.json();
+    //         setProperties(data);
+    //     } catch (error) {
+    //         console.error('Properties Data not found: ', error);
+    //     }
+    // }
+
+    const fetchData = async()=>{
         try {
-            const response = await fetch('properties.json');
-            if (!response.ok) {
-                throw new Error('Oh no Not good...');
-            }
-            const data = await response.json();
-            setProperties(data);
+            const response = await axiosInstance.get('/properties')
+            setProperties(response.data)
+            console.log(response.data);
         } catch (error) {
             console.error('Properties Data not found: ', error);
         }

@@ -4,7 +4,7 @@ import { MdLocationPin } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const PropertiesCard = ({ property }) => {
-    const { image, title, location, id } = property;
+    const { image, title, location, _id } = property;
     return (
         <div className="relative full overflow-hidden flex flex-col justify-between ">
             <div className="relative">
@@ -22,7 +22,7 @@ const PropertiesCard = ({ property }) => {
                 </button>
             </div>
             <div className="p-4 text-black">
-                <Link to={`/propertyDetails/${id}`}>
+                <Link to={`/propertyDetails/${_id}`}>
                     <h1 className="text-xl font-semibold hover:text-red-700 duration-300 ease-in-out ">{title}</h1>
                 </Link>
                 <p className="flex items-center ">
