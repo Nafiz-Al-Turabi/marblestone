@@ -21,7 +21,7 @@ const Admin = () => {
                     </button>
                 </div>
                 <nav className="flex flex-col flex-grow px-4">
-                        <Link to="/" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link to="/admin" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
                             <FaHome className="mr-3" /> Dashboard
                         </Link>
                         <Link to="/admin/addProperties" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
@@ -29,7 +29,7 @@ const Admin = () => {
                         </Link>
                     </nav>
                 <div className="px-4 py-4">
-                    <a href="#" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <a href="/" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
                         <FaSignOutAlt className="mr-3" /> Logout
                     </a>
                 </div>
@@ -37,12 +37,12 @@ const Admin = () => {
 
             {/* Main content area */}
             <div className="flex-grow p-6 bg-gray-100 ml-0  transition-all duration-300 ease-in-out">
-                <header className="flex items-center justify-between p-4 bg-white shadow">
+                {/* <header className="flex items-center justify-between p-4 bg-white shadow">
                     <button className="md:hidden text-gray-800" onClick={toggleSidebar}>
                         <FaBars />
                     </button>
                     <h1> Dashboard</h1>
-                </header>
+                </header> */}
                 
                 <main className="mt-6">
                     <Outlet></Outlet>

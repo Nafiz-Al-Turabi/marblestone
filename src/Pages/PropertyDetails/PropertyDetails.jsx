@@ -3,6 +3,7 @@ import { MdArrowForwardIos } from 'react-icons/md';
 import AboutPropertyDetails from '../../PropertyComponents/AboutPropertyDetails/AboutPropertyDetails';
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../../Axios/AxiosInstance';
+import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 
 const PropertyDetails = () => {
     const { id } = useParams();
@@ -51,7 +52,9 @@ const PropertyDetails = () => {
         window.scrollTo(0, 0);
       }, []);
     return (
-        <div className='pt-20 lg:pt-32 lg:px-4 mb-20'>
+        <div className='xl:p-6'>
+            <NavbarBlack/>
+            <div className='pt-20 lg:pt-32 lg:px-4 mb-20'>
             <div className='xl:w-[1440px] mx-auto'>
                 <div className='flex items-center md:mb-10  lg:mb-16 mx-2 '>
                     <p className='flex items-center secondary-text gap-2'>Property
@@ -81,6 +84,7 @@ const PropertyDetails = () => {
                 </div>
             </div>
             <AboutPropertyDetails propertyDetail={propertyDetails} />
+        </div>
         </div>
     );
 };

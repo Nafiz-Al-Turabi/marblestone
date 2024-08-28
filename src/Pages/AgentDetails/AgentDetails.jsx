@@ -6,6 +6,7 @@ import { IoCopy, IoSearch } from 'react-icons/io5';
 import { FaArrowRight } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import AgentProperties from '../../AgentComponents/Agent\'sProperties/AgentProperties';
+import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 
 
 const AgentDetails = () => {
@@ -38,7 +39,8 @@ const AgentDetails = () => {
 
     const { name, title, image, phone, mail, about, experience } = details;
     return (
-        <div>
+        <div className='xl:p-6'>
+            <NavbarBlack />
             <div className='pt-20 lg:pt-32 lg:px-4 mb-20 max-w-[1440px] mx-auto'>
                 <div className='flex items-center md:mb-10  lg:mb-16 mx-2'>
                     <p className='flex items-center secondary-text gap-2'>Agents
