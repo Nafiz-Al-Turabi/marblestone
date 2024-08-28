@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='absolute  z-20 w-full xl:px-4 '>
+        <nav className='absolute  z-20 w-full xl:px-4  left-0 right-0'>
             {/* Desktop Navbar */}
             <div className='hidden xl:flex xl:max-w-[1440px] mx-auto  justify-between items-center p-4'>
                 <div className='flex items-center'>
