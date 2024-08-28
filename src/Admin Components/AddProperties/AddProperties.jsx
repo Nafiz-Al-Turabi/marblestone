@@ -2,13 +2,35 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axiosInstance from '../../Axios/AxiosInstance';
 
+const image_token= "6a61f4573470b3c2d847bbcd4cd9b15a"
+
 const AddProperties = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
+      const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_token}`
 
-    const onSubmit = async (data) => {
+      const onSubmit = async (data) => {
         try {
+            // Handle image upload
+            const imageFile = data.image[0];
+            const formData = new FormData();
+            formData.append('image', imageFile);
+
+            const imageResponse = await fetch(image_hosting_url, {
+                method: 'POST',
+                body: formData,
+            });
+
+            const imageResult = await imageResponse.json();
+            const imageUrl = imageResult.data.url;
+
+            // Include the image URL in the data
+            const propertyData = {
+                ...data,
+                image: imageUrl,
+            };
+
             // Post data to your server
-            const response = await axiosInstance.post('/postproperty', data);
+            const response = await axiosInstance.post('/postproperty', propertyData);
             console.log('Property added successfully:', response.data);
             reset();
         } catch (error) {
@@ -142,6 +164,16 @@ const AddProperties = () => {
                     </select>
                     {errors.sort && <p className="text-red-500 text-sm">{errors.sort.message}</p>}
                 </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700">Image</label>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        {...register("image", { required: 'Image is required' })}
+                        className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm p-1 "
+                    />
+                    {errors.image && <p className="text-red-500 text-sm">{errors.image.message}</p>}
+                </div>
 
                 <div className="col-span-1 sm:col-span-2">
                     <label className="block text-sm font-medium text-gray-700">Description</label>
@@ -156,7 +188,7 @@ const AddProperties = () => {
                 <div className="col-span-1 sm:col-span-2">
                     <button
                         type="submit"
-                        className="w-full py-2 px-4 inset-20 ring-blue-500 ring-offset-2 ring-offset-slate-900 bg-red-600 text-white font-semibold rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full py-2 px-4 font-semibold rounded-md  bg-cyan-200 shadow-2xl shadow-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                         Add Property
                     </button>
