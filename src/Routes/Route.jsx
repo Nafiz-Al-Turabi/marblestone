@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: '/agentDetails/:id',
                 element: <AgentDetails></AgentDetails>,
-                loader: ({ params }) => fetch('agents.json')
+                // loader: ({ params }) => fetch('agents.json')
             },
             {
                 path: '/properties',

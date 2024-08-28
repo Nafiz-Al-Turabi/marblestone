@@ -7,6 +7,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import AgentProperties from '../../AgentComponents/Agent\'sProperties/AgentProperties';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 
 const AgentDetails = () => {
@@ -16,28 +17,41 @@ const AgentDetails = () => {
         fetchData();
     }, [id])
 
-    const fetchData = async () => {
+    // const fetchData = async () => {
+    //     try {
+    //         const response = await fetch('/agents.json')
+    //         if (!response.ok) {
+    //             throw new error('Oh no not good!')
+    //         }
+    //         const data = await response.json(); // Convert response to JSON
+    //         const agent = data.find(detail => detail.id == id);
+    //         if (agent) {
+    //             setDetails(agent);
+    //             console.log(agent);
+    //         }
+    //     } catch (error) {
+    //         console.error('Failed to fetch agent:', error);
+    //     }
+    // }
+
+    const fetchData = async () =>{
         try {
-            const response = await fetch('/agents.json')
-            if (!response.ok) {
-                throw new error('Oh no not good!')
-            }
-            const data = await response.json(); // Convert response to JSON
-            const agent = data.find(detail => detail.id == id);
-            if (agent) {
-                setDetails(agent);
-                console.log(agent);
+            const response=await axiosInstance.get(`/agents/${id}`);
+            const agent = response.data;
+            if(agent){
+                setDetails(agent)
+                console.log(agent)
             }
         } catch (error) {
-            console.error('Failed to fetch agent:', error);
+            console.log('Agent details not found',error)
         }
     }
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+        useEffect(() => {
+            window.scrollTo(0, 0)
+        }, [])
 
-    const { name, title, image, phone, mail, about, experience } = details;
+    const { name, designation, image, phone, email, about, experience } = details;
     return (
         <div className='xl:p-6'>
             <NavbarBlack />
@@ -65,7 +79,7 @@ const AgentDetails = () => {
                                         <MdEmail className='text-xl mr-1.5' />
                                         Email adress
                                     </p>
-                                    <p className='ml-7 font-semibold'>{mail}</p>
+                                    <p className='ml-7 font-semibold'>{email}</p>
                                 </div>
                                 <div className='mb-5'>
                                     <p className='flex items-center secondary-text text-base'>
@@ -86,7 +100,7 @@ const AgentDetails = () => {
                                         <FaBriefcase className='text-xl mr-1.5' />
                                         Position
                                     </p>
-                                    <p className='ml-7 font-semibold'>{title}</p>
+                                    <p className='ml-7 font-semibold'>{designation}</p>
                                 </div>
                                 <form className="relative mt-7 lg:mt- pb-20 lg:pb-12">
                                     <input type="text" name="" placeholder='Enter your email' defaultValue='marblestone/agent' className="bg-[#f7f7f7]  py-3 px-4 w-full lg:w-96 text-gray-600 rounded-full focus:outline-none" />

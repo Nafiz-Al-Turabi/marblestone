@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 import Navbar from '../../Shared/Navbar/Navbar';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const LocationCMS = () => {
     const [properties, setProperties] = useState([]);
@@ -16,19 +17,16 @@ const LocationCMS = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('/properties.json');
-            if (!response.ok) {
-                throw new Error('Oh no Not good...');
-            }
-            const data = await response.json();
-            setProperties(data);
+            const response = await axiosInstance.get('/properties');
+            setProperties(response.data);
+            console.log(response.data)
         } catch (error) {
             console.error('Properties Data not found: ', error);
         }
     };
     return (
         <div className='xl:p-6 '>
-            <Navbar/>
+            <Navbar />
             <div className="relative bg-cover bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44"
                 style={{ backgroundImage: `url(${banner})` }}>
                 <div className='text-center'>
@@ -134,7 +132,7 @@ const LocationCMS = () => {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-5 px-2 xl:px-0 mt-10'>
                     {properties.slice(0, 2).map(property => (
-                        <div key={property.id} className="relative full overflow-hidden flex flex-col justify-between">
+                        <div key={property._id} className="relative full overflow-hidden flex flex-col justify-between">
                             <div className="relative">
                                 <img
                                     src={property.image}
@@ -150,7 +148,7 @@ const LocationCMS = () => {
                                 </button>
                             </div>
                             <div className="p-4 text-black">
-                                <Link to={`/propertyDetails/${property.id}`}>
+                                <Link to={`/propertyDetails/${property._id}`}>
                                     <h1 className="text-xl font-semibold hover:text-red-700 duration-300 ease-in-out mb-4">{property.title}</h1>
                                 </Link>
                                 <p className=" flex items-center">

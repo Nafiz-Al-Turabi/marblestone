@@ -6,6 +6,7 @@ import { MdMail } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarBlack from "../../Shared/Navbar/NavbarBlack";
+import axiosInstance from "../../Axios/AxiosInstance";
 
 const Agents = () => {
     const [agents, setAgents] = useState([]);
@@ -14,19 +15,28 @@ const Agents = () => {
         fetchData();
     }, []);
 
-    const fetchData = async () => {
+    // const fetchData = async () => {
+    //     try {
+    //         const response = await fetch('/agents.json')
+    //         if (!response.ok) {
+    //             throw new error('Network response not ok')
+    //         }
+    //         const data = await response.json()
+    //         setAgents(data);
+    //         console.log(data)
+    //     } catch (error) {
+    //         console.error('Failed to fetch agents:', error);
+    //     }
+    // };
+
+    const fetchData= async()=>{
         try {
-            const response = await fetch('/agents.json')
-            if (!response.ok) {
-                throw new error('Network response not ok')
-            }
-            const data = await response.json()
-            setAgents(data);
-            console.log(data)
+            const response = await axiosInstance.get('/agents');
+            setAgents(response.data);
         } catch (error) {
-            console.error('Failed to fetch agents:', error);
+            console.error(error)
         }
-    };
+    }
     return (
         <div className="xl:p-6">
             <NavbarBlack/>
@@ -46,12 +56,12 @@ const Agents = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
                         agents.map((agent) => (
-                            <div key={agent.id}  className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
+                            <div key={agent._id}  className="p-16 md:p-20 lg:p-16 xl:p-24 shadow rounded-3xl bg-white relative">
                                 <div className="flex justify-center">
                                     <img src={agent.image} alt="" className="rounded-full h-32 w-32" />
                                 </div>
                                 <h1 className="flex justify-center text-base md:text-xl my-3 font-semibold">{agent.name}</h1>
-                                <p className="flex justify-center secondary-text mb-4">{agent.title}</p>
+                                <p className="flex justify-center secondary-text mb-4">{agent.designation}</p>
                                 <div className="flex justify-center gap-5">
                                     <button>
                                         <MdMail className="h-10 w-10 bg-slate-100 rounded-full text-gray-900 p-2" />
@@ -60,7 +70,7 @@ const Agents = () => {
                                         <FaPhoneAlt className="h-10 w-10 bg-slate-100 rounded-full text-gray-900 p-2" />
                                     </button>
                                 </div>
-                                <Link  to={`/agentDetails/${agent.id}`} className="absolute top-5 right-5">
+                                <Link  to={`/agentDetails/${agent._id}`} className="absolute top-5 right-5">
                                     <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
                                 </Link>
                             </div>
