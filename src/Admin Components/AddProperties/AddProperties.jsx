@@ -29,7 +29,7 @@ const AddProperties = () => {
                 image: imageUrl,
             };
 
-            // Post data to your server
+            // Post data to server
             const response = await axiosInstance.post('/postproperty', propertyData);
             console.log('Property added successfully:', response.data);
             reset();
