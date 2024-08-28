@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaTachometerAlt, FaUsers, FaChartPie, FaSignOutAlt, FaBars, FaHome, FaPlus } from 'react-icons/fa';
+import { FaTachometerAlt, FaUsers, FaChartPie, FaSignOutAlt, FaBars, FaHome, FaPlus, FaUser } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 
 const Admin = () => {
@@ -26,6 +26,9 @@ const Admin = () => {
                         </Link>
                         <Link to="/admin/addProperties" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
                             <FaPlus className="mr-3" /> Add Property
+                        </Link>
+                        <Link to="/admin/addAgent" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <FaUser className="mr-3" /> Add Agent
                         </Link>
                     </nav>
                 <div className="px-4 py-4">

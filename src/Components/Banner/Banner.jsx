@@ -4,10 +4,12 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Banner = () => {
     return (
-        <div className="relative bg-cover md:bg-top h-screen md:h-[620px] 2xl:h-screen bg-no-repeat xl:m-6 xl:rounded-3xl 2xl:mt-5 mb-20"
+        <div className='xl:p-6'>
+            <Navbar />
+            <div className="relative bg-cover md:bg-top h-screen md:h-[620px] 2xl:h-screen bg-no-repeat xl:rounded-3xl mb-20"
             style={{ backgroundImage: `url(${banner})` }}
         >
-            <Navbar />
+            
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black opacity-10 2xl:rounded-3xl"></div>
 
@@ -30,6 +32,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

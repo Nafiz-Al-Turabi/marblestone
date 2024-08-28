@@ -21,6 +21,7 @@ import Resources from "../Pages/Resources/Resources";
 import Admin from "../Admin/Admin";
 import AddProperties from "../Admin Components/AddProperties/AddProperties";
 import Dashboard from "../Admin Components/Dashboard/Dashboard";
+import AddAgents from "../Admin Components/AddAgents/AddAgents";
 
 const router = createBrowserRouter([
     {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
             {
                 path:'/admin/addProperties',
                 element:<AddProperties />
+            },
+            {
+                path:'/admin/addAgent',
+                element:<AddAgents />
             }
         ]
     }

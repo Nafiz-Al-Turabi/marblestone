@@ -7,6 +7,7 @@ import LatestBlog from "../../Components/LatestBlog/LatestBlog";
 import image2 from './../../assets/Images/macbook.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import NavbarBlack from "../../Shared/Navbar/NavbarBlack";
 
 const Blogs = () => {
     const slides = [
@@ -39,7 +40,9 @@ const Blogs = () => {
     };
 
     return (
-        <div className='max-w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
+        <div className="xl:p-6">
+            <NavbarBlack />
+            <div className='max-w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
             <div>
                 <h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-7xl text-center lg:text-left'>News & articles</h1>
                 <div className="lg:flex justify-between items-center mt-4 px-2">
@@ -96,6 +99,7 @@ const Blogs = () => {
             <div>
                 <LatestBlog />
             </div>
+        </div>
         </div>
     );
 };
