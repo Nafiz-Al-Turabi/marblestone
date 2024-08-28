@@ -1,59 +1,53 @@
-import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import axiosInstance from '../../Axios/AxiosInstance';
+const image_token = "6a61f4573470b3c2d847bbcd4cd9b15a"
+
 
 const AddAgents = () => {
-    const { control, handleSubmit, register, watch, formState: { errors } } = useForm({
-        defaultValues: {
-            image: '',
-            name: '',
-            designation: '',
-            email: '',
-            phone: '',
-            description: ''
-        }
-    });
+    const { control, handleSubmit, register, watch, formState: { errors }, reset } = useForm();
+    const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_token}`
+    const onSubmit = async (data) => {
+        try {
+            const imageFile = data.image[0];
+            const formData = new FormData();
+            formData.append('image', imageFile);
 
-    const onSubmit = (data) => {
-        console.log(data);
+            const imageResponse = await fetch(image_hosting_url, {
+                method: 'POST',
+                body: formData
+            });
+
+            const imageResult= await imageResponse.json();
+            const imageUrl = imageResult.data.url;
+
+            const agentData ={
+                ...data,
+                image:imageUrl
+            }
+            const response = await axiosInstance.post('/addagent', agentData);
+            reset();
+        } catch (error) {
+            console.log(error);
+        }
     };
 
+    
     const imagePreview = watch('image');
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Add New Agent</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 gap-6">
                 {/* Image Upload */}
-                <div className="flex flex-col">
-                    <label className="text-sm font-medium text-gray-700 mb-2">Image</label>
-                    <Controller
-                        name="image"
-                        control={control}
-                        render={({ field }) => (
-                            <>
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => {
-                                        const file = e.target.files[0];
-                                        if (file) {
-                                            field.onChange(file);
-                                            // Set image preview URL
-                                            field.onChange(URL.createObjectURL(file));
-                                        }
-                                    }}
-                                    className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
-                                />
-                                {imagePreview && (
-                                    <img
-                                        src={imagePreview}
-                                        alt="Preview"
-                                        className="mt-2 w-32 h-32 object-cover rounded-md"
-                                    />
-                                )}
-                            </>
-                        )}
+                <div>
+                    <label className="block text-sm font-medium text-gray-700">Image</label>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        {...register("image", { required: 'Image is required' })}
+                        className="mt-1 block w-full border rounded-md p-1 "
                     />
+                    {errors.image && <p className="text-red-500 text-sm">{errors.image.message}</p>}
                 </div>
 
                 {/* Name */}
@@ -65,17 +59,6 @@ const AddAgents = () => {
                         className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-                </div>
-
-                {/* Designation */}
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Designation</label>
-                    <input
-                        type="text"
-                        {...register('designation', { required: 'Designation is required' })}
-                        className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
-                    />
-                    {errors.designation && <p className="text-red-500 text-sm mt-1">{errors.designation.message}</p>}
                 </div>
 
                 {/* Email */}
@@ -106,8 +89,39 @@ const AddAgents = () => {
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
 
-                {/* Description */}
+                {/* Designation */}
                 <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Designation</label>
+                    <input
+                        type="text"
+                        {...register('designation', { required: 'Designation is required' })}
+                        className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
+                    />
+                    {errors.designation && <p className="text-red-500 text-sm mt-1">{errors.designation.message}</p>}
+                </div>
+
+                {/* Experience */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Experience</label>
+                    <input
+                        type="text"
+                        {...register('experience', { required: 'Experience is required' })}
+                        className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
+                    />
+                    {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience.message}</p>}
+                </div>
+
+                {/* About */}
+                <div className='col-span-2'>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">About</label>
+                    <textarea
+                        {...register('about')}
+                        rows="4"
+                        className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 p-2"
+                    ></textarea>
+                </div>
+                {/* Description */}
+                <div className='col-span-2'>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
                     <textarea
                         {...register('description')}

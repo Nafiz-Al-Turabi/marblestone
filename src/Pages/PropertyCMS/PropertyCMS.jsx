@@ -6,7 +6,7 @@ import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 const PropertyCMS = () => {
     return (
         <div className='xl:p-6'>
-            <NavbarBlack/>
+            <NavbarBlack />
             <div className='py-32'>
                 <div className='xl:w-[1440px] mx-auto  lg:flex justify-between items-center mb-10 text-center lg:text-left space-y-3 m-6'>
                     <h1 className='lg:w-[422px] text-3xl lg:text-5xl xl:text-7xl font-medium'>Houses for sale or rent</h1>
