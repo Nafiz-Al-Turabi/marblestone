@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ContactUs.css';
 import Slider from 'react-slick';
+import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 
 const ContactUs = () => {
     const slides = [
@@ -42,7 +43,8 @@ const ContactUs = () => {
         arrows:false
     };
     return (
-        <div className='xl:m-6 '>
+        <div className='xl:p-6 '>
+            <NavbarBlack/>
             <div className='2xl:w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
                 <div className='xl:flex justify-between xl:gap-24'>
                     <div className='lg:w-full 2xl:w-[640px] '>

@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavbarBlack from "../../Shared/Navbar/NavbarBlack";
 
 const Agents = () => {
     const [agents, setAgents] = useState([]);
@@ -27,7 +28,9 @@ const Agents = () => {
         }
     };
     return (
-        <div className='pt-20 lg:pt-40 lg:px-4 mb-20'>
+        <div className="xl:p-6">
+            <NavbarBlack/>
+            <div className='pt-20 lg:pt-40 lg:px-4 mb-20'>
             <div className='text-center'>
                 <div className="flex justify-center ">
                     <button className="text-xs flex items-center bg-gray-100 gap-1 justify-center p-2 rounded-full mb-4  ">
@@ -65,6 +68,7 @@ const Agents = () => {
                     }
                 </div>
             </div>
+        </div>
         </div>
     );
 };

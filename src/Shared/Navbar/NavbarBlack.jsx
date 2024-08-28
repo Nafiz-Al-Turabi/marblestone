@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import logo from './../../assets/Images/logo.svg'
+import logo from './../../assets/Images/logo2.svg'
 import ActiveLink from '../../Components/ActiveLink/ActiveLink';
 
 const NavbarBlack = () => {

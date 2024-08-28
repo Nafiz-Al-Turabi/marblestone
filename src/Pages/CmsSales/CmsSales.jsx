@@ -4,6 +4,7 @@ import { IoPricetags } from 'react-icons/io5';
 import { MdLocationPin } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaTag } from 'react-icons/fa';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const CmsSales = () => {
     const [properties, setProperties] = useState([]);
@@ -25,7 +26,8 @@ const CmsSales = () => {
         }
     };
     return (
-        <div className='xl:m-6 '>
+        <div className='xl:p-6 '>
+            <Navbar />
             <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44 '>
                 <div className='text-center'>
                     <div className="flex justify-center ">

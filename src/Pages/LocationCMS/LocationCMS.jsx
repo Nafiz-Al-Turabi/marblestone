@@ -5,6 +5,7 @@ import PropertiesCard from '../../Cards/PropertiesCard';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaTag } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const LocationCMS = () => {
     const [properties, setProperties] = useState([]);
@@ -26,7 +27,8 @@ const LocationCMS = () => {
         }
     };
     return (
-        <div className='xl:m-6 '>
+        <div className='xl:p-6 '>
+            <Navbar/>
             <div className="relative bg-cover bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44"
                 style={{ backgroundImage: `url(${banner})` }}>
                 <div className='text-center'>

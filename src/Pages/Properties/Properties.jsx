@@ -4,6 +4,7 @@ import { MdLocationPin } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import PropertiesCard from '../../Cards/PropertiesCard';
 import axiosInstance from '../../Axios/AxiosInstance';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Properties = () => {
     const [properties, setProperties] = useState([]);
@@ -97,7 +98,8 @@ const Properties = () => {
         setFilteredProperties(filtered);
     }
     return (
-        <div className='xl:m-6'>
+        <div className='xl:p-6'>
+            <Navbar />
             <div className=' bg-black px-2 py-20 md:px-32 lg:p-40  xl:rounded-3xl xl:relative mb-44 '>
                 <div className='text-center'>
                     <div className="flex justify-center ">

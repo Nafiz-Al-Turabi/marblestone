@@ -2,10 +2,12 @@ import React from 'react';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaArrowRight } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Owner = () => {
     return (
-        <div className='xl:m-6'>
+        <div className='xl:p-6'>
+            <Navbar/>
             <div className='bg-black px-4 py-20 md:px-8 lg:px-16 xl:px-32 lg:py-24 xl:py-32 xl:rounded-2xl'>
                 <div className='text-center'>
                     <div className='max-w-4xl mx-auto'>

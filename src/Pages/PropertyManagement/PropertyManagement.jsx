@@ -6,6 +6,7 @@ import RentCollection from '../../PropertyComponents/RentCollection/RentCollecti
 import Maintenance from '../../PropertyComponents/Maintenance/Maintenance';
 import FinancialReporting from '../../PropertyComponents/FinancialReporting/FinancialReporting';
 import { FaCheck } from 'react-icons/fa';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 
 const tabs = [
@@ -23,7 +24,8 @@ const PropertyManagement = () => {
     const activeComponent = tabs.find(tab => tab.id === activeTab)?.component;
 
     return (
-        <div className='xl:m-6'>
+        <div className='xl:p-6'>
+            <Navbar/>
             <div className='bg-black px-4 py-20 md:px-8 lg:px-16 xl:px-32 lg:py-24 xl:py-32 xl:rounded-2xl'>
                 <div className='text-center'>
                     <div className='max-w-4xl mx-auto'>

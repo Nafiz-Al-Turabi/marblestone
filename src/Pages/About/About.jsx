@@ -9,12 +9,14 @@ import AboutBlog from '../../AboutComponents/AboutBlog/AboutBlog';
 import AboutFAQs from '../../AboutComponents/AboutFAQs/AboutFAQs';
 import ResidentFAQs from '../../AboutComponents/ResidentFAQs/ResidentFAQs';
 import OurTeam from '../../AboutComponents/OurTeam/OurTeam';
+import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 
 
 
 const About = () => {
     return (
-        <div className='xl:m-6 '>
+        <div className='xl:p-6 '>
+            <NavbarBlack/>
             <div className='pt-20 lg:pt-40 lg:px-4 mb-20'>
                 <div className='lg:max-w-[1200px] mx-auto lg:flex xl:px-6 lg:px-0'>
                     <div className=''>
