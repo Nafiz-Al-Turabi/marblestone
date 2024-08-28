@@ -99,7 +99,7 @@ const PropertyCMS = () => {
                     </form>
                 </div>
             </div>
-            <div className='w-[1200px] mx-auto'>
+            <div className='xl:w-[1200px] mx-auto'>
                 <FeaturedProperties />
             </div>
         </div>

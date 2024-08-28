@@ -55,7 +55,7 @@ const FeaturedProperties = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto p-4">
+        <div className="xl:max-w-7xl mx-auto p-4">
             <div>
                 <div className="flex justify-center">
                     <button className='bg-slate-100 flex items-center text-black pl-2 pr-4 py-[6px] rounded-full mb-4 pointer-events-none'>
@@ -123,7 +123,7 @@ const FeaturedProperties = () => {
                     <h1 className='text-3xl lg:text-5xl font-medium'>All properties in Chicago</h1>
                     <p className='text-center'>Lorem ipsum dolor sit amet consectetur. Sit ut gravida aenean potenti. Metus in eu vel morbi dui nunc tellus. Non a massa maecenas massa.</p>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-5 px-2 xl:px-0 mt-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 w-full xl:max-w-[1200px] mx-auto gap-5 px-2 xl:px-0 mt-10'>
                     {properties.slice(0, 2).map(property => (
                         <div key={property.id} className="relative full overflow-hidden flex flex-col justify-between">
                             <div className="relative">
