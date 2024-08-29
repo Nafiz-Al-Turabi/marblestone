@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 import { AuthContext } from '../../Provider/AuthProvider';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const AuthPage = () => {
   const [loginPage, setLoginPage] = useState(true);
-  const { newUser, updateUser } = useContext(AuthContext);
+  const { newUser, updateUser, login, user } = useContext(AuthContext);
   const toggleAuth = () => {
     setLoginPage(!loginPage);
   };
@@ -13,8 +14,11 @@ const AuthPage = () => {
   // Initialize the form handling
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onLoginSubmit = (data) => {
-    console.log("Login data:", data);
+  const onLoginSubmit = async (data) => {
+    await login(data.email, data.password);
+    if (user) {
+      console.log(user)
+    }
   };
 
   const onSignupSubmit = async (data) => {
@@ -24,7 +28,17 @@ const AuthPage = () => {
       const user = userCrdential.user;
       await updateUser(data.name, data.photoURL)
       if (user) {
-        setLoginPage(true)
+        // add user in database
+        const userData = {
+          name: data.name,
+          email: data.email,
+          photoURL: photoURL
+        }
+        const response = await axiosInstance.post('/users', userData);
+        if (response.status === 201) {
+          console.log('User Saved:', response.data);
+          setLoginPage(true);
+        }
       }
     } catch (error) {
       console.error("Error creating user:", error);
@@ -78,7 +92,7 @@ const AuthPage = () => {
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">User Name</label>
                 <input
-                  type="text"
+                  type="name"
                   id="name"
                   {...register('name', { required: 'User Name is required' })}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
