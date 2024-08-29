@@ -39,6 +39,7 @@ const NavbarBlack = () => {
                                 <li><Link to="/propertycms" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property CMS</Link></li>
                                 <li><Link to="/cmsSales" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>CMS Sales</Link></li>
                                 <li><Link to="/agents" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
+                                <li><Link to="/authpage" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Login</Link></li>
                             </ul>
                         )}
                     </li>

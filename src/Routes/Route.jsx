@@ -22,16 +22,21 @@ import Admin from "../Admin/Admin";
 import AddProperties from "../Admin Components/AddProperties/AddProperties";
 import Dashboard from "../Admin Components/Dashboard/Dashboard";
 import AddAgents from "../Admin Components/AddAgents/AddAgents";
+import AuthPage from "../Pages/Register/AuthPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
-        errorElement:<NotFound></NotFound>,
+        errorElement: <NotFound></NotFound>,
         children: [
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/authpage",
+                element: <AuthPage />
             },
             {
                 path: '/about',
@@ -95,20 +100,20 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'/admin',
-        element:<Admin />,
-        children:[
+        path: '/admin',
+        element: <Admin />,
+        children: [
             {
-                path:'/admin',
-                element:<Dashboard />
+                path: '/admin',
+                element: <Dashboard />
             },
             {
-                path:'/admin/addProperties',
-                element:<AddProperties />
+                path: '/admin/addProperties',
+                element: <AddProperties />
             },
             {
-                path:'/admin/addAgent',
-                element:<AddAgents />
+                path: '/admin/addAgent',
+                element: <AddAgents />
             }
         ]
     }
