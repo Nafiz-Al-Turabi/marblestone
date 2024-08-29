@@ -23,6 +23,7 @@ import AddProperties from "../Admin Components/AddProperties/AddProperties";
 import Dashboard from "../Admin Components/Dashboard/Dashboard";
 import AddAgents from "../Admin Components/AddAgents/AddAgents";
 import AuthPage from "../Pages/Register/AuthPage";
+import PrivateRoute from "../Private/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -101,7 +102,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/admin',
-        element: <Admin />,
+        element: <PrivateRoute><Admin /></PrivateRoute>,
         children: [
             {
                 path: '/admin',

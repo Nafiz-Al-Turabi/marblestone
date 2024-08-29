@@ -17,7 +17,7 @@ const Admin = () => {
             <aside className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 transition-transform duration-300 ease-in-out w-64 bg-gray-800 text-white flex flex-col z-50`}>
                 <div className="px-6 py-4 flex justify-between items-center">
                     <h1 className="text-2xl font-bold">Dashboard</h1>
-                    <button className="md:hidden text-white" onClick={toggleSidebar}>
+                    <button className="md:hidden text-black " onClick={toggleSidebar}>
                         <FaBars />
                     </button>
                 </div>

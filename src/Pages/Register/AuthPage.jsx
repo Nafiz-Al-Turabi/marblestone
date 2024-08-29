@@ -3,10 +3,15 @@ import { useForm } from 'react-hook-form';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 import { AuthContext } from '../../Provider/AuthProvider';
 import axiosInstance from '../../Axios/AxiosInstance';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AuthPage = () => {
   const [loginPage, setLoginPage] = useState(true);
   const { newUser, updateUser, login, user } = useContext(AuthContext);
+  const location=useLocation()
+  const navigate=useNavigate()
+  
+  const from =location.state?.from?.pathname || '/'
   const toggleAuth = () => {
     setLoginPage(!loginPage);
   };
@@ -17,7 +22,7 @@ const AuthPage = () => {
   const onLoginSubmit = async (data) => {
     await login(data.email, data.password);
     if (user) {
-      console.log(user)
+      navigate(from, {replace: true})
     }
   };
 
@@ -32,12 +37,12 @@ const AuthPage = () => {
         const userData = {
           name: data.name,
           email: data.email,
-          photoURL: photoURL
+          photoURL: data.photoURL
         }
         const response = await axiosInstance.post('/users', userData);
         if (response.status === 201) {
-          console.log('User Saved:', response.data);
           setLoginPage(true);
+          navigate(from, {replace: true})
         }
       }
     } catch (error) {
