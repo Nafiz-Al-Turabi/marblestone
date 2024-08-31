@@ -23,15 +23,6 @@ const Users = () => {
     const displayUsers = users.slice(0, 4);
     const userCount = users.length > 4 ? users.length - 4 : 0;
 
-    const handleEdit = (userId) => {
-        // Implement edit logic here
-        console.log('Edit user with ID:', userId);
-    };
-
-    const handleDelete = (userId) => {
-        // Implement delete logic here
-        console.log('Delete user with ID:', userId);
-    };
 
     return (
         <div className="p-6">
@@ -56,6 +47,7 @@ const Users = () => {
                 <table className='min-w-full divide-y divide-gray-200'>
                     <thead className='bg-gray-50'>
                         <tr>
+                            <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>#</th>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Photo</th>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Name</th>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Email</th>
@@ -63,8 +55,9 @@ const Users = () => {
                         </tr>
                     </thead>
                     <tbody className='bg-white divide-y divide-gray-200'>
-                        {users.map(user => (
+                        {users.map((user, index) => (
                             <tr key={user._id}>
+                                <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{index + 1}</td>
                                 <td className='px-6 py-4 whitespace-nowrap'>
                                     <img src={user.photoURL} alt="" className='w-12 h-12 rounded-full object-cover' />
                                 </td>
