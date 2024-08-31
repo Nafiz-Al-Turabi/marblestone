@@ -8,6 +8,7 @@ const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [agents, setAgents] = useState([]);
+  const [users, setUsers] = useState([]);
   const [properties, setProperties] = useState([]);
   // for dropdown close clicking anywhere
   const dropdownRef = useRef(null);
@@ -41,7 +42,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchData();
-    fetchProperies()
+    fetchProperies();
+    fetchUsers();
   }, []);
 
   const fetchData = async () => {
@@ -59,6 +61,17 @@ const Dashboard = () => {
       const response = await axiosInstance.get('/Properties');
       if (response) {
         setProperties(response.data);
+      }
+    } catch (error) {
+      console.log('error to get agents', error);
+    }
+  };
+  const fetchUsers = async () => {
+    try {
+      const response = await axiosInstance.get('/users');
+      if (response) {
+        setUsers(response.data);
+        console.log(response.data)
       }
     } catch (error) {
       console.log('error to get agents', error);
@@ -122,9 +135,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className='bg-rose-300 text-white p-10 inset-3 shadow-lg shadow-rose-500/50 rounded-md duration-700 select-none'>
-          <h1 className='text-center text-base xl:text-xl font-bold'>Others</h1>
+          <h1 className='text-center text-base xl:text-xl font-bold'>Users</h1>
           <span className='block text-center text-6xl md:text-4xl lg:text-5xl 2xl:text-9xl font-extrabold'>
-            <CountUp end={1200} duration={2.5} />
+            <CountUp end={users.length} duration={2.5} />
           </span>
         </div>
       </div>
