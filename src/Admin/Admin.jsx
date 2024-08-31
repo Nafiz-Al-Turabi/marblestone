@@ -69,7 +69,7 @@ const Admin = () => {
 
             {/* Main content area */}
             <div className="flex-grow p-6 bg-gray-100 ml-0  transition-all duration-300 ease-in-out">
-            <header className="flex items-center justify-between p-4 bg-white shadow">
+            <header className="md:hidden p-4 bg-white shadow">
                     <button className="md:hidden text-gray-800" onClick={toggleSidebar}>
                         <FaBars />
                     </button>

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import FullMessage from '../FullMessage/FullMessage';
 
 const Messages = () => {
     const [selectedRows, setSelectedRows] = useState([]);
+    const [openFullMessage, setOpenFullMessage] = useState(false);
+
+    const toggleOpenMessage = () => {
+        setOpenFullMessage(!openFullMessage)
+    }
 
     const messages = [
         { id: 1, name: 'Nafiz', message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', date: '20 Mar' },
@@ -22,7 +28,7 @@ const Messages = () => {
     return (
         <div className='p-4'>
             <div className='overflow-x-auto'>
-                <div className='hidden md:block'>
+                <div className=''>
                     <table className='min-w-full bg-white shadow rounded-lg'>
                         <tbody>
                             {messages.map(message => (
@@ -36,33 +42,19 @@ const Messages = () => {
                                         />
                                         <FaStar className='text-yellow-500' />
                                     </td>
-                                    <td className='py-2 px-4 text-gray-800'>{message.name}</td>
-                                    <td className='py-2 px-4 text-gray-800'>{message.message}</td>
+                                    <td  className='py-2 px-4 text-gray-800'>{message.name}</td>
+                                    <td onClick={toggleOpenMessage} className='py-2 px-4 text-gray-800'>{message.message}</td>
                                     <td className='py-2 px-4 text-gray-800'>{message.date}</td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
-
-                <div className='md:hidden'>
-                    {messages.map(message => (
-                        <div key={message.id} className='bg-white shadow rounded-lg mb-4 p-4 flex flex-col space-y-2'>
-                            <div className='flex items-center space-x-3'>
-                                <input
-                                    type='checkbox'
-                                    checked={selectedRows.includes(message.id)}
-                                    onChange={() => handleCheckboxChange(message.id)}
-                                    className='form-checkbox h-5 w-5 text-green-500'
-                                />
-                                <FaStar className='text-yellow-500' />
-                            </div>
-                            <div className='text-gray-800 font-semibold'>{message.name}</div>
-                            <div className='text-gray-600'>{message.message}</div>
-                            <div className='text-gray-500'>{message.date}</div>
-                        </div>
-                    ))}
-                </div>
+            </div>
+            <div>
+                {
+                    openFullMessage && <FullMessage toggleOpenMessage={toggleOpenMessage}></FullMessage>
+                }
             </div>
         </div>
     );
