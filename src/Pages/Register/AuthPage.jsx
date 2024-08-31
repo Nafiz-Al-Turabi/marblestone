@@ -22,7 +22,7 @@ const AuthPage = () => {
   const onLoginSubmit = async (data) => {
     await login(data.email, data.password);
     if (user) {
-      navigate(from, {replace: true})
+      navigate(from, {replace: true});
     }
   };
 
@@ -42,7 +42,7 @@ const AuthPage = () => {
         const response = await axiosInstance.post('/users', userData);
         if (response.status === 201) {
           setLoginPage(true);
-          navigate(from, {replace: true})
+          navigate(from, {replace: true});
         }
       }
     } catch (error) {

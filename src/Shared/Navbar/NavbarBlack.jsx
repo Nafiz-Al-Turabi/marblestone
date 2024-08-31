@@ -18,7 +18,7 @@ const NavbarBlack = () => {
     };
 
     return (
-        <nav className='absolute  z-20 w-full xl:px-4 left-0 right-0'>
+        <nav className='absolute  z-20 w-full xl:px-4  left-0 right-0'>
             {/* Desktop Navbar */}
             <div className='hidden xl:flex xl:max-w-[1440px] mx-auto  justify-between items-center p-4'>
                 <div className='flex items-center'>
@@ -32,13 +32,14 @@ const NavbarBlack = () => {
                             Property Management <IoIosArrowDown />
                         </a>
                         {isDropdownOpen && (
-                            <ul className='absolute bg-gray-100 mt-2 p-2 rounded shadow-lg'>
+                            <ul className='absolute bg-gray-500 mt-2 p-2 rounded shadow-lg'>
                                 <li><Link to="/propertyManagement" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property Management</Link></li>
                                 <li><Link to="/properties" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Properties</Link></li>
                                 <li><Link to="/propertyLocation" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property Location</Link></li>
                                 <li><Link to="/propertycms" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property CMS</Link></li>
                                 <li><Link to="/cmsSales" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>CMS Sales</Link></li>
                                 <li><Link to="/agents" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
+                                <li><Link to="/admin" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Admin Pannel</Link></li>
                                 <li><Link to="/authpage" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Login</Link></li>
                             </ul>
                         )}
@@ -62,7 +63,7 @@ const NavbarBlack = () => {
                 <Link to="/">
                     <img src={logo} alt="Logo" />
                 </Link>
-                <button onClick={toggleMobileMenu} className='text-gray-400 text-2xl'>
+                <button onClick={toggleMobileMenu} className='text-white text-2xl'>
                     {isMobileMenuOpen ? '' : <IoIosMenu />}
                 </button>
             </div>

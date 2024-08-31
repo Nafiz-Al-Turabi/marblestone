@@ -5,7 +5,7 @@ import agent from './../../assets/AboutImages/agent1.png'
 import { MdEmail, MdPhone } from 'react-icons/md';
 
 const AboutPropertyDetails = ({ propertyDetail }) => {
-    const { location, title, bed, bath, car, area,description } = propertyDetail;
+    const { location, title, bed, bath, car, area, description,maxRent } = propertyDetail;
     return (
         <div className='pt-20 lg:pt-32 lg:px-4 mb-20 mx-2'>
             <div className='xl:w-[1440px] mx-auto lg:flex justify-between gap-24'>
@@ -92,7 +92,7 @@ const AboutPropertyDetails = ({ propertyDetail }) => {
                 </div>
                 <div className='lg:w-2/5 mt-12 xl:mt-0 '>
                     <div className='bg-white py-10 px-12 rounded-3xl shadow hover:scale-105 duration-300'>
-                        <h2 className='text-xl md:text-3xl lg:text-5xl font-medium mb-2.5'>$8,000 <span className='text-xl text-gray-500 '>USD</span></h2>
+                        <h2 className='text-xl md:text-3xl lg:text-5xl font-medium mb-2.5'>${maxRent } <span className='text-xl text-gray-500 '>USD</span></h2>
                         <p className='text-xl text-gray-500'>Property for rent</p>
                     </div>
                     <div className='bg-white py-10 px-12 rounded-3xl shadow hover:scale-105 duration-300 mt-6'>

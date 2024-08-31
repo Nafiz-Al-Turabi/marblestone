@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import banner from './../../assets/Images/banner3.png'
 import FeaturedProperties from '../../PropertyComponents/FeaturedProperties/FeaturedProperties';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
+import { FaPlus, FaTag } from 'react-icons/fa';
+import { MdLocationPin } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const PropertyCMS = () => {
+    const [properties, setProperties] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axiosInstance.get('/properties');
+            setProperties(response.data);
+            console.log(response.data)
+        } catch (error) {
+            console.error('Properties Data not found: ', error);
+        }
+    };
     return (
         <div className='xl:p-6'>
             <NavbarBlack />
@@ -99,8 +118,34 @@ const PropertyCMS = () => {
                     </form>
                 </div>
             </div>
-            <div className='xl:w-[1200px] mx-auto'>
-                <FeaturedProperties />
+            <div className='grid grid-cols-1 md:grid-cols-2 max-w-[1200px] mx-auto gap-5 px-2 xl:px-0 mt-10'>
+                {properties.slice(0, 2).map(property => (
+                    <div key={property._id} className="relative full overflow-hidden flex flex-col justify-between">
+                        <div className="relative">
+                            <img
+                                src={property.image}
+                                alt="Luxury Loft"
+                                className="w-full h-96 object-cover rounded-3xl"
+                            />
+                            <Link to='' className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md focus:outline-none">
+                                <FaPlus className="text-gray-800" />
+                            </Link>
+                            <button className="flex items-center absolute top-2 left-2 p-2 bg-black text-white rounded-full shadow-md focus:outline-none">
+                                <FaTag className="text-white mr-2" />
+                                For rent
+                            </button>
+                        </div>
+                        <div className="p-4 text-black">
+                            <Link to={`/propertyDetails/${property._id}`}>
+                                <h1 className="text-xl font-semibold hover:text-red-700 duration-300 ease-in-out mb-4">{property.title}</h1>
+                            </Link>
+                            <p className=" flex items-center">
+                                <MdLocationPin className='mr-2' />
+                                {property.location}
+                            </p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
