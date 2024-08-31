@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import FullMessage from '../FullMessage/FullMessage';
+import { IoMdTrash } from 'react-icons/io';
 
 const Messages = () => {
     const [selectedRows, setSelectedRows] = useState([]);
@@ -27,9 +28,17 @@ const Messages = () => {
 
     return (
         <div className='p-4'>
+            <div className='bg-white mb-5 p-3 flex items-center'>
+                <div>
+                    <h1>All Messages</h1>
+                </div>
+            </div>
+            <button className='text-2xl mb-5  text-red-500 border p-2 rounded hover:bg-white duration-300 active:scale-95'>
+                <IoMdTrash />
+            </button>
             <div className='overflow-x-auto'>
                 <div className=''>
-                    <table className='min-w-full bg-white shadow rounded-lg'>
+                    <table className='min-w-full bg-white shadow rounded-lg '>
                         <tbody>
                             {messages.map(message => (
                                 <tr key={message.id} className='hover:bg-gray-50 duration-300 cursor-pointer'>
@@ -42,9 +51,9 @@ const Messages = () => {
                                         />
                                         <FaStar className='text-yellow-500' />
                                     </td>
-                                    <td  className='py-2 px-4 text-gray-800'>{message.name}</td>
+                                    <td className='py-2 px-4 text-gray-800'>{message.name}</td>
                                     <td onClick={toggleOpenMessage} className='py-2 px-4 text-gray-800'>{message.message}</td>
-                                    <td className='py-2 px-4 text-gray-800'>{message.date}</td>
+                                    <td className='py-2 px-4 text-gray-400'>{message.date}</td>
                                 </tr>
                             ))}
                         </tbody>

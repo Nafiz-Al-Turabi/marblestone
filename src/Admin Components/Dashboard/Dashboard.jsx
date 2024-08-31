@@ -79,7 +79,7 @@ const Dashboard = () => {
             <img src={user?.photoURL} alt={user?.displayName || "User Avatar"} className='w-10 h-10 rounded-full border border-gray-700' />
           </button>
           {isDropdownOpen && (
-            <div className='absolute right-6 top-20 mt-2 w-56 bg-white shadow-lg rounded-md p-4 '>
+            <div className='absolute right-6 top-20 mt-2  bg-white shadow-lg rounded-md p-4 '>
               <div>
               <h1 className='text-lg font-semibold '>{user?.displayName}</h1>
                 <p className='text-gray-400'>{user?.email}</p>
@@ -127,9 +127,6 @@ const Dashboard = () => {
             <CountUp end={1200} duration={2.5} />
           </span>
         </div>
-      </div>
-      <div>
-        {/* Tab will here tab name will be Users , users Message,  */}
       </div>
     </div>
   );
