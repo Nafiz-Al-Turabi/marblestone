@@ -9,7 +9,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const NavbarBlack = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const {user}=useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -52,7 +52,7 @@ const NavbarBlack = () => {
                     <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
                     {
-                        user ? <li><Link to="/admin" onClick={toggleDropdown} className='block px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : ''
+                        user ? <li><Link to="/admin" className='lock px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : <li><Link to="/authpage" className='lock px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Login</Link></li>
                     }
                 </ul>
                 <button className='primary-btn flex items-center'>
@@ -100,7 +100,7 @@ const NavbarBlack = () => {
                     <li><ActiveLink to="/about" onClick={toggleMobileMenu} className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" onClick={toggleMobileMenu} className='font-medium'>Contact</ActiveLink></li>
                     {
-                        user ? <li><Link to="/admin" onClick={toggleDropdown} className='block px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : ''
+                        user ? <li><Link to="/admin" onClick={toggleMobileMenu}  className='lock px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : <li><Link to="/authpage" onClick={toggleMobileMenu}  className='lock px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Login</Link></li>
                     }
                 </ul>
                 <button className='primary-btn flex items-center mt-6'>

@@ -8,26 +8,28 @@ const Messages = () => {
     const [selectedRows, setSelectedRows] = useState([]);
     const [openFullMessage, setOpenFullMessage] = useState(false);
     const [messages, setMessages] = useState([]);
+    const [selectedMessage, setSelectedMessage] = useState(null);
 
-    const toggleOpenMessage = () => {
-        setOpenFullMessage(!openFullMessage)
-    }
+    const toggleOpenMessage = (message) => {
+        setSelectedMessage(message);
+        setOpenFullMessage(!openFullMessage);
+    };
 
     useEffect(() => {
-        fetchMessage()
-    }, [])
+        fetchMessage();
+    }, []);
 
     const fetchMessage = async () => {
         try {
             const response = await axiosInstance.get('/contacts');
             if (response) {
                 setMessages(response.data);
-                console.log(response.data)
+                console.log(response.data);
             }
         } catch (error) {
-
+            console.error('Error fetching messages:', error);
         }
-    }
+    };
 
     const handleCheckboxChange = (id) => {
         setSelectedRows(prevSelectedRows =>
@@ -36,7 +38,7 @@ const Messages = () => {
                 : [...prevSelectedRows, id]
         );
     };
-    // for show small part of message
+
     const truncateMessage = (message, wordLimit = 20) => {
         const words = message.split(' ');
         if (words.length <= wordLimit) return message;
@@ -50,12 +52,12 @@ const Messages = () => {
                     <h1>All Messages</h1>
                 </div>
             </div>
-            <button className='text-2xl mb-5  text-red-500 border p-2 rounded hover:bg-white duration-300 active:scale-95'>
+            <button className='text-2xl mb-5 text-red-500 border p-2 rounded hover:bg-white duration-300 active:scale-95'>
                 <IoMdTrash />
             </button>
             <div className='overflow-x-auto'>
                 <div className=''>
-                    <table className='min-w-full bg-white shadow rounded-lg '>
+                    <table className='min-w-full bg-white shadow rounded-lg'>
                         <tbody>
                             {messages.map(message => (
                                 <tr key={message._id} className='hover:bg-gray-50 duration-300 cursor-pointer'>
@@ -69,7 +71,9 @@ const Messages = () => {
                                         <FaStar className='text-yellow-500' />
                                     </td>
                                     <td className='py-2 px-4 text-gray-800'>{message.firstName + message.lastName}</td>
-                                    <td onClick={toggleOpenMessage} className='py-2 px-4 text-gray-800'> {truncateMessage(message.message)}</td>
+                                    <td onClick={() => toggleOpenMessage(message)} className='py-2 px-4 text-gray-800'>
+                                        {truncateMessage(message.message)}
+                                    </td>
                                     <td className='py-2 px-4 text-gray-400'>{message.timestamp}</td>
                                 </tr>
                             ))}
@@ -77,11 +81,9 @@ const Messages = () => {
                     </table>
                 </div>
             </div>
-            <div>
-                {
-                    openFullMessage && <FullMessage toggleOpenMessage={toggleOpenMessage}></FullMessage>
-                }
-            </div>
+            {openFullMessage && selectedMessage && (
+                <FullMessage message={selectedMessage} toggleOpenMessage={toggleOpenMessage} />
+            )}
         </div>
     );
 };

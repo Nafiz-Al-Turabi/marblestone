@@ -18,7 +18,8 @@ const AddAgents = () => {
             });
 
             const imageResult = await imageResponse.json();
-            const imageUrl = imageResult.data.url;
+            const imageUrl = imageResult.data.
+            url;
 
             const agentData = {
                 ...data,
