@@ -24,7 +24,6 @@ const Messages = () => {
             const response = await axiosInstance.get('/contacts');
             if (response) {
                 setMessages(response.data);
-                console.log(response.data);
             }
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -45,6 +44,23 @@ const Messages = () => {
         return words.slice(0, wordLimit).join(' ') + '...';
     };
 
+    const handleDelete = async () => {
+        if (selectedRows.length === 0) return;
+
+        try {
+            const response = await axiosInstance.delete('/contacts', {
+                data: { ids: selectedRows }
+            });
+
+            if (response.status === 200) {
+                setMessages(messages.filter(message => !selectedRows.includes(message._id)));
+                setSelectedRows([]); // Clear selected rows
+            }
+        } catch (error) {
+            console.error('Error deleting messages:', error);
+        }
+    };
+
     return (
         <div className='p-4'>
             <div className='bg-white mb-5 p-3 flex items-center'>
@@ -52,9 +68,14 @@ const Messages = () => {
                     <h1>All Messages</h1>
                 </div>
             </div>
-            <button className='text-2xl mb-5 text-red-500 border p-2 rounded hover:bg-white duration-300 active:scale-95'>
-                <IoMdTrash />
-            </button>
+            {selectedRows.length > 0 && (
+                <button
+                    onClick={handleDelete}
+                    className='text-2xl mb-5 text-red-500 border p-2 rounded hover:bg-white duration-300 active:scale-95'
+                >
+                    <IoMdTrash />
+                </button>
+            )}
             <div className='overflow-x-auto'>
                 <div className=''>
                     <table className='min-w-full bg-white shadow rounded-lg'>
@@ -70,7 +91,9 @@ const Messages = () => {
                                         />
                                         <FaStar className='text-yellow-500' />
                                     </td>
-                                    <td className='py-2 px-4 text-gray-800'>{message.firstName + message.lastName}</td>
+                                    <td className='py-2 px-4 text-gray-800'>
+                                        {message.firstName + message.lastName}
+                                    </td>
                                     <td onClick={() => toggleOpenMessage(message)} className='py-2 px-4 text-gray-800'>
                                         {truncateMessage(message.message)}
                                     </td>

@@ -6,6 +6,7 @@ import { MdLocationPin } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import PropertiesCard from '../../Cards/PropertiesCard';
 import AgentBlog from '../Agent\'sBlog/AgentBlog';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const AgentProperties = ({ name }) => {
     const [properties, setProperties] = useState([]);
@@ -16,12 +17,9 @@ const AgentProperties = ({ name }) => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('/properties.json');
-            if (!response.ok) {
-                throw new Error('Oh no Not good...');
-            }
-            const data = await response.json();
-            setProperties(data);
+            const response = await axiosInstance.get('/properties');
+            setProperties(response.data);
+            console.log(response.data)
         } catch (error) {
             console.error('Properties Data not found: ', error);
         }
@@ -43,7 +41,7 @@ const AgentProperties = ({ name }) => {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 mx-auto gap-5 px-2 xl:px-0'>
                     {properties.slice(0, 2).map(property => (
-                        <div key={property.id} className="relative full overflow-hidden flex flex-col justify-between">
+                        <div key={property._id} className="relative full overflow-hidden flex flex-col justify-between">
                             <div className="relative">
                                 <img
                                     src={property.image}
@@ -59,7 +57,7 @@ const AgentProperties = ({ name }) => {
                                 </button>
                             </div>
                             <div className="p-4 text-black">
-                                <Link to={`/propertyDetails/${property.id}`}>
+                                <Link to={`/propertyDetails/${property._id}`}>
                                     <h1 className="text-white text-xl font-semibold hover:text-red-700 duration-300 ease-in-out mb-4">{property.title}</h1>
                                 </Link>
                                 <p className="text-white flex items-center">
