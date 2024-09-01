@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import { useEffect, useState } from "react";
 import axiosInstance from "../../Axios/AxiosInstance";
+import { Link } from "react-router-dom";
 
 
 const OurTeam = () => {
@@ -56,9 +57,9 @@ const OurTeam = () => {
                                             <FaPhoneAlt className="h-10 w-10 bg-slate-100 rounded-full text-gray-900 p-2" />
                                         </button>
                                     </div>
-                                    <button className="absolute top-5 right-5">
+                                    <Link to={`/agentDetails/${agent._id}`} className="absolute top-5 right-5">
                                         <FaPlus className="h-10 w-10 bg-gray-900 rounded-full text-white p-2" />
-                                    </button>
+                                    </Link>
                                 </div>
                             ))
                         }
