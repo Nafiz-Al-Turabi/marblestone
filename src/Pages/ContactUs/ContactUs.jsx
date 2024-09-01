@@ -131,7 +131,7 @@ const ContactUs = () => {
                                     <MdEmail className="absolute left-3 text-gray-400" style={{ fontSize: '20px' }} />
                                     <input
                                         id="email"
-                                        type="text"
+                                        type="email"
                                         name="name"
                                         placeholder='example@yourmail.com'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
@@ -140,13 +140,13 @@ const ContactUs = () => {
                             </div>
                             <div className="relative">
                                 <label htmlFor="phone" className='block mb-2.5 font-semibold'>
-                                    Email address
+                                    Phone
                                 </label>
                                 <div className="flex items-center">
                                     <MdPhone className="absolute left-3 text-gray-400" style={{ fontSize: '20px' }} />
                                     <input
                                         id="phone"
-                                        type="text"
+                                        type="number"
                                         name="name"
                                         placeholder='(123) 4567890'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
@@ -163,9 +163,9 @@ const ContactUs = () => {
                                     className="bg-gray-50 pl-3 py-3 w-full focus:outline-none rounded-full"
                                 >
                                     <option value="" disabled>General inquiry</option>
-                                    <option value="option1">Option 1</option>
-                                    <option value="option2">Option 2</option>
-                                    <option value="option3">Option 3</option>
+                                    <option value="Property-sale">Property for sale</option>
+                                    <option value="Property-location">Property Location</option>
+                                    <option value="Property-rent">Property Rent</option>
                                 </select>
                             </div>
                             <div className="relative md:col-span-2">

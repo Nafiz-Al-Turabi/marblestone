@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import logo from './../../assets/Images/logo2.svg'
 import ActiveLink from '../../Components/ActiveLink/ActiveLink';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavbarBlack = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const {user}=useContext(AuthContext)
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -32,15 +34,13 @@ const NavbarBlack = () => {
                             Property Management <IoIosArrowDown />
                         </a>
                         {isDropdownOpen && (
-                            <ul className='absolute bg-gray-500 mt-2 p-2 rounded shadow-lg'>
+                            <ul className='absolute bg-gray-500 mt-2 p-2 rounded shadow-lg text-white'>
                                 <li><Link to="/propertyManagement" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Property Management</Link></li>
                                 <li><Link to="/properties" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Properties</Link></li>
                                 <li><Link to="/propertyLocation" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property Location</Link></li>
                                 <li><Link to="/propertycms" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'> Property CMS</Link></li>
                                 <li><Link to="/cmsSales" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>CMS Sales</Link></li>
                                 <li><Link to="/agents" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Agents</Link></li>
-                                <li><Link to="/admin" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Admin Pannel</Link></li>
-                                <li><Link to="/authpage" onClick={toggleDropdown} className='block p-2 hover:bg-slate-300 rounded duration-300 ease-in'>Login</Link></li>
                             </ul>
                         )}
                     </li>
@@ -51,6 +51,9 @@ const NavbarBlack = () => {
                     <li><ActiveLink to="/resources" className='font-medium'>Resources</ActiveLink></li>
                     <li><ActiveLink to="/about" className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" className='font-medium'>Contact</ActiveLink></li>
+                    {
+                        user ? <li><Link to="/admin" onClick={toggleDropdown} className='block px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : ''
+                    }
                 </ul>
                 <button className='primary-btn flex items-center'>
                     Book a call
@@ -96,6 +99,9 @@ const NavbarBlack = () => {
                     <li><ActiveLink to="/resources" onClick={toggleMobileMenu} className='font-medium'>Resources</ActiveLink></li>
                     <li><ActiveLink to="/about" onClick={toggleMobileMenu} className='font-medium'>About</ActiveLink></li>
                     <li><ActiveLink to="/contact" onClick={toggleMobileMenu} className='font-medium'>Contact</ActiveLink></li>
+                    {
+                        user ? <li><Link to="/admin" onClick={toggleDropdown} className='block px-2 bg-[#990a05] text-white p-1  rounded duration-300 ease-in'>Dashboard</Link></li> : ''
+                    }
                 </ul>
                 <button className='primary-btn flex items-center mt-6'>
                     Book a call

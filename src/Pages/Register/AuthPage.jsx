@@ -8,10 +8,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const AuthPage = () => {
   const [loginPage, setLoginPage] = useState(true);
   const { newUser, updateUser, login, user } = useContext(AuthContext);
-  const location=useLocation()
-  const navigate=useNavigate()
-  
-  const from =location.state?.from?.pathname || '/'
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const from = location.state?.from?.pathname || '/'
   const toggleAuth = () => {
     setLoginPage(!loginPage);
   };
@@ -22,33 +22,46 @@ const AuthPage = () => {
   const onLoginSubmit = async (data) => {
     await login(data.email, data.password);
     if (user) {
-      navigate(from, {replace: true});
+      navigate(from, { replace: true });
     }
   };
 
   const onSignupSubmit = async (data) => {
     try {
       console.log("Signup data:", data);
-      const userCrdential = await newUser(data.email, data.password);
-      const user = userCrdential.user;
-      await updateUser(data.name, data.photoURL)
+      const userCredential = await newUser(data.email, data.password);
+      const user = userCredential.user;
+      await updateUser(data.name, data.photoURL);
+
       if (user) {
-        // add user in database
+        // Add user in the database
         const userData = {
           name: data.name,
           email: data.email,
-          photoURL: data.photoURL
-        }
+          photoURL: data.photoURL,
+        };
+
         const response = await axiosInstance.post('/users', userData);
+
         if (response.status === 201) {
           setLoginPage(true);
-          navigate(from, {replace: true});
+          navigate(from, { replace: true });
+        } else {
+          // Handle other unexpected statuses here if needed
         }
       }
     } catch (error) {
-      console.error("Error creating user:", error);
+      if (error.response && error.response.status === 409) {
+        // Email already exists error
+        console.error("Email already exists");
+        alert("This email is already registered. Please use a different email.");
+      } else {
+        console.error("Error creating user:", error);
+        alert("An error occurred during signup. Please try again.");
+      }
     }
   };
+
 
 
   return (

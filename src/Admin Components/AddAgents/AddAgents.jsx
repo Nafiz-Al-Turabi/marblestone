@@ -17,12 +17,12 @@ const AddAgents = () => {
                 body: formData
             });
 
-            const imageResult= await imageResponse.json();
+            const imageResult = await imageResponse.json();
             const imageUrl = imageResult.data.url;
 
-            const agentData ={
+            const agentData = {
                 ...data,
-                image:imageUrl
+                image: imageUrl
             }
             const response = await axiosInstance.post('/addagent', agentData);
             reset();

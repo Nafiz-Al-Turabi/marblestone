@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FaTachometerAlt, FaUsers, FaChartPie, FaSignOutAlt, FaBars, FaHome, FaPlus, FaUser, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
-import UserDashboard from '../Admin Components/Dashboard/UserDashboard';
+import AdminDashboard from '../Admin Components/Dashboard/AdminDashboard';
 
 const Admin = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,7 +24,7 @@ const Admin = () => {
                         <FaBars />
                     </button>
                 </div>
-                <UserDashboard />
+                <AdminDashboard />
                 <div className="px-4 py-4">
                     <Link to='/' className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white w-full">
                         <FaHome className="mr-3" /> Home
