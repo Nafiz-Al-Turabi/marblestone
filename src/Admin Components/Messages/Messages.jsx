@@ -13,16 +13,9 @@ const Messages = () => {
         setOpenFullMessage(!openFullMessage)
     }
 
-    // const messages = [
-    //     { id: 1, name: 'Nafiz', message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', date: '20 Mar' },
-    //     { id: 2, name: 'Mofiz', message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', date: '21 Mar' },
-    //     { id: 3, name: 'Masud', message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', date: '5 Mar' },
-    //     // Add more messages here
-    // ];
-    
-    useEffect(()=>{
+    useEffect(() => {
         fetchMessage()
-    },[])
+    }, [])
 
     const fetchMessage = async () => {
         try {
@@ -42,6 +35,12 @@ const Messages = () => {
                 ? prevSelectedRows.filter(rowId => rowId !== id)
                 : [...prevSelectedRows, id]
         );
+    };
+    // for show small part of message
+    const truncateMessage = (message, wordLimit = 20) => {
+        const words = message.split(' ');
+        if (words.length <= wordLimit) return message;
+        return words.slice(0, wordLimit).join(' ') + '...';
     };
 
     return (
@@ -70,8 +69,8 @@ const Messages = () => {
                                         <FaStar className='text-yellow-500' />
                                     </td>
                                     <td className='py-2 px-4 text-gray-800'>{message.firstName + message.lastName}</td>
-                                    <td onClick={toggleOpenMessage} className='py-2 px-4 text-gray-800'>{message.message}</td>
-                                    <td className='py-2 px-4 text-gray-400'>{message.date}</td>
+                                    <td onClick={toggleOpenMessage} className='py-2 px-4 text-gray-800'> {truncateMessage(message.message)}</td>
+                                    <td className='py-2 px-4 text-gray-400'>{message.timestamp}</td>
                                 </tr>
                             ))}
                         </tbody>

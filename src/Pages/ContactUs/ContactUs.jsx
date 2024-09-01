@@ -46,13 +46,14 @@ const ContactUs = () => {
         arrows: false
     };
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors },reset} = useForm();
 
     const onSubmit = async (data) => {
         try {
             const response = await axiosInstance.post('/contacts',data);
             if(response){
                 alert('Message sent!')
+                reset()
             }
         } catch (error) {
 
