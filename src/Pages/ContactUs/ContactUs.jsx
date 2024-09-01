@@ -8,6 +8,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import './ContactUs.css';
 import Slider from 'react-slick';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
+import { useForm } from 'react-hook-form';
+import axiosInstance from '../../Axios/AxiosInstance';
+
 
 const ContactUs = () => {
     const slides = [
@@ -40,11 +43,25 @@ const ContactUs = () => {
         autoplay: true,
         autoplaySpeed: 3000,
         pauseOnHover: true,
-        arrows:false
+        arrows: false
     };
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await axiosInstance.post('/contacts',data);
+            if(response){
+                alert('Message sent!')
+            }
+        } catch (error) {
+
+        }
+    };
+
     return (
         <div className='xl:p-6 '>
-            <NavbarBlack/>
+            <NavbarBlack />
             <div className='2xl:w-[1440px] mx-auto pt-20 lg:pt-40 lg:px-4 mb-20'>
                 <div className='xl:flex justify-between xl:gap-24'>
                     <div className='lg:w-full 2xl:w-[640px] '>
@@ -92,7 +109,7 @@ const ContactUs = () => {
                         </div>
                     </div>
                     <div className='bg-white p-11 w-full rounded-3xl mt-12 lg:mt-0 '>
-                        <form action="" className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                             <div className="relative">
                                 <label htmlFor="first-name" className='block mb-2.5 font-semibold'>
                                     First name
@@ -102,10 +119,11 @@ const ContactUs = () => {
                                     <input
                                         id="first-name"
                                         type="text"
-                                        name="name"
                                         placeholder='First name'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
+                                        {...register('firstName', { required: 'First name is required' })}
                                     />
+                                    {errors.firstName && <p className='text-red-500 text-xs'>{errors.firstName.message}</p>}
                                 </div>
                             </div>
                             <div className="relative">
@@ -117,10 +135,11 @@ const ContactUs = () => {
                                     <input
                                         id="last-name"
                                         type="text"
-                                        name="name"
                                         placeholder='Last name'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
+                                        {...register('lastName', { required: 'Last name is required' })}
                                     />
+                                    {errors.lastName && <p className='text-red-500 text-xs'>{errors.lastName.message}</p>}
                                 </div>
                             </div>
                             <div className="relative">
@@ -132,10 +151,11 @@ const ContactUs = () => {
                                     <input
                                         id="email"
                                         type="email"
-                                        name="name"
                                         placeholder='example@yourmail.com'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
+                                        {...register('email', { required: 'Email address is required', pattern: { value: /^[^@]+@[^@]+\.[^@]+$/, message: 'Invalid email address' } })}
                                     />
+                                    {errors.email && <p className='text-red-500 text-xs'>{errors.email.message}</p>}
                                 </div>
                             </div>
                             <div className="relative">
@@ -146,11 +166,12 @@ const ContactUs = () => {
                                     <MdPhone className="absolute left-3 text-gray-400" style={{ fontSize: '20px' }} />
                                     <input
                                         id="phone"
-                                        type="number"
-                                        name="name"
+                                        type="tel"
                                         placeholder='(123) 4567890'
                                         className='bg-gray-50 pl-10 py-3 px-3 w-full focus:outline-none rounded-full'
+                                        {...register('phone', { required: 'Phone number is required' })}
                                     />
+                                    {errors.phone && <p className='text-red-500 text-xs'>{errors.phone.message}</p>}
                                 </div>
                             </div>
                             <div className="relative md:col-span-2">
@@ -159,30 +180,30 @@ const ContactUs = () => {
                                 </label>
                                 <select
                                     id="options"
-                                    name="options"
                                     className="bg-gray-50 pl-3 py-3 w-full focus:outline-none rounded-full"
+                                    {...register('inquiryType', { required: 'Inquiry type is required' })}
                                 >
-                                    <option value="" disabled>General inquiry</option>
+                                    <option value="" disabled>Select inquiry type</option>
                                     <option value="Property-sale">Property for sale</option>
                                     <option value="Property-location">Property Location</option>
                                     <option value="Property-rent">Property Rent</option>
                                 </select>
+                                {errors.inquiryType && <p className='text-red-500 text-xs'>{errors.inquiryType.message}</p>}
                             </div>
                             <div className="relative md:col-span-2">
-                                <label htmlFor="comment" className="block mb-2.5 font-semibold text-gray-700">
-                                    Your Message
+                                <label htmlFor="message" className="block mb-2.5 font-semibold">
+                                    Your message
                                 </label>
-                                <div className="relative flex items-start">
-                                    <FaPen className="absolute top-3 left-3 text-gray-400" style={{ fontSize: '16px' }} />
-                                    <textarea
-                                        id="comment"
-                                        name="comment"
-                                        placeholder='Write your message here...'
-                                        className='bg-gray-50 pl-10 py-3 w-full h-32 resize-none focus:outline-none rounded-md'
-                                    />
-                                </div>
+                                <textarea
+                                    id="message"
+                                    rows="5"
+                                    placeholder="Your message"
+                                    className="bg-gray-50 pl-3 py-3 w-full focus:outline-none rounded-xl"
+                                    {...register('message', { required: 'Message is required' })}
+                                />
+                                {errors.message && <p className='text-red-500 text-xs'>{errors.message.message}</p>}
                             </div>
-                            <button className='primary-btn flex items-center mt-6 w-[167px]'>
+                            <button type='submit' className='primary-btn flex items-center mt-6 w-[167px]'>
                                 Send message
                                 <FaArrowRight className='bg-white p-2 w-[28px] h-[28px] rounded-full text-black ml-2' />
                             </button>
