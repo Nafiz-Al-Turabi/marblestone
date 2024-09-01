@@ -5,8 +5,8 @@ const FullMessage = ({ toggleOpenMessage, message }) => {
     const { email, phone, message: messageContent, firstName, lastName } = message;
     
     return (
-        <div className='bg-black/10 w-full p-12 fixed top-0 left-0 right-0 z-50 min-h-screen'>
-            <div className='bg-white xl:w-1/2 mx-auto rounded-xl p-10 relative'>
+        <div className=' bg-black/0 w-full p-12 fixed top-0 left-0 right-0 z-50 min-h-screen'>
+            <div className='animation bg-white xl:w-1/2 mx-auto rounded-xl p-10 relative'>
                 <div className='flex items-center space-x-3'>
                     <div>
                         <img src="https://i.ibb.co/9gk7p8p/avatar.png" alt="" className='w-16 h-16 rounded-full' />
