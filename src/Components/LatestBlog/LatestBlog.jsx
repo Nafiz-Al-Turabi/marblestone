@@ -3,6 +3,7 @@ import { FaNewspaper, FaBook } from 'react-icons/fa';
 import { MdOutlineSettings } from "react-icons/md";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import BlogCard from '../../Cards/BlogCard';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const LatestBlog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -10,14 +11,30 @@ const LatestBlog = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
 
+    // useEffect(() => {
+    //     fetch('/blogdata.json')
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             setBlogs(result);
+    //             console.log(result);
+    //         });
+    // }, []);
+
+
     useEffect(() => {
-        fetch('/blogdata.json')
-            .then(res => res.json())
-            .then(result => {
-                setBlogs(result);
-                console.log(result);
-            });
+        fetchData()
     }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axiosInstance.get('/blogs');
+            if (response) {
+                setBlogs(response.data)
+            }
+        } catch (error) {
+            console.log('blog fetch failed in blogs page:', error)
+        }
+    }
 
     // filter 
     const filterBlogs = () => {
@@ -64,7 +81,7 @@ const LatestBlog = () => {
                 <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
                     {
                         paginatedBlogs().map(blog =>
-                            <BlogCard blog={blog} key={blog.id} />
+                            <BlogCard blog={blog} key={blog._id} />
                         )
                     }
                 </div>

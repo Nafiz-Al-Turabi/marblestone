@@ -3,17 +3,24 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { IoPencil } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import BlogCard from '../../Cards/BlogCard';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 const AgentBlog = ({ name }) => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('/blogdata.json')
-            .then(res => res.json())
-            .then(result => {
-                setBlogs(result)
-                console.log(result)
-            })
-    }, [])
+        fetchData()
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axiosInstance.get('/blogs');
+            if (response) {
+                setBlogs(response.data)
+            }
+        } catch (error) {
+            console.log('blog fetch failed in blogs page:', error)
+        }
+    }
     return (
         <div>
             <div className='max-w-[1200px] mx-auto mb-44'>
@@ -31,7 +38,7 @@ const AgentBlog = ({ name }) => {
                     {
                         blogs.map(blog =>
 
-                            <BlogCard blog={blog} />
+                            <BlogCard blog={blog} key={blog._id} />
                         )
                     }
                 </div>

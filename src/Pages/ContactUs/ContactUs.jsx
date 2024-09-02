@@ -250,8 +250,8 @@ const ContactUs = () => {
                 </Slider>
 
                 <div className="flex justify-center mt-6 ">
-                    <button className="text-base flex items-center bg-white  opacity-80 gap-5 justify-center p-2 rounded-full mb-4  ">
-                        contact us
+                    <button className="text-base flex items-center bg-white  opacity-80 gap-2 justify-center p-2 rounded-full mb-4  ">
+                        Contact us
                         <FaArrowRight className="h-7 w-7 text-white bg-slate-500 rounded-full p-1" />
                     </button>
                 </div>
