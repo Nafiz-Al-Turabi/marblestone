@@ -16,6 +16,9 @@ const AdminDashboard = () => {
             <Link to="/admin/addAgent" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white shadow shadow-white/5 rounded-lg">
                 <FaUser className="mr-3" /> Add Agent
             </Link>
+            <Link to="/admin/addblog" className="flex items-center px-4 py-2 mt-2 text-gray-300 hover:bg-gray-700 hover:text-white shadow shadow-white/5 rounded-lg">
+                <FaUser className="mr-3" /> Add Blog
+            </Link>
             <div>
                 <button
                     onClick={() => setIsOpen(!isOpen)}

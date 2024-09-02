@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { FaTachometerAlt, FaUsers, FaChartPie, FaSignOutAlt, FaBars, FaHome, FaPlus, FaUser, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaHome, } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import AdminDashboard from '../Admin Components/Dashboard/AdminDashboard';
 
 const Admin = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
 
 
     const toggleSidebar = () => {

@@ -26,6 +26,7 @@ import AuthPage from "../Pages/Register/AuthPage";
 import PrivateRoute from "../Private/PrivateRoute";
 import Messages from "../Admin Components/Messages/Messages";
 import Users from "../Admin Components/Users/Users";
+import AddBlog from "../Admin Components/AddBlog/AddBlog";
 
 const router = createBrowserRouter([
     {
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
             {
                 path: '/admin/addAgent',
                 element: <AddAgents />
+            },
+            {
+                path: '/admin/addblog',
+                element: <AddBlog />
             },
             {
                 path: '/admin/messages',
