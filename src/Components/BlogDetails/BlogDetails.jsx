@@ -6,6 +6,7 @@ import { FaXTwitter, FaCirclePlus } from "react-icons/fa6";
 import { useParams } from 'react-router-dom';
 import { AiFillSetting, AiFillSound } from 'react-icons/ai';
 import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
+import axiosInstance from '../../Axios/AxiosInstance';
 
 
 
@@ -13,23 +14,38 @@ import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 const BlogDetails = () => {
     const { id } = useParams()
     const [details, setDetails] = useState({});
+    // useEffect(() => {
+    //     fetch('/blogdata.json')
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             const data = result.find(detail => detail.id == id)
+    //             if (data) {
+    //                 setDetails(data)
+    //                 console.log(data)
+    //             }
+    //         })
+    // }, []);
+
+
     useEffect(() => {
-        fetch('/blogdata.json')
-            .then(res => res.json())
-            .then(result => {
-                const data = result.find(detail => detail.id == id)
-                if (data) {
-                    setDetails(data)
-                    console.log(data)
-                }
-            })
+        window.scrollTo(0, 0);
+        fetchDetails();
     }, []);
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+    const fetchDetails = async () => {
+        try {
+            const response = await axiosInstance.get(`/blogs/${id}`);
+            const blogDetails = response.data;
+            if (blogDetails) {
+                setDetails(blogDetails);
+                console.log(blogDetails)
+            }
+        } catch (error) {
+            console.log("Bolg details not found", error)
+        }
+    }
 
-    const { title, image, description, date, agent_name, agent_email, blogtype } = details;
+    const { title, image, description, date, authorName, authorEmail, blogtype } = details;
 
     const renderBlogTypeIcon = () => {
         switch (blogtype) {
@@ -60,14 +76,14 @@ const BlogDetails = () => {
                         </p>
                     </div>
                     <div className='lg:flex flex-row-reverse gap-5 xl:gap-10 mt-5'>
-                        <div className='relative shadow m-2 lg:m-2 xl:m-0 p-4 md:rounded-3xl  xl:w-[446px]'>
+                        <div className='relative shadow m-2 lg:m-2 xl:m-0 p-4 md:rounded-3xl  xl:w-[446px] h-52'>
                             <div className='flex items-center'>
                                 <div>
                                     <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=" alt="" className='w-16' />
                                 </div>
                                 <div>
-                                    <h1 className='text-xl font-medium'>{agent_name}</h1>
-                                    <p className='secondary-text'>{agent_email}</p>
+                                    <h1 className='text-xl font-medium'>{authorName}</h1>
+                                    <p className='secondary-text'>{authorEmail}</p>
                                 </div>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur fermentum eget fringilla egestas lorem.</p>
@@ -81,7 +97,7 @@ const BlogDetails = () => {
                                 <FaCirclePlus />
                             </button>
                         </div>
-                        <div>
+                        <div className='w-5/6'>
                             <h1 className='text-2xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-medium my-2 px-2'>{title}</h1>
                             <p className='secondary-text px-2 text-justify mb-10'>{description}</p>
                         </div>

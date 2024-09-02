@@ -66,6 +66,19 @@ const AddBlog = () => {
                     />
                     {errors.image && <p className="text-red-500 text-sm">{errors.image.message}</p>}
                 </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700">Blog type</label>
+                    <select
+                        {...register('blogtype', { required: 'Sort option is required' })}
+                        className="mt-1 block w-full border rounded-md p-2"
+                    >
+                        <option value="" disabled >Select One</option>
+                        <option value="Articles">Articles</option>
+                        <option value="News">News</option>
+                        <option value="Resources">Resources</option>
+                    </select>
+                    {errors.sort && <p className="text-red-500 text-sm">{errors.sort.message}</p>}
+                </div>
 
                 <div className='col-span-2'>
                     <label htmlFor="description" className="block text-sm font-medium text-gray-700">

@@ -5,7 +5,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
-    const { image, title, date, id, blogtype } = blog;
+    const { image, title, date, _id, blogtype } = blog;
 
     const renderBlogTypeIcon = () => {
         switch (blogtype) {
@@ -31,7 +31,7 @@ const BlogCard = ({ blog }) => {
                     <BsCalendar3 className='mr-2 text-xl' />
                     {date}
                 </p>
-                <Link to={`/blogDetails/${id}`} className='flex items-center '>Read more
+                <Link to={`/blogDetails/${_id}`} className='flex items-center '>Read more
                     <IoIosArrowForward className='ml-2' />
                 </Link>
             </div>
