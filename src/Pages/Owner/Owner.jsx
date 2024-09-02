@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaArrowRight } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 import Navbar from '../../Shared/Navbar/Navbar';
 
 const Owner = () => {
+    // for scroll topz
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className='xl:p-6'>
             <Navbar/>

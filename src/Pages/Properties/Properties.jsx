@@ -20,6 +20,7 @@ const Properties = () => {
 
     useEffect(() => {
         fetchData();
+        window.scrollTo(0, 0);
     }, [])
 
     useEffect(() => {

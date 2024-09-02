@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRight, FaPen, FaUser } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import './ContactUs.css'
@@ -46,12 +46,12 @@ const ContactUs = () => {
         arrows: false
     };
 
-    const { register, handleSubmit, formState: { errors },reset} = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = async (data) => {
         try {
-            const response = await axiosInstance.post('/contacts',data);
-            if(response){
+            const response = await axiosInstance.post('/contacts', data);
+            if (response) {
                 alert('Message sent!')
                 reset()
             }
@@ -59,7 +59,10 @@ const ContactUs = () => {
 
         }
     };
-
+    // for scroll topz
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className='xl:p-6 '>
             <NavbarBlack />

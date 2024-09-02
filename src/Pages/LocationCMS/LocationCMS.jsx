@@ -13,6 +13,7 @@ const LocationCMS = () => {
 
     useEffect(() => {
         fetchData();
+        window.scrollTo(0, 0);
     }, []);
 
     const fetchData = async () => {
