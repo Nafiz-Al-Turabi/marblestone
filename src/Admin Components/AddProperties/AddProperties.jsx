@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axiosInstance from '../../Axios/AxiosInstance';
 
 const image_token= "6a61f4573470b3c2d847bbcd4cd9b15a"
 
 const AddProperties = () => {
+    const  [isSubmittin, SetIsSubmitting]=useState(false);
     const { register, handleSubmit, formState: { errors },reset } = useForm();
       const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_token}`
 
       const onSubmit = async (data) => {
+        SetIsSubmitting(true);
         try {
             // Handle image upload
             const imageFile = data.image[0];
@@ -35,6 +37,8 @@ const AddProperties = () => {
             reset();
         } catch (error) {
             console.error('Error adding property:', error);
+        }finally{
+            isSubmittin(false);
         }
     };
 
@@ -190,6 +194,7 @@ const AddProperties = () => {
                     <button
                         type="submit"
                         className="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        disabled={isSubmittin}
                     >
                         Add Property
                     </button>
