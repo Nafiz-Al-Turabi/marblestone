@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import image2 from './../../assets/AboutImages/image2.png'
 import image1 from './../../assets/AboutImages/image1.png'
@@ -14,9 +14,12 @@ import NavbarBlack from '../../Shared/Navbar/NavbarBlack';
 
 
 const About = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <div className='xl:p-6 '>
-            <NavbarBlack/>
+            <NavbarBlack />
             <div className='pt-20 lg:pt-40 lg:px-4 mb-20'>
                 <div className='lg:max-w-[1200px] mx-auto lg:flex xl:px-6 lg:px-0'>
                     <div className=''>

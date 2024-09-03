@@ -3,6 +3,7 @@ import CountUp from 'react-countup';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaSignOutAlt } from 'react-icons/fa';
 import axiosInstance from '../../Axios/AxiosInstance';
+import Tabs from '../Tabs/Tabs';
 
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -141,6 +142,8 @@ const Dashboard = () => {
           </span>
         </div>
       </div>
+
+      <Tabs/>
     </div>
   );
 };

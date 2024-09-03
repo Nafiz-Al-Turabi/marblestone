@@ -47,7 +47,6 @@ const AuthPage = () => {
           setLoginPage(true);
           navigate(from, { replace: true });
         } else {
-          // Handle other unexpected statuses here if needed
         }
       }
     } catch (error) {
