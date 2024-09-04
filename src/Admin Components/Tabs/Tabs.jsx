@@ -12,7 +12,9 @@ const Tabs = () => {
     const [users, setUsers] = useState([]);
     const [properties, setProperties] = useState([]);
     const [search, setSearch] = useState('');
-    const [filterAgents, setFilterAgents] = useState([])
+    const [filterAgents, setFilterAgents] = useState([]);
+    const [searchUser, setSearchUser] = useState('')
+    const [filterSearchUser, setFilterSeacrchUser] = useState([]);
 
 
     const handleTabClick = (tab) => {
@@ -84,7 +86,8 @@ const Tabs = () => {
 
     useEffect(() => {
         filterAgent();
-    }, [search, agents])
+        filterUser();
+    }, [search, agents, searchUser, users])
 
     const filterAgent = () => {
         let filtered = agents;
@@ -92,6 +95,14 @@ const Tabs = () => {
             filtered = filtered.filter(agent => agent.name.toLowerCase().includes(search.toLowerCase()))
         }
         setFilterAgents(filtered)
+    }
+
+    const filterUser = () => {
+        let filteredUser = users;
+        if (searchUser) {
+            filteredUser = filteredUser.filter(user => user.name.toLowerCase().includes(searchUser.toLowerCase()))
+        }
+        setFilterSeacrchUser(filteredUser)
     }
 
     return (
@@ -161,7 +172,21 @@ const Tabs = () => {
                 )}
                 {activeTab === 'users' && (
                     <div>
-                        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+                        <div className="overflow-x-auto ">
+                        <div className="flex  my-5">
+                                <div className="relative ">
+                                    <input
+                                        type="text"
+                                        className="w-full p-3 pl-10 text-gray-900 border border-gray-300 rounded-lg"
+                                        placeholder="Search..."
+                                        value={searchUser}
+                                        onChange={(e) => setSearchUser(e.target.value)}
+                                    />
+                                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+                                        <FaSearch />
+                                    </div>
+                                </div>
+                            </div>
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-200">
                                     <tr>
@@ -173,7 +198,7 @@ const Tabs = () => {
                                     </tr>
                                 </thead>
                                 {
-                                    users.map((user, index) =>
+                                    filterSearchUser.map((user, index) =>
                                         <UserTable handleDeleteUser={handleDeleteUser} user={user} key={user._id} index={index} />
                                     )
                                 }

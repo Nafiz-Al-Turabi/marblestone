@@ -40,7 +40,7 @@ const AuthPage = () => {
         };
 
         const response = await axiosInstance.post('/users', userData);
-
+        console.log(response.data)
         if (response.status === 201) {
           setLoginPage(true);
           navigate(from, { replace: true });
