@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoPencil, IoTrash } from 'react-icons/io5';
 
-const PropertyTable = ({ index, property }) => {
+const PropertyTable = ({ index, property,handleDeleteProperty }) => {
     return (
         <tbody className="bg-sky-300 divide-y text-white divide-gray-200">
             <tr>
@@ -15,7 +15,7 @@ const PropertyTable = ({ index, property }) => {
                     <button className="text-sky-500 hover:text-sky-700  text-xl p-1 rounded-md hover:scale-105  bg-white transition duration-150 ease-in-out">
                         <IoPencil />
                     </button>
-                    <button className="text-rose-500 hover:text-rose-700 text-xl p-1 rounded-md hover:scale-105  bg-white  transition duration-150 ease-in-out">
+                    <button onClick={()=>handleDeleteProperty(property._id)} className="text-rose-500 hover:text-rose-700 text-xl p-1 rounded-md hover:scale-105  bg-white  transition duration-150 ease-in-out">
                         <IoTrash />
                     </button>
                 </td>

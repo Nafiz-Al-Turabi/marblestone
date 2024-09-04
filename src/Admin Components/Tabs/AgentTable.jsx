@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoPencil, IoTrash } from 'react-icons/io5';
 
-const AgentTable = ({ agent, index ,handleDelete}) => {
+const AgentTable = ({ agent, index, handleDeleteAgent }) => {
     return (
         <tbody className="bg-teal-300 divide-y divide-gray-200">
             <tr>
@@ -15,7 +15,7 @@ const AgentTable = ({ agent, index ,handleDelete}) => {
                     <button className="text-sky-500 bg-white text-xl p-1 rounded-md hover:scale-105  hover:text-sky-700 transition duration-150 ease-in-out">
                         <IoPencil />
                     </button>
-                    <button onClick={handleDelete} className="text-rose-500 bg-white text-xl p-1 rounded-md hover:scale-105  hover:text-rose-700 transition duration-150 ease-in-out">
+                    <button onClick={() => handleDeleteAgent(agent._id)} className="text-rose-500 bg-white text-xl p-1 rounded-md hover:scale-105  hover:text-rose-700 transition duration-150 ease-in-out">
                         <IoTrash />
                     </button>
                 </td>

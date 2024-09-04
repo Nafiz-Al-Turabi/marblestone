@@ -49,13 +49,31 @@ const Tabs = () => {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDeleteAgent = async (id) => {
         try {
             const response = await axiosInstance.delete(`/agents/${id}`);
             console.log('Agent deleted:', response.data);
             fetchAgent(); 
         } catch (error) {
             console.error('Error deleting agent data:', error);
+        }
+    };
+    const handleDeleteUser = async (id) => {
+        try {
+            const response = await axiosInstance.delete(`/users/${id}`);
+            console.log('User deleted:', response.data);
+            fetchUser(); 
+        } catch (error) {
+            console.error('Error deleting user data:', error);
+        }
+    };
+    const handleDeleteProperty = async (id) => {
+        try {
+            const response = await axiosInstance.delete(`/properties/${id}`);
+            console.log('Property deleted:', response.data);
+            fetchProperies(); 
+        } catch (error) {
+            console.error('Error deleting property data:', error);
         }
     };
     
@@ -104,7 +122,7 @@ const Tabs = () => {
                                 </thead>
                                 {
                                     agents.map((agent, index) =>
-                                        <AgentTable handleDelete={handleDelete} agent={agent} key={agent._id} index={index} />
+                                        <AgentTable handleDeleteAgent={handleDeleteAgent} agent={agent} key={agent._id} index={index} />
                                     )
                                 }
                             </table>
@@ -126,7 +144,7 @@ const Tabs = () => {
                             </thead>
                             {
                                 users.map((user, index) =>
-                                    <UserTable user={user} key={user._id} index={index} />
+                                    <UserTable handleDeleteUser={handleDeleteUser} user={user} key={user._id} index={index} />
                                 )
                             }
                         </table>
@@ -148,7 +166,7 @@ const Tabs = () => {
                                 </thead>
                                 {
                                     properties.map((property, index) =>
-                                        <PropertyTable property={property} key={property._id} index={index} />
+                                        <PropertyTable handleDeleteProperty={handleDeleteProperty} property={property} key={property._id} index={index} />
                                     )
                                 }
                             </table>
