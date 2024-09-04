@@ -16,12 +16,12 @@ const TrustedCompany = () => {
             <div className="mb-20">
                 <h3 className="text-[18px] secondary-text text-center mb-6">As seen On:</h3>
                 <Marquee >
-                    <img src={image2} alt="" className=" ml-10" />
-                    <img src={image3} alt="" className=" ml-10" />
-                    <img src={image4} alt="" className=" ml-10" />
-                    <img src={image1} alt="" className=" ml-10" />
-                    <img src={image5} alt="" className=" ml-10" />
-                    <img src={image6} alt="" className=" ml-10" />
+                    <img src={image2} alt="" className=" ml-16 lg:ml-24" />
+                    <img src={image3} alt="" className=" ml-16 lg:ml-24" />
+                    <img src={image4} alt="" className=" ml-16 lg:ml-24" />
+                    <img src={image1} alt="" className=" ml-16 lg:ml-24" />
+                    <img src={image5} alt="" className=" ml-16 lg:ml-24" />
+                    <img src={image6} alt="" className=" ml-16 lg:ml-24" />
                 </Marquee>
             </div>
             <div className=" lg:flex justify-between lg:mx-6">
