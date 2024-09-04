@@ -8,10 +8,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const AuthPage = () => {
   const [loginPage, setLoginPage] = useState(true);
   const { newUser, updateUser, login, user } = useContext(AuthContext);
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || '/'
+  const from = location.state?.from?.pathname || '/';
   const toggleAuth = () => {
     setLoginPage(!loginPage);
   };
@@ -28,13 +28,11 @@ const AuthPage = () => {
 
   const onSignupSubmit = async (data) => {
     try {
-      console.log("Signup data:", data);
       const userCredential = await newUser(data.email, data.password);
       const user = userCredential.user;
       await updateUser(data.name, data.photoURL);
 
       if (user) {
-        // Add user in the database
         const userData = {
           name: data.name,
           email: data.email,
@@ -46,12 +44,10 @@ const AuthPage = () => {
         if (response.status === 201) {
           setLoginPage(true);
           navigate(from, { replace: true });
-        } else {
         }
       }
     } catch (error) {
-      if (error.response && error.response.status === 409) {
-        // Email already exists error
+      if (error.response && error.response.status === 400) {
         console.error("Email already exists");
         alert("This email is already registered. Please use a different email.");
       } else {
@@ -61,7 +57,18 @@ const AuthPage = () => {
     }
   };
 
-
+  // Password validation rules for signup
+  const passwordValidation = {
+    required: 'Password is required',
+    minLength: {
+      value: 8,
+      message: 'Password must be at least 8 characters long',
+    },
+    pattern: {
+      value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
+      message: 'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character',
+    },
+  };
 
   return (
     <div className='xl:p-6'>
@@ -76,7 +83,13 @@ const AuthPage = () => {
                 <input
                   type="email"
                   id="email"
-                  {...register('email', { required: 'Email is required' })}
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: 'Please enter a valid email address',
+                    },
+                  })}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -86,7 +99,7 @@ const AuthPage = () => {
                 <input
                   type="password"
                   id="password"
-                  {...register('password', { required: 'Password is required' })}
+                  {...register('password', passwordValidation)}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
                 />
                 {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
@@ -109,7 +122,7 @@ const AuthPage = () => {
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">User Name</label>
                 <input
-                  type="name"
+                  type="text"
                   id="name"
                   {...register('name', { required: 'User Name is required' })}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
@@ -121,7 +134,13 @@ const AuthPage = () => {
                 <input
                   type="email"
                   id="email"
-                  {...register('email', { required: 'Email is required' })}
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: 'Please enter a valid email address',
+                    },
+                  })}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -131,7 +150,7 @@ const AuthPage = () => {
                 <input
                   type="password"
                   id="password"
-                  {...register('password', { required: 'Password is required' })}
+                  {...register('password', passwordValidation)}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-sm"
                 />
                 {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
@@ -152,7 +171,7 @@ const AuthPage = () => {
                 Signup
               </button>
               <p className="text-center text-sm text-gray-600">
-                Already have an account? <button onClick={toggleAuth} className="text-[#990a05] hover:text-rose-700 font-medium">Login</button>
+                Already have an account? <button onClick={toggleAuth} className="text-[#990a05] hover:text-rose-700 font-medium">Log in</button>
               </p>
             </form>
           </div>
