@@ -55,7 +55,7 @@ const Tabs = () => {
             console.log('Agent deleted:', response.data);
             fetchAgent(); 
         } catch (error) {
-            console.error('Error deleting agent:', error);
+            console.error('Error deleting agent data:', error);
         }
     };
     
