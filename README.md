@@ -42,4 +42,6 @@ A modern real estate website built with React for the frontend and Node.js with 
 1. Clone the repository:
 
    ```bash
+   Admin: nafizalturabi@gmail.com
+   Password : 16247
    git clone https://github.com/Nafiz-Al-Turabi/marblestone
